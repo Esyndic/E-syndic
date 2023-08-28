@@ -1,21 +1,17 @@
 const express = require('express');
 
-//Create an Express App
 const app = express();
 
-//Require application Route modules
-const syndicRoute = require('./routes/syndic');
-const usersRoute = require('./routes/users');
-const personnelRoute = require('./routes/personnel');
+const postsRoute = require('./routes/syndic');
+const tenantsRoute = require('./routes/tenants');
 
-//Middleware to parse incoming requests with JSON and urlencoded payloads
+
+
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-//Add Routes to the middleware handling path, specifying the respective URL path
-app.use('/api/syndic', syndicRoute);
-app.use('/api/users', usersRoute);
-app.use('/api/personnel', personnelRoute);
 
+app.use('/api/posts', postsRoute);
+app.use('/api/tenants', tenantsRoute);
 
-module.exports = app; // export the express app.
+module.exports = app; 

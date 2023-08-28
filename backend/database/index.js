@@ -4,7 +4,12 @@ const mysql = require('mysql2');
 const config = require('config');
 
 // Create a database connection and export it from this file.
-const connection = mysql.createConnection(config);
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  database: '',
+  password: "A.m.i.n.e1"
+ });
 connection.connect((err)=>{
   if (err) {
     console.log(err);

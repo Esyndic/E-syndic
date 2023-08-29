@@ -3,24 +3,27 @@ import React from "react";
 function Home() {
   return (
     <div>
-      <h1 class="h1">E-Syndic</h1>
-
+      <br></br>
       <section class="section-2">
         <div class="sheet">
+          
+          <img class="img2" src="https://www.coprolib.com/wp-content/uploads/2019/08/visuel-devenir-coprolib.svg" />
+          <br></br>
           <p class="description">
+
           Manage your co-ownership in complete freedom! For more than 10 years,
              E-SYNDIC makes life easier for co-owners. A clear platform
              and effective, for the volunteer trustee. The support of a team
              experts to meet your needs. Together, let's build a
              sustainable condominium project!
           </p>
-          <img class="img2" src="https://www.coprolib.com/wp-content/uploads/2019/08/visuel-devenir-coprolib.svg" />
+
         </div>
       </section>
 
       <section class="section-3">
         <div class="sheet">
-          <h2 class="heading">Try This Now!</h2>
+          <h2 class="heading">Start Now!</h2>
           <button id="shbtn">
             <a href="login.html" class="button">
               Login As Tenant

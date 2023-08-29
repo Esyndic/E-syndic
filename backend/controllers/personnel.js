@@ -1,4 +1,5 @@
 const { personnel } = require("../database/models");
+    
 
 
 module.exports = {
@@ -18,14 +19,15 @@ module.exports = {
     }, req.body);
   },
 
-  updatePersonnel: function (res, req) {
+  updatePersonnel: function (req, res) {
+    console.log(req.body);
     personnel.update(
       function (err, results) {
         if (err) res.status(500).send(err);
         else res.json(results);
       },
       req.body,
-      req.params
+      req.params.idpersonnel
     );
   },
   
@@ -33,6 +35,6 @@ module.exports = {
     personnel.delete(function (err, results) {
       if (err) res.status(500).send(err);
       else res.json(results);
-    }, req.params);
+    }, req.params.idpersonnel);
   },
 };

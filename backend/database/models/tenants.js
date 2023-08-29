@@ -10,19 +10,19 @@ module.exports = {
     });
   },
  
-  getOne: function (callback, id) {
-    const sql = "SELECT * FROM `tenants` WHERE id=?";
-    conn.query(sql, [id], function (error, results, ) {
-      callback(error, results);
-    });
-  },
+  // getOne: function (callback, id) {
+  //   const sql = "SELECT * FROM `tenants` WHERE id=?";
+  //   conn.query(sql, [id], function (error, results, ) {
+  //     callback(error, results);
+  //   });
+  // },
   
   add: function (callback, tenantsData) {
     const sql =
-      "INSERT INTO tenants (name, password, email) VALUES (?,?,?)";
+      "INSERT INTO tenants (name, password, email,syndic_idsyndic) VALUES (?,?,?,?)";
     conn.query(
       sql,
-      [tenantsData.name, tenantsData.password, tenantsData.email],
+      [tenantsData.name, tenantsData.password, tenantsData.email,tenantsData.syndic_idsyndic],
       function (error, results) {
         callback(error, results);
       }

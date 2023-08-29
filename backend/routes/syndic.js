@@ -14,8 +14,10 @@ router.get("/getAll",getSyndic);
 //router.get("/:idpost", getOnePost);
 // POST request for creating a new post.
 router.post("/add", addSyndic);
-// DELETE request for removing a post
+
+
+
 // UPDATE request for updating a post.
-router.put("/update/:idsyndic", updateSyndic);
+router.put("/update/:id", updateSyndic);
 
 module.exports = router;

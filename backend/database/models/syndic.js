@@ -6,6 +6,7 @@ module.exports = {
 
    // a function which fetches all the syndic
 
+ 
    getSyndic: function (callback) {
     const sql = "SELECT * FROM `syndic`  "
 

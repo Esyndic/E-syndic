@@ -15,7 +15,7 @@ module.exports = {
   addSyndic: function (req, res) {
     syndic.addSyndic(function (err, results) {
       if (err) res.status(500).send(err);
-      else res.json(results);
+      else res.json(results) ;
     }, req.body);
   },
 
@@ -26,7 +26,9 @@ module.exports = {
         else res.json(results);
       },
       req.body,
+
       req.params.idsyndic
+
     );
   },
 

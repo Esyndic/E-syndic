@@ -15,10 +15,10 @@ module.exports = {
 
    // a function which fetches all the posts
 
-   getSyndic: function (callback) {
-    const sql = "SELECT * FROM `syndic` WHERE email = ? and password=?   "
+   getSyndic: function (callback,user) {
+    const sql = "SELECT * FROM `syndic`    "
 
-    conn.query(sql, function (error, results) {
+    conn.query(sql,function (error, results) {
       callback(error, results);
     });
   },

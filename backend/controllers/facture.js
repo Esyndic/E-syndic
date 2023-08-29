@@ -1,38 +1,39 @@
-const { personnel } = require("../database/models");
-    
+const {deleteone , getAll,add,update} = require("../database/models/facture");
+
+     
 
 module.exports = {
   //method to fetch all posts from the blog database.
-  getPersonnel: function (req, res) {
-    personnel.getAll(function (err, results) {
+  getFacture: function (req, res) {
+   getAll(function (err, results) {
       if (err) res.status(500).send(err);
       else res.json(results);
     });
   },
 
   //method to add a post to the database via the respective model function.
-  addPersonnel: function (req, res) {
-    personnel.add(function (err, results) {
+  addFacture: function (req, res) {
+    add(function (err, results) {
       if (err) res.status(500).send(err);
       else res.json(results);
     }, req.body);
   },
 
-  updatePersonnel: function (res, req) {
-    personnel.update(
+  updateFacture: function (res, req) {
+   update(
       function (err, results) {
         if (err) res.status(500).send(err);
         else res.json(results);
       },
       req.body,
-      req.params
+      req.params.id
     );
   },
   
-  deletePersonnel: function (req, res) {
-    personnel.delete(function (err, results) {
+  deleteFacture: function (req, res) {
+    deleteone (function (err, results) {
       if (err) res.status(500).send(err);
       else res.json(results);
-    }, req.params);
+    }, req.params.id);
   },
 };

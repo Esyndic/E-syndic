@@ -14,16 +14,16 @@ module.exports = {
 
    //method to fetch all posts from the blog database.
    getSyndic: function (req, res) {
-    posts.getAll(function (err, results) {
+    posts.getSyndic(function (err, results) {
       if (err) res.status(500).send(err);
       else res.json(results);
-    });
+    },req.body);
   },
   //method to add a post to the database via the respective model function.
   addSyndic: function (req, res) {
-    posts.add(function (err, results) {
+    posts.addSyndic(function (err, results) {
       if (err) res.status(500).send(err);
-      else res.json(results);
+      else res.json(results) ;
     }, req.body);
   },
  /* updatePost: function (res, req) {

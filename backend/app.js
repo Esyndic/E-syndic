@@ -1,17 +1,16 @@
-const express = require('express');
+const express = require("express");
+const cors = require("cors");
 
 const app = express();
-
-const postsRoute = require('./routes/syndic');
-const tenantsRoute = require('./routes/tenants');
-
-
-
+app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
 
+const syndic = require("./routes/syndic");
+const tenantsRoute = require("./routes/tenants");
+const personnel = require("./routes/personnel");
 
-app.use('/api/posts', postsRoute);
-app.use('/api/tenants', tenantsRoute);
+app.use("/api/syndic", syndic);
+app.use("/api/tenants", tenantsRoute);
+app.use("/api/personnel", personnel);
 
-module.exports = app; 
+module.exports = app;

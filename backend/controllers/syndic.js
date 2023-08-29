@@ -1,6 +1,6 @@
 //Controller related to posts ressource.
 //Complete the request handlers with models interaction after importing them from the database folder
-const posts = require("../database/models/syndic");
+const syndic = require("../database/models/syndic");
 
 module.exports = {
  
@@ -14,20 +14,21 @@ module.exports = {
 
    //method to fetch all posts from the blog database.
    getSyndic: function (req, res) {
-    posts.getAll(function (err, results) {
+    syndic.getSyndic(function (err, results) {
       if (err) res.status(500).send(err);
       else res.json(results);
     });
   },
   //method to add a post to the database via the respective model function.
   addSyndic: function (req, res) {
-    posts.add(function (err, results) {
+    syndic.addSyndic(function (err, results) {
       if (err) res.status(500).send(err);
       else res.json(results);
     }, req.body);
   },
- /* updatePost: function (res, req) {
-    posts.update(
+
+ updateSyndic: function (res, req) {
+    syndic.updateSyndic(
       function (err, results) {
         if (err) res.status(500).send(err);
         else res.json(results);
@@ -35,12 +36,13 @@ module.exports = {
       req.body,
       req.params
     );
-  },*/
-  /*deletePost: function (req, res) {
-    posts.delete(function (err, results) {
+  },
+
+  deleteSyndic: function (req, res) {
+    syndic.deleteSyndic(function (err, results) {
       if (err) res.status(500).send(err);
       else res.json(results);
     }, req.params);
   },
-  */
+  
 };

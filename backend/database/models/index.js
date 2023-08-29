@@ -1,6 +1,7 @@
 const db = {};
 
-db.users = require('./users')
+
+db.tenanats = require('./tenants')
 db.syndic = require('./syndic')
 db.personnel = require('./personnel')
 

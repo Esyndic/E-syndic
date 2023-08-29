@@ -21,30 +21,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`syndic` (
   `idsyndic` INT NOT NULL AUTO_INCREMENT,
   `syndicName` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` LONGTEXT NOT NULL,
   PRIMARY KEY (`idsyndic`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`factures`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`factures` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `date` DATE NOT NULL,
-  `location` DECIMAL(3) NOT NULL,
-  `STEG` DECIMAL(3) NOT NULL,
-  `SONEDE` DECIMAL(3) NOT NULL,
-  `Topnet` DECIMAL(3) NOT NULL,
-  `decription` LONGTEXT NULL,
-  `syndic_idsyndic` INT NOT NULL,
-  PRIMARY KEY (`id`, `syndic_idsyndic`),
-  INDEX `fk_factures_syndic1_idx` (`syndic_idsyndic` ASC) VISIBLE,
-  CONSTRAINT `fk_factures_syndic1`
-    FOREIGN KEY (`syndic_idsyndic`)
-    REFERENCES `mydb`.`syndic` (`idsyndic`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -57,19 +35,11 @@ CREATE TABLE IF NOT EXISTS `mydb`.`tenants` (
   `email` VARCHAR(45) NOT NULL,
   `password` LONGTEXT NOT NULL,
   `syndic_idsyndic` INT NOT NULL,
-  `factures_id` INT NOT NULL,
-  `factures_syndic_idsyndic` INT NOT NULL,
-  PRIMARY KEY (`id`, `syndic_idsyndic`, `factures_id`, `factures_syndic_idsyndic`),
+  PRIMARY KEY (`id`, `syndic_idsyndic`),
   INDEX `fk_tenants_syndic_idx` (`syndic_idsyndic` ASC) VISIBLE,
-  INDEX `fk_tenants_factures1_idx` (`factures_id` ASC, `factures_syndic_idsyndic` ASC) VISIBLE,
   CONSTRAINT `fk_tenants_syndic`
     FOREIGN KEY (`syndic_idsyndic`)
     REFERENCES `mydb`.`syndic` (`idsyndic`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tenants_factures1`
-    FOREIGN KEY (`factures_id` , `factures_syndic_idsyndic`)
-    REFERENCES `mydb`.`factures` (`id` , `syndic_idsyndic`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -85,12 +55,42 @@ CREATE TABLE IF NOT EXISTS `mydb`.`personnels` (
   `email` VARCHAR(45) NOT NULL,
   `role` VARCHAR(45) NOT NULL,
   `syndic_idsyndic` INT NOT NULL,
-  `image` VARCHAR(45) NOT NULL,
+  `image` LONGTEXT NOT NULL,
   PRIMARY KEY (`idpersonnel`, `syndic_idsyndic`),
   INDEX `fk_personnels_syndic1_idx` (`syndic_idsyndic` ASC) VISIBLE,
   CONSTRAINT `fk_personnels_syndic1`
     FOREIGN KEY (`syndic_idsyndic`)
     REFERENCES `mydb`.`syndic` (`idsyndic`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`factures`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`factures` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `date` DATE NOT NULL,
+  `rent` DECIMAL(3) NOT NULL,
+  `STEG` DECIMAL(3) NOT NULL,
+  `SONEDE` DECIMAL(3) NOT NULL,
+  `Topnet` DECIMAL(3) NOT NULL,
+  `decription` LONGTEXT NULL,
+  `syndic_idsyndic` INT NOT NULL,
+  `tenants_id` INT NOT NULL,
+  `tenants_syndic_idsyndic` INT NOT NULL,
+  PRIMARY KEY (`id`, `syndic_idsyndic`, `tenants_id`, `tenants_syndic_idsyndic`),
+  INDEX `fk_factures_syndic1_idx` (`syndic_idsyndic` ASC) VISIBLE,
+  INDEX `fk_factures_tenants1_idx` (`tenants_id` ASC, `tenants_syndic_idsyndic` ASC) VISIBLE,
+  CONSTRAINT `fk_factures_syndic1`
+    FOREIGN KEY (`syndic_idsyndic`)
+    REFERENCES `mydb`.`syndic` (`idsyndic`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_factures_tenants1`
+    FOREIGN KEY (`tenants_id` , `tenants_syndic_idsyndic`)
+    REFERENCES `mydb`.`tenants` (`id` , `syndic_idsyndic`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

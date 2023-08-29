@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 const settings = ["Profile", "Logout"];
 
-function ResponsiveAppBar() {
+function navBAr() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenUserMenu = (event) => {
@@ -64,7 +64,13 @@ function ResponsiveAppBar() {
           >
             E-SYNDIC
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}></Box>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Typography textAlign="center"><Link to="/personnels">Personels</Link></Typography>
+          <Typography textAlign="center"><Link to="/feedback">FeedBacks</Link></Typography>
+          <Typography textAlign="center"><Link to="/createFacture">Create Facture</Link></Typography>
+         
+          
+          </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             
@@ -104,4 +110,4 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+export default navBAr;

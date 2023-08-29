@@ -11,10 +11,10 @@ module.exports = {
 
   // a function that can be used to insert a personnel into the database
   add: function (callback, val) {
-    const sql = "INSERT INTO personnels (name,num,email,role,image) VALUES (?, ?, ?, ?, ?)";
+    const sql = "INSERT INTO personnels (name,num,email,role,image,syndic_idsyndic) VALUES (?, ?, ?, ?, ?, ?)";
     conn.query(
       sql,
-      [val.name, val.num, val.email, val.role, val.image],
+      [val.name, val.num, val.email, val.role, val.image,val.syndic_idsyndic],
       function (error, results, fields) {
         callback(error, results);
       }

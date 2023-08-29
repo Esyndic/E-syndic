@@ -11,9 +11,9 @@ import Update from "./Update";
 function App() {
   return (
     <BrowserRouter>
-      <NavBar />
+      <NavBar/>
       <Routes>
-        <Route path="/" element={<THome />} />
+        <Route path="/Thome" element={<THome />} />
         <Route path="/facture" element={<Factures />} />
         <Route path="/claims" element={<Claims />} />
         <Route path="/profile" element={<Profile />} />

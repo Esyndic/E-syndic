@@ -14,7 +14,6 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         <Box sx={{ flexGrow: 0 }}><Link id="title" to="/">E-Syndic</Link></Box>
-
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}></Box>
           <Box sx={{ flexGrow: 0 }}>contact:+21656251081</Box>
         </Toolbar>

@@ -6,11 +6,9 @@ const {
   getSyndic,
   addSyndic,
   //getOnePost,
-  //deletePost,
-  //updatePost,
+  deleteSyndic,
+  updateSyndic,
 } = require("../controllers/syndic");
-
-/// POSTS ROUTES ///
 
 //GET request to fetch all posts. NOTE This must come before route for id.
 router.get("/getAll",getSyndic);
@@ -19,8 +17,8 @@ router.get("/getAll",getSyndic);
 // POST request for creating a new post.
 router.post("/add", addSyndic);
 // DELETE request for removing a post.
-//router.delete("/delete/:idpost", deletePost);
+router.delete("/delete/:idsyndic", deleteSyndic);
 // UPDATE request for updating a post.
-//router.put("/update/:idpost", updatePost);
+router.put("/update/:idsyndic", updateSyndic);
 
 module.exports = router;

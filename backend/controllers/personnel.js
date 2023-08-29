@@ -1,8 +1,9 @@
 const { personnel } = require("../database/models");
     
 
+
 module.exports = {
-  //method to fetch all posts from the blog database.
+  //method to fetch all personnel from the blog database.
   getPersonnel: function (req, res) {
     personnel.getAll(function (err, results) {
       if (err) res.status(500).send(err);
@@ -10,7 +11,7 @@ module.exports = {
     });
   },
 
-  //method to add a post to the database via the respective model function.
+  //method to add a personnel to the database via the respective model function.
   addPersonnel: function (req, res) {
     personnel.add(function (err, results) {
       if (err) res.status(500).send(err);

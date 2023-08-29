@@ -19,7 +19,7 @@ module.exports = {
     }, req.body);
   },
 
-  updateFacture: function (res, req) {
+  updateFacture: function (req, res) {
    update(
       function (err, results) {
         if (err) res.status(500).send(err);

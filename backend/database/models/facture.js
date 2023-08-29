@@ -28,15 +28,15 @@ module.exports = {
       });
     },
   
-    update: function (callback, val, id) {
-      const sql = "UPDATE `factures` SET date=?,rent=?,STEG=?,SONEDE=?,Topnet=?,decription=?,syndic_idsyndic=?,tenants_id=?,tenants_syndic_idsyndic=?  WHERE id=?";
+    update: function (callback, val,id) {
+      const sql = "UPDATE `factures` SET date=?,rent=?,STEG=?,SONEDE=?,Topnet=?,decription=?  WHERE id=?";
       conn.query(
         sql,
-        [val.date, val.rent, val.STEG, val.SONEDE, val.Topnet, val.decription, val.syndic_idsyndic, val.tenants_id, val.tenants_syndic_idsyndic,id],
+        [val.date, val.rent, val.STEG, val.SONEDE, val.Topnet, val.decription,id],
         function (error, results) {
           callback(error, results);
         }
       );
-    },
+    }
   };
   

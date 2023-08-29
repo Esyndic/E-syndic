@@ -41,6 +41,7 @@ module.exports = {
     const sql = "DELETE FROM tenants where id=?";
     conn.query(sql, [id], function (error, results) {
       calback(error, results)
+      calback(error, results);
     });
   },
   update: function (callback, val, id) {

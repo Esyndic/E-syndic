@@ -8,7 +8,7 @@ module.exports = {
    getSyndic: function (req, res) {
     syndic.getSyndic(function (err, results) {
       if (err) res.status(500).send(err);
-      else res.json(results);
+      else res.json( results );
     });
   },
   //method to add a post to the database via the respective model function.

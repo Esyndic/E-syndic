@@ -25,12 +25,8 @@ module.exports = {
   },
 
   
-  getOneTenants: function (req, res) {
-    tenants.getOne(function (err, results) {
-      if (err) res.status(500).send(err);
-      else res.json(results);
-    }, req.params.email);
-  },
+
+ 
   // loginTenants: async function (req, res) {
   //   const user=[]
   //    tenants.getoneByEmail(function (err, results) {
@@ -44,6 +40,14 @@ module.exports = {
   //    if (auth){
   //     res.status(200).json("successfuly logged in" ,user)
   //    }
+
+
+  // getOneTenants: function (req, res) {
+  //   tenants.getOne(function (err, results) {
+  //     if (err) res.status(500).send(err);
+  //     else res.json(results);
+  //   }, req.params.id);
+  // },
 
 
 

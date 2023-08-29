@@ -17,12 +17,21 @@ module.exports = {
   },
 
  
+
   getOne: function (callback, id) {
     const sql = "SELECT * FROM `tenants` ";
     conn.query(sql,  function (error, results, ) {
       callback(error, results);
     });
   },
+
+  // getOne: function (callback, id) {
+  //   const sql = "SELECT * FROM `tenants` WHERE id=?";
+  //   conn.query(sql, [id], function (error, results, ) {
+  //     callback(error, results);
+  //   });
+  // },
+
   
   add: async function (callback, tenantsData) {
     const salt = await bcrypt.genSalt(10) ;
@@ -31,7 +40,9 @@ module.exports = {
       "INSERT INTO tenants (name, password, email,syndic_idsyndic) VALUES (?,?,?,?)";
     conn.query(
       sql,
+
       [tenantsData.name, hashedpassowrd, tenantsData.email,tenantsData.syndic_idsyndic],
+
       function (error, results) {
         callback(error, results);
       }

@@ -17,7 +17,10 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
-
+#title{
+  color: white;
+  font-size: 25px;
+}
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -37,6 +40,122 @@
   padding: 2em;
 }
 
-.read-the-docs {
-  color: #888;
+
+/* card */
+.card {
+  box-sizing: border-box;
+  width: 190px;
+  height: 254px;
+  background: rgba(217, 217, 217, 0.58);
+  border: 1px solid white;
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  font-weight: bolder;
+  color: black;
+}
+
+.card:hover {
+  border: 1px solid black;
+  transform: scale(1.05);
+}
+
+.card:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+
+/* home */
+.section-2 .sheet {
+  min-height: 541px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 30px;
+}
+
+.section-2 .description {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+.section-2 .img2 {
+  border: 2px solid black;
+  width: 50%;
+  height: auto;
+}
+
+.footer {
+  padding: 1%;
+}
+
+.footer-div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.social-button {
+  background-color: transparent;
+  border: none;
+  margin: 0 0.5rem;
+  padding: 0;
+}
+
+.footer-link {
+  text-decoration: none;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+.text-center {
+  text-align: center;
+  color: white;
+  padding: 1px;
+}
+
+.section-3 {
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("https://www.coprolib.com/wp-content/uploads/2019/12/visuel-communaute-2.svg")
+      no-repeat fixed center;
+  background-position: center;
+}
+
+.section-3 .sheet {
+  min-height: 800px;
+  margin: 30px auto 60px;
+  text-align: center;
+  color: white;
+  padding-top: 7%;
+  font-size: 50px;
+}
+
+.section-3 .heading {
+  margin: 60px auto 0;
+  padding-top: 10%;
+  color: wheat;
+}
+
+.section-3 .button {
+
+  font-size: 30px;
+}
+#shbtn {
+  background-color: transparent;
+  margin: 5%;
+}
+#shbtn a {
+  color: black;
 }

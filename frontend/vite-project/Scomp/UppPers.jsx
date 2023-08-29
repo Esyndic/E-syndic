@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function UppPers() {
-  return (
-    <div>UppPers</div>
-  )
+  return <div class="card">Click me</div>;
 }
 
-export default UppPers
+export default UppPers;

@@ -5,7 +5,7 @@ const router = express.Router();
 const {
   getAllTenants,
   addTenants,
-  getOneTenants,
+  // getOneTenants,
   deleteTenants,
   updateTenants,
   loginTenants,
@@ -15,7 +15,10 @@ const { getoneByEmail } = require("../database/models/tenants");
 router.post("/login", loginTenants);
 router.get("/getAll", getAllTenants);
 
+
 router.get("/:email", getOneTenants);
+
+
 
 router.post("/add", addTenants);
 

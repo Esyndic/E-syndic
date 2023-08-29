@@ -2,7 +2,9 @@ import React from 'react'
 
 function Clamis() {
   return (
-    <div>Clamis</div>
+    <div class="card">
+  Click me
+</div>
   )
 }
 

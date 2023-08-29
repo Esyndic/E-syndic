@@ -3,15 +3,6 @@ const conn = require("../index");
 
 module.exports = {
 
-  /*
-  //a function that retrieves one post record based on the provided id.
-  getOne: function (callback, id) {
-    const sql = "SELECT * FROM `post` WHERE (id_user=?)";
-    conn.query(sql, [id], function (error, results, fields) {
-      callback(error, results);
-    });
-  },
-  */ 
 
    // a function which fetches all the syndic
 
@@ -34,12 +25,7 @@ module.exports = {
       }
     );
   },
-  deleteSyndic: function (callback, id) {
-    const sql = "DELETE FROM syndic WHERE idsyndic=?";
-    conn.query(sql, [id], function (error, results, fields) {
-      callback(error, results);
-    });
-  },
+
   updateSyndic: function (callback, val, id) {
     const sql = "UPDATE syndic SET syndicName=?,email=?,password=? WHERE idsyndic=?";
     conn.query(

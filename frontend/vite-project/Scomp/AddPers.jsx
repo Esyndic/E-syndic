@@ -2,7 +2,9 @@ import React from 'react'
 
 function AddPers() {
   return (
-    <div>AddPers</div>
+    <div class="card">
+  Click me
+</div>
   )
 }
 

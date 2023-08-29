@@ -2,7 +2,9 @@ import React from 'react'
 
 function Personnels() {
   return (
-    <div>Personnels</div>
+    <div class="card">
+  Click me
+</div>
   )
 }
 

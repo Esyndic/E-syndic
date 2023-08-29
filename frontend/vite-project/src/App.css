@@ -17,7 +17,10 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
-
+#title{
+  color: white;
+  font-size: 25px;
+}
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -37,9 +40,6 @@
   padding: 2em;
 }
 
-.read-the-docs {
-  color: #888;
-}
 
 /* card */
 .card {
@@ -144,19 +144,17 @@
 
 .section-3 .heading {
   margin: 60px auto 0;
-  padding-top: 15%;
+  padding-top: 10%;
   color: wheat;
 }
 
 .section-3 .button {
-  margin: 20px auto 60px;
-  height: 35px;
-  margin-top: 20px;
-  color: white;
-  font-size: 25px;
+
+  font-size: 30px;
 }
 #shbtn {
-  background-color: wheat;
+  background-color: transparent;
+  margin: 5%;
 }
 #shbtn a {
   color: black;

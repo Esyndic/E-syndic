@@ -5,8 +5,6 @@ const router = express.Router();
 const {
   getSyndic,
   addSyndic,
-  //getOnePost,
-  deleteSyndic,
   updateSyndic,
 } = require("../controllers/syndic");
 
@@ -16,8 +14,7 @@ router.get("/getAll",getSyndic);
 //router.get("/:idpost", getOnePost);
 // POST request for creating a new post.
 router.post("/add", addSyndic);
-// DELETE request for removing a post.
-router.delete("/delete/:idsyndic", deleteSyndic);
+// DELETE request for removing a post
 // UPDATE request for updating a post.
 router.put("/update/:idsyndic", updateSyndic);
 

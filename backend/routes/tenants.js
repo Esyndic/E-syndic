@@ -5,7 +5,7 @@ const router = express.Router();
 const {
   getAllTenants,
   addTenants,
-  getOneTenants,
+  // getOneTenants,
   deleteTenants,
   updateTenants,
 } = require("../controllers/tenants");
@@ -13,7 +13,7 @@ const {
 
 router.get("/getAll", getAllTenants);
 
-router.get("/:id", getOneTenants);
+// router.get("/:id", getOneTenants);
 
 router.post("/add", addTenants);
 

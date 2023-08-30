@@ -65,7 +65,7 @@ function NavBar() {
           <Box sx={{ flexGrow: 0.09 }}><Link id="navLink" to="/personnels"> Personels</Link></Box>
           <Box sx={{ flexGrow: 1 }}><Link id="navLink" to="/tenants"> Tenants</Link></Box>
           <Box sx={{ flexGrow: 1 }}><Link id="navLink" to="/feedback"> Feedback</Link></Box>
-          <Box sx={{ flexGrow: 0.09 }}><Link id="navLink" to="/tenant/factures"> Factures</Link></Box>
+          <Box sx={{ flexGrow: 0.09 }}><Link id="navLink" to="/createfacture"> Factures</Link></Box>
 
 
           <Box sx={{ flexGrow: 0 }}>

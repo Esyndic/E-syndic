@@ -11,6 +11,7 @@ import {
   MDBIcon,
 } from "mdb-react-ui-kit";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Login() {
   const navigate =useNavigate()
@@ -20,8 +21,9 @@ function Login() {
        
     event.preventDefault();
   
-    axios.post("http://localhost:5000/api/syndic/login",{"email":email,"password":pwd}).then((result)=>{
-      if(result.data[0].user) navigate("/shome")
+    axios.post("http://localhost:3000/api/syndic/login",{"email":email,"password":pwd}).then((result)=>{
+      console.log("🚀 ~ file: Login.jsx:24 ~ axios.post ~ result:", result)
+      if(result.data.user) navigate("/shome")
       else {alert ("wrong credential")}
   })
 }
@@ -71,7 +73,7 @@ function Login() {
                 />
               </div>
 
-              <MDBBtn className="w-100 mb-4" size="md" onClick={()=>{handleSubmit}}>
+              <MDBBtn className="w-100 mb-4" size="md" onClick={(e)=>{handleSubmit(e)}}>
                 sign in
               </MDBBtn>
 

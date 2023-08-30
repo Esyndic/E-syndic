@@ -16,6 +16,7 @@ import Claims from "../Tcomp/Claims.jsx";
 import Profile from "../Tcomp/Profile";
 import Update from "../Tcomp/Update";
 
+
 function App() {
   const [inter, setInter] = useState(0)
   function setInterFn(int) {
@@ -24,6 +25,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+
+        <Route path="/" element={<Home />} />
+        <Route path="/loginAsSyndic" element={<LoginAsTenant />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/personnels" element={<Personnels />} />
+
         <Route path="/" element={<Home inter={setInterFn} />} />
 
         
@@ -39,6 +46,7 @@ function App() {
         <Route path="/claims" element={<Claims />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/profile/update" element={<Update />} />
+
       </Routes>
     </BrowserRouter>
   );

@@ -5,7 +5,7 @@ const router = express.Router();
 const {
   getAllTenants,
   addTenants,
- getOneTenants,
+  getOneTenants,
   deleteTenants,
   updateTenants,
   loginTenants,

@@ -67,8 +67,8 @@ function Navbar() {
           </Typography>
           <Box sx={{ flexGrow: 1}}><Link id="navLink" to="/claims"> </Link></Box>
           <Box sx={{ flexGrow: 0.09}}><Link id="navLink" to="/claims"> Claims</Link></Box>
-          <Box sx={{ flexGrow: 0.09}}><Link id="navLink" to="/claims"> Factures</Link></Box>
-          <Box sx={{ flexGrow: 1}}><Link id="navLink" to="/claims"> FeedBack</Link></Box>
+          <Box sx={{ flexGrow: 0.09}}><Link id="navLink" to="/tenant/factures"> Factures</Link></Box>
+          <Box sx={{ flexGrow: 1}}><Link id="navLink" to="/tenant/feedbacks"> FeedBack</Link></Box>
 
 
           <Box sx={{ flexGrow: 0 }}>

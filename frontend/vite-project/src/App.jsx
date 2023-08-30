@@ -10,13 +10,14 @@ import THome from "../Tcomp/THome.jsx";
 import Shome from "../Scomp/Shome.jsx";
 import Personnels from "../Scomp/Personnels.jsx";
 import Feedback from "../Scomp/feedbacks.jsx";
+import TFeedback from "../Tcomp/Feedback.jsx";
 import CreateFacture from "../Scomp/CreateFacture.jsx";
 import UppPers from "../Scomp/UppPers.jsx";
 import AddPers from "../Scomp/AddPers";
 import Factures from "../Tcomp/Factures";
 import Claims from "../Tcomp/Claims.jsx";
 import Profile from "../Tcomp/Profile";
-import Update from "../Tcomp/Update";
+
 
 
 function App() {
@@ -40,10 +41,10 @@ function App() {
 
 
         <Route path="/Thome" element={<THome />} />
-        <Route path="/facture" element={<Factures />} />
+        <Route path="/tenant/factures" element={<Factures />} />
+        <Route path="/tenant/feedbacks" element={<TFeedback />} />
         <Route path="/claims" element={<Claims />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/profile/update" element={<Update />} />
 
       </Routes>
     </BrowserRouter>

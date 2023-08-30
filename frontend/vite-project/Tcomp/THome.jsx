@@ -1,68 +1,26 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import NavBar from "../components/NavBar.jsx";
-import Navbar from "../Scomp/navBar.jsx";
+import Navbar from "../Tcomp/NavBar.jsx";
+import Cards from "./Cards.jsx";
 function THome(props) {
   return (
     <div>
       <div>
         <Navbar />
-        <div />
-        <br></br>
-        <section class="section-2">
-          <div class="sheet">
-            <p class="description">
-              Hello in your interface , here you can send claims , feedbacks and check
-              factures .
-              If you have any issue feel free and send what you want 
-              we are here 7/7 24h in your service  
-            </p>
-            <img
-              class="img2"
-              src="https://www.coprolib.com/wp-content/uploads/2019/08/visuel-devenir-coprolib.svg"
-            />
-            <br></br>
-          </div>
-        </section>
 
         <section class="section-3">
           <div class="sheet">
-            <h2 class="heading">Start Now!</h2>
-            <button id="shbtn">
-              <Link
-                to="/Thome"
-                href="login.html"
-                class="button"
-                onClick={() => {
-                  props.inter(1);
-                }}
-              ></Link>
-
-              <Link
-                to="/Thome"
-                class="button"
-                onClick={() => {
-                  setInter(1);
-                }}
-              >
-                Login As Tenant
-              </Link>
-              <></>
-            </button>
-            <button id="shbtn">
-              <Link
-                to="/Shome"
-                href="login.html"
-                class="button"
-                onClick={() => {
-                  props.inter(2);
-                }}
-              >
-                Login As Syndic
-              </Link>
-            </button>
+            <p class="description">
+              Hello in your interface , here you can send claims , feedbacks and
+              check factures . If you have any issue feel free and send what you
+              want we are here 7/7 24h in your service
+            </p>
+            <Cards/>
           </div>
-          <footer class="footer">
+
+        </section>
+        
+        <footer class="footer">
             <div class="footer-div">
               <button type="button" class="social-button">
                 <a class="footer-link" href="https://www.facebook.com">
@@ -91,7 +49,6 @@ function THome(props) {
             </div>
             <div class="text-center">© 2023 - All rights reserved</div>
           </footer>
-        </section>
       </div>
     </div>
   );

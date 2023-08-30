@@ -11,7 +11,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 
-function ResponsiveAppBar() {
+function Navbar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenUserMenu = (event) => {
@@ -40,7 +40,9 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-            <Link to="/">E-Syndic</Link>
+            <Link id="title" to="/Thome">
+              Home
+            </Link>
           </Typography>
 
           <Typography
@@ -59,15 +61,26 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-            E-SYNDIC
+            Home
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Typography>
-              <Link to="/facture">Notifications</Link>
-            </Typography>
-            <Typography>
-              <Link to="/claims">Claims</Link>
-            </Typography>
+          <Box sx={{ flexGrow: 1 }}></Box>
+          <Box sx={{ flexGrow: 0.09 }}>
+            <Link id="navLink" to="/claims">
+              {" "}
+              Claims
+            </Link>
+          </Box>
+          <Box sx={{ flexGrow: 0.09 }}>
+            <Link id="navLink" to="/tenant/factures">
+              {" "}
+              Factures
+            </Link>
+          </Box>
+          <Box sx={{ flexGrow: 1 }}>
+            <Link id="navLink" to="/tenant/feedbacks">
+              {" "}
+              FeedBack
+            </Link>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
@@ -100,7 +113,7 @@ function ResponsiveAppBar() {
               </MenuItem>
               <MenuItem onClick={handleCloseUserMenu}>
                 <Typography textAlign="center">
-                  <Link to="http://localhost:5173">Logout</Link>
+                  <Link to="/">Logout</Link>
                 </Typography>
               </MenuItem>
             </Menu>
@@ -110,4 +123,4 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+export default Navbar;

@@ -1,4 +1,3 @@
-
 const mysql = require("mysql2");
 const config = {
   host: "localhost",
@@ -14,6 +13,7 @@ connection.connect((err) => {
   } else {
     console.log("dataBases connected 😘");
   }
+
 })
 module.exports=connection
 

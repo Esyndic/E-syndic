@@ -11,15 +11,18 @@ verifyToken :async (req,res) => {
    const token = req.cookies.jwt
     const auth = jwt.verify(token,process.env.ACCESS_TOKEN_SECRET,(err,payload)=>{
      if (err) return  res.status(403).json(false,"wrong token")
-     if (payload)  return res.status(201).json(true)
+     if (payload)  return res.status(201).json({true:true,payload:payload})
 
     })
- }
+ } 
 
 
+
+} ,
+logout : (req,res)=> {
+   res.clearCookie("jwt").send("success logout")
 
 }
-
 
 
 

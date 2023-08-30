@@ -1,9 +1,3 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-} */
 
 .logo {
   height: 6em;
@@ -92,7 +86,12 @@
   font-size: 25px;
 
 }
+.description {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 25px;
 
+}
 .section-2 .img2 {
   border: 2px solid black;
   width: 50%;
@@ -127,7 +126,7 @@
 
 .text-center {
   text-align: center;
-  color: white;
+  color: black;
   padding: 1px;
 }
 

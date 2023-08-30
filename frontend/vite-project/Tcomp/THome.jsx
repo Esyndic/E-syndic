@@ -11,18 +11,17 @@ function THome(props) {
         <br></br>
         <section class="section-2">
           <div class="sheet">
+            <p class="description">
+              Hello in your interface , here you can send claims , feedbacks and check
+              factures .
+              If you have any issue feel free and send what you want 
+              we are here 7/7 24h in your service  
+            </p>
             <img
               class="img2"
               src="https://www.coprolib.com/wp-content/uploads/2019/08/visuel-devenir-coprolib.svg"
             />
             <br></br>
-            <p class="description">
-              Manage your co-ownership in complete freedom! For more than 10
-              years, E-SYNDIC makes life easier for co-owners. A clear platform
-              and effective, for the volunteer trustee. The support of a team
-              experts to meet your needs. Together, let's build a sustainable
-              condominium project!
-            </p>
           </div>
         </section>
 

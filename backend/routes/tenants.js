@@ -6,10 +6,14 @@ const {
   getAllTenants,
   addTenants,
 <<<<<<< HEAD
+<<<<<<< HEAD
   getOneTenants,
 =======
  getOneTenants,
 >>>>>>> 226a49f8008eec434f14e464217f868c047c0416
+=======
+  getOneTenants,
+>>>>>>> 5c1c02ef92998bb4f7a6c3b35f874f4cebd99256
   deleteTenants,
   updateTenants,
   loginTenants,

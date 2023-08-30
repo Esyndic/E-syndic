@@ -1,9 +1,9 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
+} */
 
 .logo {
   height: 6em;
@@ -20,6 +20,10 @@
 #title{
   color: white;
   font-size: 25px;
+}
+#navLink{
+  color: white;
+  font-size: 15px;
 }
 @keyframes logo-spin {
   from {
@@ -86,6 +90,7 @@
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 25px;
+
 }
 
 .section-2 .img2 {
@@ -145,7 +150,6 @@
 .section-3 .heading {
   margin: 60px auto 0;
   padding-top: 10%;
-  color: wheat;
 }
 
 .section-3 .button {

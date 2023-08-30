@@ -43,7 +43,11 @@ module.exports = {
 
 
   getOneTenants: function (req, res) {
+<<<<<<< HEAD
     tenants.getOne(function (err, results) {
+=======
+    tena/ nts.getOne(function (err, results) {
+>>>>>>> 226a49f8008eec434f14e464217f868c047c0416
       if (err) res.status(500).send(err);
       else res.json(results);
     }, req.params.id);

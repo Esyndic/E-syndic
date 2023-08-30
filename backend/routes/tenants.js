@@ -5,7 +5,11 @@ const router = express.Router();
 const {
   getAllTenants,
   addTenants,
+<<<<<<< HEAD
   getOneTenants,
+=======
+ getOneTenants,
+>>>>>>> 226a49f8008eec434f14e464217f868c047c0416
   deleteTenants,
   updateTenants,
   loginTenants,

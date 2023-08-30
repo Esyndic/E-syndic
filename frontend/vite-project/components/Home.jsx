@@ -64,6 +64,7 @@ function Home(props) {
             </button>
           </div>
 
+
           <footer class="footer">
             <div class="footer-div">
               <button type="button" class="social-button">

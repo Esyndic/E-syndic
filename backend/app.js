@@ -10,10 +10,11 @@ const syndic = require("./routes/syndic");
 const tenantsRoute = require("./routes/tenants");
 const personnel = require("./routes/personnel");
 const facture = require("./routes/facture");
-const {verifyToken} =require("./database/jwt-auth")
+const {verifyToken,logout} =require("./database/jwt-auth")
 app.use("/api/syndic", syndic);
 app.use("/api/tenants", tenantsRoute);
 app.use("/api/personnel", personnel);
 app.use("/api/facture", facture);
 app.post("/api/auth",verifyToken)
+app.get("/api/logout",logout)
 module.exports = app;

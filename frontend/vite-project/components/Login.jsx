@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   MDBBtn,
   MDBContainer,
@@ -10,8 +10,21 @@ import {
   MDBCheckbox,
   MDBIcon,
 } from "mdb-react-ui-kit";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate =useNavigate()
+  const [email,setemail]=useState("")
+    const [pwd,setpwd]=useState("")
+  const handleSubmit = (event) => {
+       
+    event.preventDefault();
+  
+    axios.post("http://localhost:5000/api/syndic/login",{"email":email,"password":pwd}).then((result)=>{
+      if(result.data[0].user) navigate("/shome")
+      else {alert ("wrong credential")}
+  })
+}
   return (
     <MDBContainer fluid className="p-4">
       <MDBRow>
@@ -32,37 +45,21 @@ function Login() {
         <MDBCol md="6">
           <MDBCard className="my-5">
             <MDBCardBody className="p-5">
-              <MDBRow>
-                <MDBCol col="6">
-                  <MDBInput
-                    wrapperClass="mb-4"
-                    label="First name"
-                    id="form1"
-                    type="text"
-                  />
-                </MDBCol>
-
-                <MDBCol col="6">
-                  <MDBInput
-                    wrapperClass="mb-4"
-                    label="Last name"
-                    id="form1"
-                    type="text"
-                  />
-                </MDBCol>
-              </MDBRow>
+              
 
               <MDBInput
                 wrapperClass="mb-4"
                 label="Email"
                 id="form1"
                 type="email"
+                onChange={(e)=>{setemail(e.target.value)}}
               />
               <MDBInput
                 wrapperClass="mb-4"
                 label="Password"
                 id="form1"
                 type="password"
+                onChange={(e)=>{setpwd(e.target.value)}}
               />
 
               <div className="d-flex justify-content-center mb-4">
@@ -74,12 +71,12 @@ function Login() {
                 />
               </div>
 
-              <MDBBtn className="w-100 mb-4" size="md">
-                sign up
+              <MDBBtn className="w-100 mb-4" size="md" onClick={()=>{handleSubmit}}>
+                sign in
               </MDBBtn>
 
               <div className="text-center">
-                <p>or sign up with:</p>
+               
 
                 <MDBBtn
                   tag="a"

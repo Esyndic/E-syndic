@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Home() {
+function Home(props) {
+  const [inter, setInterface] = useState(0);
+
+  sendInterface=()=>{
+    props.interface(inter)
+  }
   return (
     <div>
       <br></br>
@@ -26,13 +31,27 @@ function Home() {
         <div class="sheet">
           <h2 class="heading">Start Now!</h2>
           <button id="shbtn">
-            <Link to="/Thome" href="login.html" class="button">
+            <Link
+              to="/Thome"
+              href="login.html"
+              class="button"
+              onClick={() => {
+                setInterface(1);
+              }}
+            >
               Login As Tenant
             </Link>
             <></>
           </button>
           <button id="shbtn">
-            <Link to="/Shome" href="login.html" class="button">
+            <Link
+              to="/Shome"
+              href="login.html"
+              class="button"
+              onClick={() => {
+                setInterface(2);
+              }}
+            >
               Login As Syndic
             </Link>
           </button>

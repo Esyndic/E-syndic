@@ -53,7 +53,7 @@ function Home() {
               </a>
             </button>
           </div>
-          <div class="text-center">© 2023 - All rights reserved</div>
+          <div class="text-center"> © 2023 - All rights reserved</div>
         </footer>
       </section>
     </div>

@@ -11,8 +11,6 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 
-const settings = ["Profile", "Logout"];
-
 function Navbar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -65,11 +63,25 @@ function Navbar() {
           >
             Home
           </Typography>
-          <Box sx={{ flexGrow: 1}}><Link id="navLink" to="/claims"> </Link></Box>
-          <Box sx={{ flexGrow: 0.09}}><Link id="navLink" to="/claims"> Claims</Link></Box>
-          <Box sx={{ flexGrow: 0.09}}><Link id="navLink" to="/tenant/factures"> Factures</Link></Box>
-          <Box sx={{ flexGrow: 1}}><Link id="navLink" to="/tenant/feedbacks"> FeedBack</Link></Box>
-
+          <Box sx={{ flexGrow: 1 }}></Box>
+          <Box sx={{ flexGrow: 0.09 }}>
+            <Link id="navLink" to="/claims">
+              {" "}
+              Claims
+            </Link>
+          </Box>
+          <Box sx={{ flexGrow: 0.09 }}>
+            <Link id="navLink" to="/tenant/factures">
+              {" "}
+              Factures
+            </Link>
+          </Box>
+          <Box sx={{ flexGrow: 1 }}>
+            <Link id="navLink" to="/tenant/feedbacks">
+              {" "}
+              FeedBack
+            </Link>
+          </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
@@ -96,7 +108,7 @@ function Navbar() {
             >
               <MenuItem onClick={handleCloseUserMenu}>
                 <Typography textAlign="center">
-                  <Link to="/login">Profile</Link>
+                  <Link to="/profile">Profile</Link>
                 </Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseUserMenu}>

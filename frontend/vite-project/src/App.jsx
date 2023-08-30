@@ -15,7 +15,7 @@ import UppPers from "../Scomp/UppPers.jsx";
 import Factures from "../Tcomp/Factures";
 import Claims from "../Tcomp/Claims.jsx";
 import Profile from "../Tcomp/Profile";
-import Update from "../Tcomp/Update";
+
 
 
 function App() {

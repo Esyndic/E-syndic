@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar.jsx";
-import Navbar from "../Scomp/navBar.jsx";
+import Navbar from "../Scomp/NavBar.jsx";
 function THome(props) {
   return (
     <div>

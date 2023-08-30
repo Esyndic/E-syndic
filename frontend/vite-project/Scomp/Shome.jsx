@@ -1,124 +1,98 @@
-import React from 'react'
-import Navbar from './navBar'
-
-
-
-export default function Interface() {
-    return (
-       
-
-
-            <div style={{width:"100%"}}>
-                <Navbar/>
-                <div  class="card">
-                    <div class="content">
-                        <div class="back">
-                            <div class="back-content">
-                                <svg stroke="#FFFFFF" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" height="50px" width="50px" fill="#FFFFFF">
-                                    <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
-                                    <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
-                                    <img class="image" src="https://icons.veryicon.com/png/o/miscellaneous/civil-affairs-icon-summary/tenant-management-1.png" />
-                                </svg>
-                                <strong>Personnels</strong>
-                            </div>
-                        </div>
-                        <div class="front">
-                            <div class="img">
-                                <div class="circle">
-                                </div>
-                                <div class="circle" id="right">
-                                </div>
-                                <div class="circle" id="bottom">
-                                </div>
-                            </div>
-                            <div class="front-content">
-                                <small class="badge">description</small>
-                                <div class="description">
-                                    <div class="title">
-                                        <p>uzhfiuzrfzhgzdfiuuzrff</p>
-                                    </div>
-                                    <p class="card-footer">
-                                        dar num : 50&nbsp; | &nbsp; bloc 1
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="content">
-                            <div class="back">
-                                <div class="back-content">
-                                    <svg stroke="#FFFFFF" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" height="50px" width="50px" fill="#FFFFFF">
-                                        <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
-                                        <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
-                                        <img class="image" src="https://www.kindpng.com/picc/m/176-1763157_transparent-background-employees-icon-hd-png-download.png" />
-
-                                    </svg>
-                                    <strong>Tenants</strong>
-                                </div>
-                            </div>
-                            <div class="front">
-                                <div class="img">
-                                    <div class="circle">
-                                    </div>
-                                    <div class="circle" id="right">
-                                    </div>
-                                    <div class="circle" id="bottom">
-                                    </div>
-                                </div>
-                                <div class="front-content">
-                                    <small class="badge">description</small>
-                                    <div class="description">
-                                        <div class="title">
-                                            <p>uzhfiuzrfzhgzdfiuuzrff</p>
-                                        </div>
-                                        <p class="card-footer">
-                                            dar num : 50&nbsp; | &nbsp; bloc 1
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="content">
-                                <div class="back">
-                                    <div class="back-content">
-                                        <svg stroke="#FFFFFF" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" height="50px" width="50px" fill="#FFFFFF">
-                                            <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
-                                            <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
-                                            <img class="image" src="https://cdn-dnhoc.nitrocdn.com/iIPHZmhBsBYIDtOADIDObpNChLqFJPuY/assets/images/optimized/[…]0/new/wp-content/uploads/2023/05/pmt-icons-04-400x400.png" />
-
-                                        </svg>
-                                        <strong>Factures</strong>
-                                    </div>
-                                </div>
-                                <div class="front">
-                                    <div class="img">
-                                        <div class="circle">
-                                        </div>
-                                        <div class="circle" id="right">
-                                        </div>
-                                        <div class="circle" id="bottom">
-                                        </div>
-                                    </div>
-                                    <div class="front-content">
-                                        <small class="badge">description</small>
-                                        <div class="description">
-                                            <div class="title">
-                                                <p>uzhfiuzrfzhgzdfiuuzrff</p>
-                                            </div>
-                                            <p class="card-footer">
-                                                dar num : 50&nbsp; | &nbsp; bloc 1
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import NavBar from "../Scomp/NavBar.jsx";
+function Home(props) {
+  return (
+    <div>
+      <div>
+        <NavBar />
+        <div />
+        <br></br>
+        <section class="section-2">
+          <div class="sheet">
+            <img
+              class="img2"
+              src="https://www.coprolib.com/wp-content/uploads/2019/08/visuel-devenir-coprolib.svg"
+            />
+            <br></br>
+            <p class="description">
+              Manage your co-ownership in complete freedom! For more than 10
+              years, E-SYNDIC makes life easier for co-owners. A clear platform
+              and effective, for the volunteer trustee. The support of a team
+              experts to meet your needs. Together, let's build a sustainable
+              condominium project!
+            </p>
+          </div>
+        </section>
+        <section class="section-3">
+          <div class="sheet">
+            <h2 class="heading">Start Now!</h2>
+            <button id="shbtn">
+              <Link
+                to="/Thome"
+                href="login.html"
+                class="button"
+                onClick={() => {
+                  props.inter(1);
+                }}
+              ></Link>
+              <Link
+                to="/Thome"
+                class="button"
+                onClick={() => {
+                  setInter(1);
+                }}
+              >
+                Login As Tenant
+              </Link>
+              <></>
+            </button>
+            <button id="shbtn">
+              <Link
+                to="/Shome"
+                href="login.html"
+                class="button"
+                onClick={() => {
+                  props.inter(2);
+                }}
+              >
+                Login As Syndic
+              </Link>
+            </button>
+          </div>
+          <div class="text-center"> © 2023 - All rights reserved</div>
+          <footer class="footer">
+            <div class="footer-div">
+              <button type="button" class="social-button">
+                <a class="footer-link" href="https://www.facebook.com">
+                  <img
+                    class="icon"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png"
+                  />
+                </a>
+              </button>
+              <button type="button" class="social-button">
+                <a class="footer-link" href="https://www.instagram.com">
+                  <img
+                    class="icon"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png"
+                  />
+                </a>
+              </button>
+              <button type="button" class="social-button">
+                <a class="footer-link" href="https://www.youtube.com">
+                  <img
+                    class="icon"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png"
+                  />
+                </a>
+              </button>
             </div>
-    
-    )
-
+            <div class="text-center">© 2023 - All rights reserved</div>
+          </footer>
+        </section>
+      </div>
+    </div>
+  );
 }
+export default Home;

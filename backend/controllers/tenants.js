@@ -43,7 +43,9 @@ module.exports = {
 
 
   getOneTenants: function (req, res) {
-    tena/ nts.getOne(function (err, results) {
+
+    tenants.getOne(function (err, results) {
+
       if (err) res.status(500).send(err);
       else res.json(results);
     }, req.params.id);

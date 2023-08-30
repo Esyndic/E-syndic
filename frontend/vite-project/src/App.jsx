@@ -15,22 +15,24 @@ import Factures from "../Tcomp/Factures";
 import Claims from "../Tcomp/Claims.jsx";
 import Profile from "../Tcomp/Profile";
 import Update from "../Tcomp/Update";
-
 function App() {
-
+  const [inter, setInter] = useState(0)
+  function setInterFn(int) {
+    setInter(int)
+  }
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/loginAsSyndic" element={<LoginAsTenant />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/personnels" element={<Personnels />} />
         <Route path="/" element={<Home inter={setInterFn} />} />
-
-        
-        <Route path="/shome" element={ <Shome />} /> 
+        <Route path="/shome" element={ <Shome />} />
         <Route path="/personnels" element={<Personnels />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/createFacture" element={< CreateFacture />} />
         <Route path="/uppPers" element={<UppPers />} />
-
-
         <Route path="/Thome" element={<THome />} />
         <Route path="/facture" element={<Factures />} />
         <Route path="/claims" element={<Claims />} />
@@ -40,5 +42,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App;

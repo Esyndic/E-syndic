@@ -3,33 +3,40 @@ import { Link } from "react-router-dom";
 
 function Home(props) {
 
+import NavBar from '../components/NavBar.jsx'
+
+function Home(props) {
+  const [inter, setInter] = useState(0)
+  props.inter(inter)
+>>>>>>> a55802efaf513704e9c70a67b67dad028c9d0232
   return (
     <div>
-      <div >
-      < Navbar  />
-      <div/>
-      <br></br>
-      <section class="section-2">
-        <div class="sheet">
-          <img
-            class="img2"
-            src="https://www.coprolib.com/wp-content/uploads/2019/08/visuel-devenir-coprolib.svg"
-          />
-          <br></br>
-          <p class="description">
-            Manage your co-ownership in complete freedom! For more than 10
-            years, E-SYNDIC makes life easier for co-owners. A clear platform
-            and effective, for the volunteer trustee. The support of a team
-            experts to meet your needs. Together, let's build a sustainable
-            condominium project!
-          </p>
-        </div>
-      </section>
+      <div>
+        <NavBar />
+        <div />
+        <br></br>
+        <section class="section-2">
+          <div class="sheet">
+            <img
+              class="img2"
+              src="https://www.coprolib.com/wp-content/uploads/2019/08/visuel-devenir-coprolib.svg"
+            />
+            <br></br>
+            <p class="description">
+              Manage your co-ownership in complete freedom! For more than 10
+              years, E-SYNDIC makes life easier for co-owners. A clear platform
+              and effective, for the volunteer trustee. The support of a team
+              experts to meet your needs. Together, let's build a sustainable
+              condominium project!
+            </p>
+          </div>
+        </section>
 
       <section class="section-3">
         <div class="sheet">
           <h2 class="heading">Start Now!</h2>
           <button id="shbtn">
+<<<<<<< HEAD
             <Link
               to="/Thome"
               href="login.html"
@@ -38,11 +45,17 @@ function Home(props) {
                 setInterface(1);
               }}
             >
+=======
+            <Link to="/Thome" class="button" onClick={() => {
+              setInter(1)
+            }}>
+>>>>>>> a55802efaf513704e9c70a67b67dad028c9d0232
               Login As Tenant
             </Link>
             <></>
           </button>
           <button id="shbtn">
+<<<<<<< HEAD
             <Link
               to="/Shome"
               href="login.html"
@@ -51,6 +64,11 @@ function Home(props) {
                 setInterface(2);
               }}
             >
+=======
+            <Link to="/shome" class="button" onClick={() => {
+              setInter(2)
+            }}>
+>>>>>>> a55802efaf513704e9c70a67b67dad028c9d0232
               Login As Syndic
             </Link>
           </button>

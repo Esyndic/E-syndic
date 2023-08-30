@@ -24,15 +24,14 @@ function App() {
         <Route path="/" element={<Home inter={setInterFn} />} />
 
         
-        
-         <Route path="/shome" element={ <Shome />} /> 
+        <Route path="/shome" element={ <Shome />} /> 
         <Route path="/personnels" element={<Personnels />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/createFacture" element={< CreateFacture />} />
         <Route path="/uppPers" element={<UppPers />} />
 
 
-        <Route path="/loginAsSyndic" element={<THome />} />
+        <Route path="/Thome" element={<THome />} />
         <Route path="/facture" element={<Factures />} />
         <Route path="/claims" element={<Claims />} />
         <Route path="/profile" element={<Profile />} />

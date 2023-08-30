@@ -20,13 +20,12 @@ function Navbar() {
     setAnchorElUser(event.currentTarget);
   };
 
-
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
 
   return (
-    <AppBar  position="static">
+    <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -43,7 +42,9 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            <Link to="/">E-Syndic</Link>
+            <Link id="title" to="/Thome">
+              Home
+            </Link>
           </Typography>
 
           <Typography
@@ -62,23 +63,19 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            E-SYNDIC
+            Home
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-          <Typography textAlign="center"><Link to="/personnels">Personels</Link></Typography>
-          <Typography textAlign="center"><Link to="/feedback">FeedBacks</Link></Typography>
-          <Typography textAlign="center"><Link to="/createFacture">Create Facture</Link></Typography>
-         
-          
-          </Box>
+          <Box sx={{ flexGrow: 1}}><Link id="navLink" to="/claims"> </Link></Box>
+          <Box sx={{ flexGrow: 0.09}}><Link id="navLink" to="/claims"> Claims</Link></Box>
+          <Box sx={{ flexGrow: 0.09}}><Link id="navLink" to="/claims"> Factures</Link></Box>
+          <Box sx={{ flexGrow: 1}}><Link id="navLink" to="/claims"> FeedBack</Link></Box>
+
 
           <Box sx={{ flexGrow: 0 }}>
-            
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
-
             </Tooltip>
 
             <Menu
@@ -98,10 +95,14 @@ function Navbar() {
               onClose={handleCloseUserMenu}
             >
               <MenuItem onClick={handleCloseUserMenu}>
-                <Typography textAlign="center"><Link to="/login">Profile</Link></Typography>
+                <Typography textAlign="center">
+                  <Link to="/login">Profile</Link>
+                </Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseUserMenu}>
-                <Typography textAlign="center"><Link to="/">Logout</Link></Typography>
+                <Typography textAlign="center">
+                  <Link to="/">Logout</Link>
+                </Typography>
               </MenuItem>
             </Menu>
           </Box>

@@ -21,12 +21,16 @@ function Login() {
        
     event.preventDefault();
   
-    axios.post("http://localhost:3000/api/syndic/login",{"email":email,"password":pwd}).then((result)=>{
-      console.log("🚀 ~ file: Login.jsx:24 ~ axios.post ~ result:", result)
+    axios.post("http://localhost:3000/api/syndic/login",{"email":email,"password":pwd},{ withCredentials: true }).then((result)=>{
+
+      console.log("🚀 ~ file: Login.jsx:24 ~ axios.post ~ result:", result.headers)
       if(result.data.user) navigate("/shome")
       else {alert ("wrong credential")}
   })
 }
+ 
+
+  
   return (
     <MDBContainer fluid className="p-4">
       <MDBRow>

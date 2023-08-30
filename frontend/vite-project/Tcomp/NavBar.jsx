@@ -11,7 +11,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 
-function ResponsiveAppBar() {
+function Navbar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenUserMenu = (event) => {
@@ -61,11 +61,25 @@ function ResponsiveAppBar() {
           >
             E-SYNDIC
           </Typography>
-          <Box sx={{ flexGrow: 1}}><Link id="navLink" to="/claims"> </Link></Box>
-          <Box sx={{ flexGrow: 0.09}}><Link id="navLink" to="/claims"> Claims</Link></Box>
-          <Box sx={{ flexGrow: 0.09}}><Link id="navLink" to="/tenant/factures"> Factures</Link></Box>
-          <Box sx={{ flexGrow: 1}}><Link id="navLink" to="/tenant/feedbacks"> FeedBack</Link></Box>
-
+          <Box sx={{ flexGrow: 1 }}></Box>
+          <Box sx={{ flexGrow: 0.09 }}>
+            <Link id="navLink" to="/claims">
+              {" "}
+              Claims
+            </Link>
+          </Box>
+          <Box sx={{ flexGrow: 0.09 }}>
+            <Link id="navLink" to="/tenant/factures">
+              {" "}
+              Factures
+            </Link>
+          </Box>
+          <Box sx={{ flexGrow: 1 }}>
+            <Link id="navLink" to="/tenant/feedbacks">
+              {" "}
+              FeedBack
+            </Link>
+          </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">

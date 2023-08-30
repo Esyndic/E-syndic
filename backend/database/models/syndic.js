@@ -1,10 +1,15 @@
 // import the database connection
 const conn = require("../index");
-
+const bcrypt = require("bcrypt")
 module.exports = {
 
 
-   // a function which fetches all the syndic
+  getoneByEmail : function (callback, email) { 
+    const sql = "SELECT * FROM `syndic` WHERE email=?";
+    conn.query(sql, [email], function (error, results, ) {
+      callback(error, results);
+    });
+  },
 
  
    getSyndic: function (callback) {
@@ -15,11 +20,14 @@ module.exports = {
     });
   },
   // a function that can be used to insert a syndic into the database
-  addSyndic: function (callback, val) {
+  addSyndic: async function (callback, val) {
+
+    const salt = await bcrypt.genSalt(10) ;
+    var  hashedpassowrd = await bcrypt.hash(val.password,salt)
     const sql = "INSERT INTO syndic (syndicName,email,password) VALUES (?, ?,?)";
     conn.query(
       sql,
-      [val.syndicName, val.email,val.password],
+      [val.syndicName, val.email,hashedpassowrd],
       function (error, results) {
         callback(error, results);
       }

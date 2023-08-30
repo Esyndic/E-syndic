@@ -1,66 +1,29 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../Tcomp/NavBar.jsx";
+<<<<<<< HEAD
+=======
+import Cards from "./Cards.jsx";
+>>>>>>> abecf7624ffaf82136e3520cfe7cd1baaaef9986
 function THome(props) {
   return (
     <div>
       <div>
         <Navbar />
-        <div />
-        <br></br>
-        <section class="section-2">
+
+        <section class="section-3">
           <div class="sheet">
             <p class="description">
               Hello in your interface , here you can send claims , feedbacks and
               check factures . If you have any issue feel free and send what you
               want we are here 7/7 24h in your service
             </p>
-            <img
-              class="img"
-              src="https://www.coprolib.com/wp-content/uploads/2019/12/visuel-communaute-2.svg"
-            />
-            <br></br>
+            <Cards/>
           </div>
+
         </section>
-
-        <section class="section-3">
-          <div class="sheet">
-            <h2 class="heading">Start Now!</h2>
-            <button id="shbtn">
-              <Link
-                to="/Thome"
-                href="login.html"
-                class="button"
-                onClick={() => {
-                  props.inter(1);
-                }}
-              ></Link>
-
-              <Link
-                to="/Thome"
-                class="button"
-                onClick={() => {
-                  setInter(1);
-                }}
-              >
-                Login As Tenant
-              </Link>
-              <></>
-            </button>
-            <button id="shbtn">
-              <Link
-                to="/Shome"
-                href="login.html"
-                class="button"
-                onClick={() => {
-                  props.inter(2);
-                }}
-              >
-                Login As Syndic
-              </Link>
-            </button>
-          </div>
-          <footer class="footer">
+        
+        <footer class="footer">
             <div class="footer-div">
               <button type="button" class="social-button">
                 <a class="footer-link" href="https://www.facebook.com">
@@ -89,7 +52,6 @@ function THome(props) {
             </div>
             <div class="text-center">© 2023 - All rights reserved</div>
           </footer>
-        </section>
       </div>
     </div>
   );

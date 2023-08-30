@@ -10,7 +10,7 @@ const {
   /// POSTS ROUTES ///
   
   //GET request to fetch all Factures. NOTE This must come before route for id.
-  router.get("/getAll", getFacture);
+  router.get("/get", getFacture);
   // POST request for creating a new Facture.
   router.post("/add", addFacture);
   // DELETE request for removing a Facture.

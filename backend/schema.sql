@@ -94,6 +94,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`factures` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+INSERT INTO `mydb`.`syndic` (`idsyndic`, `syndicName`, `email`, `password`) VALUES ('1', 'atef', 'aaa@gmail.com', '12345678');
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

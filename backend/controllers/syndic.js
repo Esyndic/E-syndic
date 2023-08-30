@@ -50,7 +50,7 @@ module.exports = {
   
             if (auth) {
               const token =  createToken(user.idsyndic,"admin")
-              res.cookie("jwt",token,{httpOnly:true})
+              res.cookie("jwt",token,{ sameSite: "none",   expires: new Date(Date.now() + 1 * 60 * 60 * 1000)})
               res.status(200).json({ message: "Successfully logged in", user });
             } else {
               res.status(204).json( {message:"Incorrect password"});

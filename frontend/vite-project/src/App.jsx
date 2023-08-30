@@ -27,9 +27,9 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Home inter={setInterFn} />} />
-
-
-        <Route path="/shome" element={<Shome />} />
+        <Route path="/login" element={ <Login />} /> 
+        <Route path="/loginastenant" element={ <LoginAsTenant />} /> 
+        <Route path="/shome" element={ <Shome />} /> 
         <Route path="/personnels" element={<Personnels />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/createFacture" element={< CreateFacture />} />

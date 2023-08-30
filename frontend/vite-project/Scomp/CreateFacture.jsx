@@ -15,7 +15,6 @@ export default function CreateFacture() {
   const [notes, setNotes] = useState("")
 
 
-
   useEffect(() => {
     axios.get("http://localhost:3000/api/tenants/getAll")
 

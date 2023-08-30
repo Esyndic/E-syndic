@@ -1,12 +1,16 @@
 import React from 'react'
+import Navbar from './navBar'
 
 
 
 export default function Interface() {
     return (
-        <>
-            <div>
-                <div class="card">
+       
+
+
+            <div style={{width:"100%"}}>
+                <Navbar/>
+                <div  class="card">
                     <div class="content">
                         <div class="back">
                             <div class="back-content">
@@ -114,7 +118,7 @@ export default function Interface() {
                     </div>
                 </div>
             </div>
-        </>
+    
     )
 
 }

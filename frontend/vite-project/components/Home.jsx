@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 
 function Home(props) {
   const [inter, setInterface] = useState(0);
@@ -7,8 +8,18 @@ function Home(props) {
   sendInterface=()=>{
     props.interface(inter)
   }
+=======
+import NavBar from '../components/NavBar.jsx'
+import Navbar from "../Scomp/navBar.jsx";
+function Home(props) {
+  const [inter, setInter] = useState(0)
+  props.inter(inter)
+>>>>>>> a55802efaf513704e9c70a67b67dad028c9d0232
   return (
     <div>
+      <div >
+      < Navbar  />
+      <div/>
       <br></br>
       <section class="section-2">
         <div class="sheet">
@@ -31,6 +42,7 @@ function Home(props) {
         <div class="sheet">
           <h2 class="heading">Start Now!</h2>
           <button id="shbtn">
+<<<<<<< HEAD
             <Link
               to="/Thome"
               href="login.html"
@@ -39,11 +51,17 @@ function Home(props) {
                 setInterface(1);
               }}
             >
+=======
+            <Link to="/Thome" class="button" onClick={() => {
+              setInter(1)
+            }}>
+>>>>>>> a55802efaf513704e9c70a67b67dad028c9d0232
               Login As Tenant
             </Link>
             <></>
           </button>
           <button id="shbtn">
+<<<<<<< HEAD
             <Link
               to="/Shome"
               href="login.html"
@@ -52,6 +70,11 @@ function Home(props) {
                 setInterface(2);
               }}
             >
+=======
+            <Link to="/shome" class="button" onClick={() => {
+              setInter(2)
+            }}>
+>>>>>>> a55802efaf513704e9c70a67b67dad028c9d0232
               Login As Syndic
             </Link>
           </button>
@@ -86,6 +109,7 @@ function Home(props) {
           <div class="text-center">© 2023 - All rights reserved</div>
         </footer>
       </section>
+    </div>
     </div>
   );
 }

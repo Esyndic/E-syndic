@@ -16,7 +16,7 @@ function AddPers() {
       .catch((error) =>{ console.log(error)});
   };
 
-
+ 
 
   return (
     <div>
@@ -37,16 +37,22 @@ function AddPers() {
       <div className="container">
         <div className="heading">Add Personnel</div>
         <form action="" className="form">
-          <input required className="input" type="text" name="name" id="name" placeholder="Name" />
-          <input required className="input" type="text" name="num" id="num" placeholder="Number" />
-          <input required className="input" type="text" name="email" id="email" placeholder="Email" />
-          <input required className="input" type="text" name="role" id="role" placeholder="Role" />
-          <input required className="input" type="text" name="image" id="image" placeholder="Image URL" />
+          <input required className="input" type="text" 
+          name="name" id="name" placeholder="Name" />
+          <input required className="input" type="text" 
+          name="num" id="num" placeholder="Number" />
+          <input required className="input" type="text" 
+          name="email" id="email" placeholder="Email" />
+          <input required className="input" type="text" 
+          name="role" id="role" placeholder="Role" />
+          <input required className="input" type="text" 
+          name="image" id="image" placeholder="Image URL" />
 
-          <input className="addbutton" 
+          <link to="/personnels"><input className="addbutton" 
                 type="submit" 
-                value="Add Personnel" />
-
+                value="Add Personnel" 
+                  onClick={()=>{addPersonnel(obj)}}
+                /> </link>
         </form>
       </div>
     </div>

@@ -12,6 +12,7 @@ import Personnels from "../Scomp/Personnels.jsx";
 import Feedback from "../Scomp/feedbacks.jsx";
 import CreateFacture from "../Scomp/CreateFacture.jsx";
 import UppPers from "../Scomp/UppPers.jsx";
+import AddPers from "../Scomp/AddPers";
 import Factures from "../Tcomp/Factures";
 import Claims from "../Tcomp/Claims.jsx";
 import Profile from "../Tcomp/Profile";
@@ -34,6 +35,8 @@ function App() {
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/createFacture" element={< CreateFacture />} />
         <Route path="/uppPers" element={<UppPers />} />
+        <Route path="/addPer" element={<AddPers />} />
+
 
 
         <Route path="/Thome" element={<THome />} />

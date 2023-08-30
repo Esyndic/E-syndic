@@ -63,19 +63,10 @@ function Home(props) {
               </Link>
             </button>
           </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <div class="text-center"> © 2023 - All rights reserved</div>
-        </footer>
-      </section>
-=======
-=======
 
           <div class="text-center"> © 2023 - All rights reserved</div>
-        </footer>
-      </section>
 
->>>>>>> 5c1c02ef92998bb4f7a6c3b35f874f4cebd99256
+
           <footer class="footer">
             <div class="footer-div">
               <button type="button" class="social-button">
@@ -107,10 +98,7 @@ function Home(props) {
           </footer>
         </section>
       </div>
-<<<<<<< HEAD
->>>>>>> 226a49f8008eec434f14e464217f868c047c0416
-=======
->>>>>>> 5c1c02ef92998bb4f7a6c3b35f874f4cebd99256
+
     </div>
   );
 }

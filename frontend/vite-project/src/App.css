@@ -52,6 +52,29 @@
   font-size: 25px;
 
 }
+
+.parag {
+  font-size: 20px;
+
+  color: #fff; /* Text color */
+  margin-bottom: 10px;
+  padding: 20px; /* Add padding for better visibility */
+  background: linear-gradient(135deg, #3498db, #e74c3c); /* Gradient colors */
+  background-size: 200% 200%; /* Controls smoothness of the gradient transition */
+  animation: gradientAnimation 10s ease infinite; /* Animation for smooth transition */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .description {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -112,10 +135,6 @@
   font-size: 50px;
 }
 
-.section-3 .heading {
-  margin: 60px auto 0;
-  padding-top: 10%;
-}
 
 .section-3 .button {
 

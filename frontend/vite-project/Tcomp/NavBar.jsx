@@ -61,14 +61,11 @@ function ResponsiveAppBar() {
           >
             E-SYNDIC
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Typography>
-              <Link to="/facture">Notifications</Link>
-            </Typography>
-            <Typography>
-              <Link to="/claims">Claims</Link>
-            </Typography>
-          </Box>
+          <Box sx={{ flexGrow: 1}}><Link id="navLink" to="/claims"> </Link></Box>
+          <Box sx={{ flexGrow: 0.09}}><Link id="navLink" to="/claims"> Claims</Link></Box>
+          <Box sx={{ flexGrow: 0.09}}><Link id="navLink" to="/tenant/factures"> Factures</Link></Box>
+          <Box sx={{ flexGrow: 1}}><Link id="navLink" to="/tenant/feedbacks"> FeedBack</Link></Box>
+
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">

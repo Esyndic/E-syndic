@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar.jsx";
-import Navbar from "../Scomp/NavBar.jsx";
+import Navbar from "../Scomp/SNavBar.jsx";
 function Home(props) {
   return (
     <div>
@@ -62,6 +62,7 @@ function Home(props) {
             </button>
           </div>
           <div class="text-center"> © 2023 - All rights reserved</div>
+
           <footer class="footer">
             <div class="footer-div">
               <button type="button" class="social-button">

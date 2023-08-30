@@ -61,18 +61,7 @@ function Home(props) {
               </Link>
             </button>
           </div>
-<<<<<<< HEAD
-          <div class="text-center"> © 2023 - All rights reserved</div>
-=======
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <div class="text-center"> © 2023 - All rights reserved</div>
-
-=======
-=======
->>>>>>> 60c5e2112ca0577b8fe86862addf60d51a72b807
->>>>>>> abecf7624ffaf82136e3520cfe7cd1baaaef9986
 
           <footer class="footer">
             <div class="footer-div">

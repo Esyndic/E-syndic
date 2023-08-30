@@ -35,12 +35,8 @@ function App() {
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/createFacture" element={< CreateFacture />} />
         <Route path="/uppPers" element={<UppPers />} />
-<<<<<<< HEAD
         <Route path="/addPer" element={<AddPers />} />
 
-=======
-        <Route path="/tenants" element={<Tenants />} />
->>>>>>> 60c5e2112ca0577b8fe86862addf60d51a72b807
 
 
         <Route path="/Thome" element={<THome />} />

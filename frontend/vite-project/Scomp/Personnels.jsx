@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Personnel.css';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -13,7 +13,7 @@ import Container from '@mui/material/Container';
 
 function Personnels() {
 
-  const history = useHistory()
+ 
 
   const [data, setdata] = useState([]);
   const [trigger, setTrigger] = useState(false)

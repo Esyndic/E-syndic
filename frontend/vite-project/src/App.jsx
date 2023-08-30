@@ -17,10 +17,7 @@ import Profile from "../Tcomp/Profile";
 import Update from "../Tcomp/Update";
 
 function App() {
-  const [inter, setInter] = useState(0)
-  function setInterFn(int) {
-    setInter(int)
-  }
+
   return (
     <BrowserRouter>
       <Routes>

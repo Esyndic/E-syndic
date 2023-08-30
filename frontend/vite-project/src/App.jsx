@@ -9,6 +9,7 @@ import THome from "../Tcomp/THome.jsx";
 import Shome from "../Scomp/Shome.jsx";
 import Personnels from "../Scomp/Personnels.jsx";
 import Feedback from "../Scomp/feedbacks.jsx";
+import TFeedback from "../Tcomp/Feedback.jsx";
 import CreateFacture from "../Scomp/CreateFacture.jsx";
 import UppPers from "../Scomp/UppPers.jsx";
 import Factures from "../Tcomp/Factures";
@@ -26,11 +27,6 @@ function App() {
     <BrowserRouter>
       <Routes>
 
-        <Route path="/" element={<Home />} />
-        <Route path="/loginAsSyndic" element={<LoginAsTenant />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/personnels" element={<Personnels />} />
-
         <Route path="/" element={<Home inter={setInterFn} />} />
 
         
@@ -42,10 +38,10 @@ function App() {
 
 
         <Route path="/Thome" element={<THome />} />
-        <Route path="/facture" element={<Factures />} />
+        <Route path="/tenant/factures" element={<Factures />} />
+        <Route path="/tenant/feedbacks" element={<TFeedback />} />
         <Route path="/claims" element={<Claims />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/profile/update" element={<Update />} />
 
       </Routes>
     </BrowserRouter>

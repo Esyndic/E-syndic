@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import NavBar from "../components/NavBar.jsx";
 import Navbar from "../Scomp/navBar.jsx";
 function THome(props) {
   return (
@@ -12,14 +11,13 @@ function THome(props) {
         <section class="section-2">
           <div class="sheet">
             <p class="description">
-              Hello in your interface , here you can send claims , feedbacks and check
-              factures .
-              If you have any issue feel free and send what you want 
-              we are here 7/7 24h in your service  
+              Hello in your interface , here you can send claims , feedbacks and
+              check factures . If you have any issue feel free and send what you
+              want we are here 7/7 24h in your service
             </p>
             <img
-              class="img2"
-              src="https://www.coprolib.com/wp-content/uploads/2019/08/visuel-devenir-coprolib.svg"
+              class="img"
+              src="https://www.coprolib.com/wp-content/uploads/2019/12/visuel-communaute-2.svg"
             />
             <br></br>
           </div>

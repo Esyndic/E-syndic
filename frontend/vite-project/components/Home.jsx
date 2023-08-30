@@ -65,8 +65,6 @@ function Home(props) {
           </div>
 
           <div class="text-center"> © 2023 - All rights reserved</div>
-        </footer>
-      </section>
 
           <footer class="footer">
             <div class="footer-div">

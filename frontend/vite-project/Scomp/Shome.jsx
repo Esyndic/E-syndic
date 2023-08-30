@@ -1,124 +1,40 @@
-import React from 'react'
-import Navbar from './navBar'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import NavBar from "../Scomp/SNavBar.jsx";
+import './s.css';
+import Scard from "../Scomp/Scard.jsx";
+function Home(props) {
+  return (
+    <div>
+      <div>
+        <NavBar />
+        <div />
+        <br></br>
+        <section class="section-2">
+          <div class="sheet">
+            <img
+              class="img2"
+              src="https://www.coprolib.com/wp-content/uploads/2019/08/visuel-devenir-coprolib.svg"
+            />
+            <br></br>
+            <p class="description">
+            Welcome to E-SYNDIC, your ultimate solution for efficient co-ownership management! With over a decade of experience, we've been simplifying the lives of co-owners just like you. Our platform offers unparalleled clarity and effectiveness, designed especially for dedicated administrators like yourself.
+
+Say goodbye to the complexities of managing co-ownership – E-SYNDIC empowers you with complete freedom. Our team of experts is here to provide unwavering support, ensuring all your needs are met seamlessly.
+
+Let's join hands and craft a sustainable condominium project together. Welcome to a new era of hassle-free syndic administration!
+            </p>
+            <Scard/>
+          </div>
+        </section>
+        <section class="section-3">
+          
+        
 
 
-
-export default function Interface() {
-    return (
-       
-
-
-            <div style={{width:"100%"}}>
-                <Navbar/>
-                <div  class="card">
-                    <div class="content">
-                        <div class="back">
-                            <div class="back-content">
-                                <svg stroke="#FFFFFF" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" height="50px" width="50px" fill="#FFFFFF">
-                                    <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
-                                    <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
-                                    <img class="image" src="https://icons.veryicon.com/png/o/miscellaneous/civil-affairs-icon-summary/tenant-management-1.png" />
-                                </svg>
-                                <strong>Personnels</strong>
-                            </div>
-                        </div>
-                        <div class="front">
-                            <div class="img">
-                                <div class="circle">
-                                </div>
-                                <div class="circle" id="right">
-                                </div>
-                                <div class="circle" id="bottom">
-                                </div>
-                            </div>
-                            <div class="front-content">
-                                <small class="badge">description</small>
-                                <div class="description">
-                                    <div class="title">
-                                        <p>uzhfiuzrfzhgzdfiuuzrff</p>
-                                    </div>
-                                    <p class="card-footer">
-                                        dar num : 50&nbsp; | &nbsp; bloc 1
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="content">
-                            <div class="back">
-                                <div class="back-content">
-                                    <svg stroke="#FFFFFF" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" height="50px" width="50px" fill="#FFFFFF">
-                                        <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
-                                        <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
-                                        <img class="image" src="https://www.kindpng.com/picc/m/176-1763157_transparent-background-employees-icon-hd-png-download.png" />
-
-                                    </svg>
-                                    <strong>Tenants</strong>
-                                </div>
-                            </div>
-                            <div class="front">
-                                <div class="img">
-                                    <div class="circle">
-                                    </div>
-                                    <div class="circle" id="right">
-                                    </div>
-                                    <div class="circle" id="bottom">
-                                    </div>
-                                </div>
-                                <div class="front-content">
-                                    <small class="badge">description</small>
-                                    <div class="description">
-                                        <div class="title">
-                                            <p>uzhfiuzrfzhgzdfiuuzrff</p>
-                                        </div>
-                                        <p class="card-footer">
-                                            dar num : 50&nbsp; | &nbsp; bloc 1
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="content">
-                                <div class="back">
-                                    <div class="back-content">
-                                        <svg stroke="#FFFFFF" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" height="50px" width="50px" fill="#FFFFFF">
-                                            <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
-                                            <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
-                                            <img class="image" src="https://cdn-dnhoc.nitrocdn.com/iIPHZmhBsBYIDtOADIDObpNChLqFJPuY/assets/images/optimized/[…]0/new/wp-content/uploads/2023/05/pmt-icons-04-400x400.png" />
-
-                                        </svg>
-                                        <strong>Factures</strong>
-                                    </div>
-                                </div>
-                                <div class="front">
-                                    <div class="img">
-                                        <div class="circle">
-                                        </div>
-                                        <div class="circle" id="right">
-                                        </div>
-                                        <div class="circle" id="bottom">
-                                        </div>
-                                    </div>
-                                    <div class="front-content">
-                                        <small class="badge">description</small>
-                                        <div class="description">
-                                            <div class="title">
-                                                <p>uzhfiuzrfzhgzdfiuuzrff</p>
-                                            </div>
-                                            <p class="card-footer">
-                                                dar num : 50&nbsp; | &nbsp; bloc 1
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-    )
-
+        </section>
+      </div>
+    </div>
+  );
 }
+export default Home;

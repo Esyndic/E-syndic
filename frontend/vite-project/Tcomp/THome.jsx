@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../Tcomp/NavBar.jsx";
+<<<<<<< HEAD
+=======
 import Cards from "./Cards.jsx";
+>>>>>>> abecf7624ffaf82136e3520cfe7cd1baaaef9986
 function THome(props) {
   return (
     <div>

@@ -40,9 +40,7 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            <Link id="title" to="/Thome">
-              Home
-            </Link>
+            <Link to="/">E-Syndic</Link>
           </Typography>
 
           <Typography
@@ -61,7 +59,7 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            Home
+            E-SYNDIC
           </Typography>
           <Box sx={{ flexGrow: 1 }}></Box>
           <Box sx={{ flexGrow: 0.09 }}>
@@ -113,7 +111,7 @@ function Navbar() {
               </MenuItem>
               <MenuItem onClick={handleCloseUserMenu}>
                 <Typography textAlign="center">
-                  <Link to="/">Logout</Link>
+                  <Link to="http://localhost:5173">Logout</Link>
                 </Typography>
               </MenuItem>
             </Menu>
@@ -123,4 +121,4 @@ function Navbar() {
     </AppBar>
   );
 }
-export default Navbar;
+export default ResponsiveAppBar;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar.jsx";
-import Navbar from "../Scomp/navBar.jsx";
+import Navbar from "../Scomp/SNavBar.jsx";
 function Home(props) {
   return (
     <div>
@@ -25,7 +25,6 @@ function Home(props) {
             </p>
           </div>
         </section>
-
         <section class="section-3">
           <div class="sheet">
             <h2 class="heading">Start Now!</h2>
@@ -38,7 +37,6 @@ function Home(props) {
                   props.inter(1);
                 }}
               ></Link>
-
               <Link
                 to="/Thome"
                 class="button"
@@ -63,11 +61,17 @@ function Home(props) {
               </Link>
             </button>
           </div>
+<<<<<<< HEAD
+          <div class="text-center"> © 2023 - All rights reserved</div>
+=======
 
+<<<<<<< HEAD
 <<<<<<< HEAD
           <div class="text-center"> © 2023 - All rights reserved</div>
 
 =======
+=======
+>>>>>>> 60c5e2112ca0577b8fe86862addf60d51a72b807
 >>>>>>> abecf7624ffaf82136e3520cfe7cd1baaaef9986
 
           <footer class="footer">
@@ -105,5 +109,4 @@ function Home(props) {
     </div>
   );
 }
-
 export default Home;

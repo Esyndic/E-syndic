@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
-function Home() {
+import NavBar from '../components/NavBar.jsx'
+import Navbar from "../Scomp/navBar.jsx";
+function Home(props) {
+  const [inter, setInter] = useState(0)
+  props.inter(inter)
   return (
     <div>
+      <div >
+      < Navbar  />
+      <div/>
       <br></br>
       <section class="section-2">
         <div class="sheet">
@@ -26,13 +32,17 @@ function Home() {
         <div class="sheet">
           <h2 class="heading">Start Now!</h2>
           <button id="shbtn">
-            <Link to="/Thome" href="login.html" class="button">
+            <Link to="/Thome" class="button" onClick={() => {
+              setInter(1)
+            }}>
               Login As Tenant
             </Link>
             <></>
           </button>
           <button id="shbtn">
-            <Link to="/Shome" href="login.html" class="button">
+            <Link to="/shome" class="button" onClick={() => {
+              setInter(2)
+            }}>
               Login As Syndic
             </Link>
           </button>
@@ -67,6 +77,7 @@ function Home() {
           <div class="text-center">© 2023 - All rights reserved</div>
         </footer>
       </section>
+    </div>
     </div>
   );
 }

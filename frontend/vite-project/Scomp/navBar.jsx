@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 const settings = ["Profile", "Logout"];
 
-function navBAr() {
+function Navbar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenUserMenu = (event) => {
@@ -26,7 +26,7 @@ function navBAr() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar  position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -110,4 +110,4 @@ function navBAr() {
     </AppBar>
   );
 }
-export default navBAr;
+export default Navbar;

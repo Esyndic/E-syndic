@@ -21,6 +21,10 @@
   color: white;
   font-size: 25px;
 }
+#navLink{
+  color: white;
+  font-size: 15px;
+}
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -86,7 +90,7 @@
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 25px;
-  border: 2px solid black;
+
 }
 
 .section-2 .img2 {

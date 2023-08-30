@@ -121,4 +121,4 @@ function Navbar() {
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+export default Navbar;

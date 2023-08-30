@@ -15,8 +15,7 @@ import UppPers from "../Scomp/UppPers.jsx";
 import Factures from "../Tcomp/Factures";
 import Claims from "../Tcomp/Claims.jsx";
 import Profile from "../Tcomp/Profile";
-
-
+import Tenants from "../Scomp/Tenants.jsx"
 
 function App() {
   const [inter, setInter] = useState(0)
@@ -29,12 +28,13 @@ function App() {
 
         <Route path="/" element={<Home inter={setInterFn} />} />
 
-        
-        <Route path="/shome" element={ <Shome />} /> 
+
+        <Route path="/shome" element={<Shome />} />
         <Route path="/personnels" element={<Personnels />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/createFacture" element={< CreateFacture />} />
         <Route path="/uppPers" element={<UppPers />} />
+        <Route path="/tenants" element={<Tenants />} />
 
 
         <Route path="/Thome" element={<THome />} />
@@ -42,10 +42,8 @@ function App() {
         <Route path="/tenant/feedbacks" element={<TFeedback />} />
         <Route path="/claims" element={<Claims />} />
         <Route path="/profile" element={<Profile />} />
-
       </Routes>
     </BrowserRouter>
   );
 }
-
 export default App;

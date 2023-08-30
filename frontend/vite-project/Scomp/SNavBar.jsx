@@ -11,9 +11,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 
-const settings = ["Profile", "Logout"];
-
-function Navbar() {
+function NavBar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenUserMenu = (event) => {
@@ -42,9 +40,7 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            <Link id="title" to="/Thome">
-              Home
-            </Link>
+            <Link to="/">E-Syndic</Link>
           </Typography>
 
           <Typography
@@ -63,12 +59,13 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            Home
+            E-SYNDIC
           </Typography>
-          <Box sx={{ flexGrow: 1}}><Link id="navLink" to="/claims"> </Link></Box>
-          <Box sx={{ flexGrow: 0.09}}><Link id="navLink" to="/claims"> Claims</Link></Box>
-          <Box sx={{ flexGrow: 0.09}}><Link id="navLink" to="/tenant/factures"> Factures</Link></Box>
-          <Box sx={{ flexGrow: 1}}><Link id="navLink" to="/tenant/feedbacks"> FeedBack</Link></Box>
+          <Box sx={{ flexGrow: 1 }}><Link id="navLink" to="/claims"> </Link></Box>
+          <Box sx={{ flexGrow: 0.09 }}><Link id="navLink" to="/personnels"> Personels</Link></Box>
+          <Box sx={{ flexGrow: 1 }}><Link id="navLink" to="/tenants"> Tenants</Link></Box>
+          <Box sx={{ flexGrow: 1 }}><Link id="navLink" to="/feedback"> Feedback</Link></Box>
+          <Box sx={{ flexGrow: 0.09 }}><Link id="navLink" to="/tenant/factures"> Factures</Link></Box>
 
 
           <Box sx={{ flexGrow: 0 }}>
@@ -96,12 +93,12 @@ function Navbar() {
             >
               <MenuItem onClick={handleCloseUserMenu}>
                 <Typography textAlign="center">
-                  <Link to="/login">Profile</Link>
+                  <Link to="/profile">Profile</Link>
                 </Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseUserMenu}>
                 <Typography textAlign="center">
-                  <Link to="/">Logout</Link>
+                  <Link to="http://localhost:5173">Logout</Link>
                 </Typography>
               </MenuItem>
             </Menu>
@@ -111,4 +108,4 @@ function Navbar() {
     </AppBar>
   );
 }
-export default Navbar;
+export default NavBar;

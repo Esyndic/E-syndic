@@ -11,6 +11,7 @@ import axios from 'axios';
 
 
 function UppPers(props) {
+  
   const obj = props.upval
   const [name, setName] = useState(obj.name);
   const [num, setNum] = useState(obj.num);

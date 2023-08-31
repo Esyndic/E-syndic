@@ -6,46 +6,49 @@ import './AboutUs.css';
 function AboutUs() {
   return (
 
-    <div>
+    <div id = "ab-out">
         <ResponsiveAppBar/>
 
-        <div class="cardContainer">
-  <div class="card">
-    <p class="city">E-Syndic: Your complete and secure platform</p> <br />
+       
 
-    <div class="checkbox-wrapper-31">
-      <input checked="" type="checkbox" />
-      <svg viewBox="0 0 35.6 35.6">
-        <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
-        <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
-        <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
-      </svg>
-      <p class="text">A simple and educational software for efficient and fast management that simplifies the work of the Syndicate Council</p>
+
+    <div class="abcard">
+      <p class="abcard-title">Welcome to Syndic Website</p>
+      <p class="small-desc">
+      Welcome to our Syndic website! We're dedicated to providing top-notch
+          solutions for all your syndication needs. Our experienced team is
+          here to assist you every step of the way, ensuring seamless and
+          efficient processes.
+      </p>
+      <div class="go-corner">
+        <div class="go-arrow">→</div>
+      </div>
     </div>
 
-    <div class="checkbox-wrapper-31">
-      <input checked="" type="checkbox" />
-      <svg viewBox="0 0 35.6 35.6">
-        <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
-        <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
-        <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
-      </svg>
-      <p class="text">Automated accounting ensures compliance with the law.</p>
+    <div class="abcard">
+      <p class="abcard-title">Our Services</p>
+      <p class="small-desc">
+      Explore our wide range of syndication services tailored to meet your
+          unique requirements. From content distribution to audience engagement,
+          we've got you covered with innovative solutions that deliver results.
+      </p>
+      <div class="go-corner">
+        <div class="go-arrow">→</div>
+      </div>
     </div>
 
-    <div class="checkbox-wrapper-31">
-      <input checked="" type="checkbox" />
-      <svg viewBox="0 0 35.6 35.6">
-        <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
-        <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
-        <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
-      </svg>
-      <p class="text">No more Excel or accounting posting, copying and pasting in the journals and above all errors. Don't wait any longer, start now and take advantage of the full potential of web and mobile</p>
+    <div class="abcard">
+      <p class="abcard-title">Why Choose Us</p>
+      <p class="small-desc">
+      With years of industry experience, we take pride in being a trusted
+          partner for syndication. Our commitment to excellence, attention to
+          detail, and client-centric approach set us apart. Join us in shaping
+          the future of syndication.
+      </p>
+      <div class="go-corner">
+        <div class="go-arrow">→</div>
+      </div>
     </div>
-  </div>
-</div>
-
-        
 
     </div>
     

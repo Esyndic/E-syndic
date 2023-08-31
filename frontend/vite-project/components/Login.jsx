@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import cookie from "js-cookie"
 import {
   MDBBtn,
   MDBContainer,
@@ -13,7 +14,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function Login() {
+function   Login() {
   const navigate =useNavigate()
   const [email,setemail]=useState("")
     const [pwd,setpwd]=useState("")
@@ -21,12 +22,14 @@ function Login() {
        
     event.preventDefault();
   
-    axios.post("http://localhost:3000/api/syndic/login",{"email":email,"password":pwd},{ withCredentials: true }).then((result)=>{
+    axios.post("http://localhost:3000/api/syndic/login",{"email":email,"password":pwd}).then((result)=>{
 
-      console.log("🚀 ~ file: Login.jsx:24 ~ axios.post ~ result:", result.headers)
-      if(result.data.user) navigate("/shome")
+      
+      if(result.data.token) {
+        cookie.set("jwt",result.data.token)
+        navigate("/shome") } 
       else {alert ("wrong credential")}
-  })
+  }).catch((err)=>{console.log(err)})
 }
  
 

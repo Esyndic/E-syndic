@@ -22,6 +22,7 @@ import Factures from "../Tcomp/Factures";
 import Claims from "../Tcomp/Claims.jsx";
 import Profile from "../Tcomp/Profile";
 import AddTenant from "../Scomp/AddTenant";
+import UppTenant from "../Scomp/UppTenant";
 
 
 function App() {

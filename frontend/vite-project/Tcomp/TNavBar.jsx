@@ -74,11 +74,6 @@ function Navbar() {
               Factures
             </Link>
           </Box>
-          <Box sx={{ flexGrow: 1 }}>
-            <Link id="navLink" to="/tenant/feedbacks">
-              FeedBack
-            </Link>
-          </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">

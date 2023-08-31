@@ -4,8 +4,7 @@ import ResponsiveAppBar from '../components/NavBar'
 function AboutUs() {
   return (
     <div>
-        <ResponsiveAppBar/>
-        
+
     </div>
   )
 }

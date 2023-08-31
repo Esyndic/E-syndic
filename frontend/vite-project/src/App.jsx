@@ -19,6 +19,7 @@ import Factures from "../Tcomp/Factures";
 import Claims from "../Tcomp/Claims.jsx";
 import Profile from "../Tcomp/Profile";
 import Tenants from "../Scomp/Tenants.jsx"
+import AddTenant from "../Scomp/AddTenant";
 
 function App() {
   const [up, setup] = useState({})
@@ -32,12 +33,19 @@ function App() {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/login" element={ <Login />} /> 
         <Route path="/loginastenant" element={ <LoginAsTenant />} /> 
+
+
+
+
         <Route path="/shome" element={ <Shome />} /> 
         <Route path="/personnels" element={<Personnels upval={upval} />} />
         <Route path="/feedback" element={<Feedback />} />
-        <Route path="/createFacture" element={< CreateFacture />} />
+        <Route path="/createFacture" element={<CreateFacture />} />
         <Route path="/uppPers" element={<UppPers upval={up} />} />
         <Route path="/addPer" element={<AddPers />} />
+        <Route path="/tenants" element={<Tenants />} />
+        <Route path="/addTenant" element={<AddTenant />} />
+        <Route path="/uppTenant" element={<UppTenant />} />
 
 
 

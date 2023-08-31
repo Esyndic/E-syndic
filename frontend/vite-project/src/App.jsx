@@ -15,13 +15,13 @@ import CreateFacture from "../Scomp/CreateFacture.jsx";
 import UppPers from "../Scomp/UppPers.jsx";
 import AddPers from "../Scomp/AddPers";
 import Tenants from "../Scomp/Tenants.jsx";
+import UppTenant from "../Scomp/UppTenant";
 import Sprofile from "../Scomp/Sprofile";
 
 import THome from "../Tcomp/THome.jsx";
 import Factures from "../Tcomp/Factures";
 import Claims from "../Tcomp/Claims.jsx";
 import Profile from "../Tcomp/Profile";
-import Tenants from "../Scomp/Tenants.jsx"
 import AddTenant from "../Scomp/AddTenant";
 
 function App() {
@@ -34,12 +34,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/loginastenant" element={<LoginAsTenant />} />
-
-
-
-
         <Route path="/shome" element={<Shome />} />
 
         <Route path="/login" element={<Login />} />

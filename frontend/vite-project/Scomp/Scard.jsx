@@ -50,7 +50,7 @@ function Scard() {
       </article>
 
       <article class="article-wrapper">
-        <Link to="//tenant/factures">
+        <Link to="/tenant/factures">
           <div class="rounded-lg container-project">
             <img
               class="rounded-lg container-project"

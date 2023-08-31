@@ -40,7 +40,7 @@ function NavBar() {
               textDecoration: "none",
             }}
           >
-            <Link to="/">E-Syndic</Link>
+            <Link to="/shome">E-Syndic</Link>
           </Typography>
 
           <Typography

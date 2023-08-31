@@ -40,28 +40,9 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            <Link id="title" to="/">
+            <Link id="title" to="/Thome">
               E-Syndic
             </Link>
-          </Typography>
-
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            E-SYNDIC
           </Typography>
           <Box sx={{ flexGrow: 0.8 }}></Box>
           <Box sx={{ flexGrow: 0.09 }}>

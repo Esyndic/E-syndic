@@ -7,7 +7,6 @@ function AboutUs() {
   return (
 
     <div>
-<<<<<<< HEAD
         <ResponsiveAppBar/>
 
         <div class="cardContainer">
@@ -47,9 +46,7 @@ function AboutUs() {
 </div>
 
         
-=======
 
->>>>>>> 9583d5b12d8b32d39d2d2e80d519506e865b9260
     </div>
     
   )

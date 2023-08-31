@@ -40,7 +40,7 @@ module.exports = {
           return res.json("Error fetching user").status(500);
         }
   
-        const user = results[0]; // Assuming you expect a single user
+        const user = results[0]; 
   
         if (user) {
           bcrypt.compare(req.body.password, user.password, async function (err, auth) {
@@ -51,7 +51,8 @@ module.exports = {
             if (auth) {
               const token =  createToken(user.idsyndic,"admin")
               res.cookie("jwt",token,{ sameSite: "none",   expires: new Date(Date.now() + 1 * 60 * 60 * 1000)})
-              res.status(200).json({ message: "Successfully logged in", user });
+
+              res.status(200).json({ message: "Successfully logged in", user ,token});
             } else {
               res.status(204).json( {message:"Incorrect password"});
             }

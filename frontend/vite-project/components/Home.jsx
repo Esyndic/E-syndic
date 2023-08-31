@@ -87,6 +87,7 @@ function Home(props) {
           </footer>
         </section>
       </div>
+
     </div>
   );
 }

@@ -1,9 +1,15 @@
-const {deleteone , getAll,add,update} = require("../database/models/facture");
+const {deleteone , getAll,add,update,getone} = require("../database/models/facture");
 
      
 
 module.exports = {
   //method to fetch all posts from the blog database.
+  getFactureById: function (req, res) {
+    getone(function (err, results) {
+       if (err) res.status(500).send(err);
+       else res.json(results);
+     },req.params.id);
+   },
   getFacture: function (req, res) {
    getAll(function (err, results) {
       if (err) res.status(500).send(err);

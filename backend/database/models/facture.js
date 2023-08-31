@@ -1,6 +1,11 @@
 const conn = require("../index");
 module.exports = {
-
+  getone: function (callback,id) {
+    const sql = "SELECT * FROM `factures`  WHERE  `tenants_id` = ? ";
+    conn.query(sql,[id], function (error, results, fields) {
+      callback(error, results);
+    });
+  },
     getAll: function (callback) {
       const sql = "SELECT * FROM `factures`  ";
       conn.query(sql, function (error, results, fields) {

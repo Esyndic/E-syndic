@@ -8,14 +8,26 @@ function THome(props) {
       <div>
         <TNavbar />
 
-        <section class="section-3">
+        <section class="section-2">
           <div class="sheet">
-            <p class="description">
-              Hello in your interface , here you can send claims , feedbacks and
-              check factures . If you have any issue feel free and send what you
-              want we are here 7/7 24h in your service
+            <p class="parag">
+            <img id="img2" src="https://www.coprolib.com/wp-content/uploads/2019/12/visuel-communaute-2.svg"></img>
+            <br/>
+            <br/>
+            <br/>
+              Hello! Welcome to our platform's interface. This is your space to
+              effortlessly submit claims, provide valuable feedback, and
+              conveniently access your invoices. If you encounter any challenges
+              or have questions, don't hesitate to reach out. Our dedicated
+              support team is available round the clock, 7 days a week, to
+              assist you. Your satisfaction is our priority, and we're here to
+              serve you anytime, day or night.
+              <br/>
+              <br/>
+            
+              <br/>
+              <Cards />
             </p>
-            <Cards />
           </div>
         </section>
 

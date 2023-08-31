@@ -4,6 +4,8 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import LoginAsTenant from "../components/LoginAsTenant";
 import Login from "../components/Login";
+import AboutUs from "../components/AboutUs";
+
 import Home from "../components/Home.jsx";
 import THome from "../Tcomp/THome.jsx";
 import Shome from "../Scomp/Shome.jsx";
@@ -12,29 +14,31 @@ import Feedback from "../Scomp/feedbacks.jsx";
 import TFeedback from "../Tcomp/Feedback.jsx";
 import CreateFacture from "../Scomp/CreateFacture.jsx";
 import UppPers from "../Scomp/UppPers.jsx";
+import AddPers from "../Scomp/AddPers";
 import Factures from "../Tcomp/Factures";
 import Claims from "../Tcomp/Claims.jsx";
 import Profile from "../Tcomp/Profile";
 import Tenants from "../Scomp/Tenants.jsx"
 
 function App() {
-  const [inter, setInter] = useState(0)
-  function setInterFn(int) {
-    setInter(int)
+  const [up, setup] = useState({})
+  function upval(obj) {
+    setup(obj)
   }
   return (
     <BrowserRouter>
       <Routes>
-
-        <Route path="/" element={<Home inter={setInterFn} />} />
-
-
-        <Route path="/shome" element={<Shome />} />
-        <Route path="/personnels" element={<Personnels />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/login" element={ <Login />} /> 
+        <Route path="/loginastenant" element={ <LoginAsTenant />} /> 
+        <Route path="/shome" element={ <Shome />} /> 
+        <Route path="/personnels" element={<Personnels upval={upval} />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/createFacture" element={< CreateFacture />} />
-        <Route path="/uppPers" element={<UppPers />} />
-        <Route path="/tenants" element={<Tenants />} />
+        <Route path="/uppPers" element={<UppPers upval={up} />} />
+        <Route path="/addPer" element={<AddPers />} />
+
 
 
         <Route path="/Thome" element={<THome />} />

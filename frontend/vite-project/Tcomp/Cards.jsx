@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import "./cards.css";
+
 function Cards() {
   return (
     <div id="tcards">
@@ -33,7 +33,7 @@ function Cards() {
           <div class="flex-pr">
             <div class="project-title">
               <Link to="/tenant/factures">
-                Check Factures
+                Check<br/> Factures
               </Link>
             </div>
           </div>
@@ -50,7 +50,7 @@ function Cards() {
           <div class="flex-pr">
             <div class="project-title">
               <Link to="/tenant/feedbacks">
-                Send Feedbacks
+                Send<br/> Feedbacks
               </Link>
             </div>
           </div>

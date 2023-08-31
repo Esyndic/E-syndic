@@ -65,9 +65,7 @@ export default function CreateFacture() {
               <option hidden value="">
                 Tenant
               </option>
-
               {selectedTenant.map((e) => {
-
                 return <option value={e.id}>{e.id}</option>
               })}
             </select>

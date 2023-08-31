@@ -30,9 +30,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<AboutUs />} />
-
-
-        <Route path="/shome" element={<Shome />} />
+        <Route path="/login" element={ <Login />} /> 
+        <Route path="/loginastenant" element={ <LoginAsTenant />} /> 
+        <Route path="/shome" element={ <Shome />} /> 
         <Route path="/personnels" element={<Personnels upval={upval} />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/createFacture" element={< CreateFacture />} />

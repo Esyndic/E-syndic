@@ -14,7 +14,7 @@ function Home(props) {
           <div class="sheet">
             <img
               class="img2"
-              src="https://www.coprolib.com/wp-content/uploads/2019/08/visuel-devenir-coprolib.svg"
+              src="https://fac.img.pmdstatic.net/fit/https.3A.2F.2Fi.2Epmdstatic.2Enet.2Ffac.2F2022.2F01.2F12.2F895946b4-9bbf-4f04-9228-cd4748f48d86.2Ejpeg/1200x600/quality/80/crop-from/center/focus-point/657%2C419/copropriete-tout-ce-qu-il-faut-savoir-pour-changer-de-syndic.jpeg"
             />
             <br></br>
             <p class="description">

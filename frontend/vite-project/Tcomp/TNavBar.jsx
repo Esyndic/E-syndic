@@ -40,7 +40,9 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            <Link to="/">E-Syndic</Link>
+            <Link id="title" to="/">
+              E-Syndic
+            </Link>
           </Typography>
 
           <Typography
@@ -61,22 +63,19 @@ function Navbar() {
           >
             E-SYNDIC
           </Typography>
-          <Box sx={{ flexGrow: 1 }}></Box>
+          <Box sx={{ flexGrow: 0.8 }}></Box>
           <Box sx={{ flexGrow: 0.09 }}>
             <Link id="navLink" to="/claims">
-              {" "}
               Claims
             </Link>
           </Box>
           <Box sx={{ flexGrow: 0.09 }}>
             <Link id="navLink" to="/tenant/factures">
-              {" "}
               Factures
             </Link>
           </Box>
           <Box sx={{ flexGrow: 1 }}>
             <Link id="navLink" to="/tenant/feedbacks">
-              {" "}
               FeedBack
             </Link>
           </Box>

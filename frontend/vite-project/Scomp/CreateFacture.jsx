@@ -1,56 +1,54 @@
-import React, { useState, useEffect } from "react"
-import axios from "axios"
-import "./createFacture.css"
-import { Link } from "react-router-dom"
-import SNavBar from "../Scomp/SNavBar"
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./createFacture.css";
+import { Link } from "react-router-dom";
+import SNavBar from "../Scomp/SNavBar";
 
 export default function CreateFacture() {
-  const [selectedTenant, setSelectedTenant] = useState([])
-  const [creationDate, setCreationDate] = useState("")
-  const [rentFacture, setRentFacture] = useState("")
-  const [stegFacture, setStegFacture] = useState("")
-  const [sonedFacture, setSonedFacture] = useState("")
-  const [topnetFacture, setTopnetFacture] = useState("")
-  const [notes, setNotes] = useState("")
-
+  const [selectedTenant, setSelectedTenant] = useState([]);
+  const [creationDate, setCreationDate] = useState("");
+  const [tenants_id, setTenants_id] = useState("");
+  const [rentFacture, setRentFacture] = useState("");
+  const [stegFacture, setStegFacture] = useState("");
+  const [sonedFacture, setSonedFacture] = useState("");
+  const [topnetFacture, setTopnetFacture] = useState("");
+  const [notes, setNotes] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/tenants/getAll")
-
+    axios
+      .get("http://localhost:3000/api/tenants/getAll")
       .then((response) => {
-        console.log(response.data)
-        setSelectedTenant(response.data)
-
+        console.log(response.data);
+        setSelectedTenant(response.data);
       })
       .catch((err) => {
-        console.log(err)
-      })
-  }, [])
+        console.log(err);
+      });
+  }, []);
 
   const handleSubmit = (event) => {
-    event.preventDefault()
-
-    const formData =
-    {
-      selectedTenant,
-      creationDate,
-      rentFacture,
-      stegFacture,
-      sonedFacture,
-      topnetFacture,
-      notes,
-    }
+    event.preventDefault();
+    const formData = {
+      date: creationDate,
+      rent: rentFacture * 1,
+      STEG: stegFacture * 1,
+      SONEDE: sonedFacture * 1,
+      Topnet: topnetFacture * 1,
+      decription: notes,
+      syndic_idsyndic: 1,
+      tenants_id: tenants_id,
+      tenants_syndic_idsyndic: 1,
+    };
+    console.log(formData);
     axios
       .post("http://localhost:3000/api/facture/add", formData)
       .then((response) => {
-        console.log(response.data)
+        console.log(response.data);
       })
       .catch((error) => {
-
-        console.error(error)
-      })
-  }
+        console.error(error);
+      });
+  };
 
   return (
     <div>
@@ -61,14 +59,12 @@ export default function CreateFacture() {
         <div className="column">
           <label>Select tenant</label>
           <div className="select-box">
-            <select>
+            <select onClick={(e) => setTenants_id(e.target.value)}>
               <option hidden value="">
                 Tenant
               </option>
-
               {selectedTenant.map((e) => {
-
-                return <option value={e.id}>{e.id}</option>
+                return <option value={e.id}>{e.id}</option>;
               })}
             </select>
           </div>
@@ -132,13 +128,19 @@ export default function CreateFacture() {
               onChange={(event) => setNotes(event.target.value)}
             />
 
-            <Link to="/shome"><button type="submit">Submit</button></Link>
+            <Link to="/shome">
+              <button
+                onClick={(e) => {
+                  handleSubmit(e);
+                }}
+                type="submit"
+              >
+                Submit
+              </button>
+            </Link>
           </div>
         </form>
       </section>
-
     </div>
-  )
+  );
 }
-
-

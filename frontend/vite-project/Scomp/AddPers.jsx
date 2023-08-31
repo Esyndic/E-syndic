@@ -1,52 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './AddPers.css';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Container from '@mui/material/Container';
+import SNavBar from "../Scomp/SNavBar.jsx"
+import axios from 'axios';
 
 
 function AddPers() {
+  const [name, setName] = useState("");
+  const [num, setNum] = useState("");
+  const [email, setEmail] = useState("");
+  const [role, setRole] = useState("");
+  const [image, setImage] = useState("");
+  
+  const obj={
+    name:name,
+    num:num,
+    email:email,
+    role:role,
+    image:image,
+    syndic_idsyndic:1
+  }
 
-  const addPersonnel = (obj) => {
+ 
+  const addPersonnel = () => {
     axios
       .post(`http://localhost:3000/api/personnel/add`, obj)
       .then((result) => {console.log(result)})
       .catch((error) =>{ console.log(error)});
   };
 
-
+ 
 
   return (
     <div>
-      <AppBar position="static">
-        <Container maxWidth="xl">
-          <Toolbar disableGutters>
-            <Box sx={{ flexGrow: 0 }}>
-              <Link id="title" to="/">
-                E-Syndic
-              </Link>
-            </Box>
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} />
-            <Box sx={{ flexGrow: 0 }}>contact: +21656251081</Box>
-          </Toolbar>
-        </Container>
-      </AppBar>
+<SNavBar/>
 
       <div className="container">
+    
         <div className="heading">Add Personnel</div>
         <form action="" className="form">
-          <input required className="input" type="text" name="name" id="name" placeholder="Name" />
-          <input required className="input" type="text" name="num" id="num" placeholder="Number" />
-          <input required className="input" type="text" name="email" id="email" placeholder="Email" />
-          <input required className="input" type="text" name="role" id="role" placeholder="Role" />
-          <input required className="input" type="text" name="image" id="image" placeholder="Image URL" />
+          <input required className="input" type="text" 
+          name="name" id="name" placeholder="Name" onChange={(e)=>{setName(e.target.value)}} />
+          <input required className="input" type="text" 
+          name="num" id="num" placeholder="Number" onChange={(e)=>{setNum(e.target.value)}}/>
+          <input required className="input" type="text" 
+          name="email" id="email" placeholder="Email" onChange={(e)=>{setEmail(e.target.value)}}/>
+          <input required className="input" type="text" 
+          name="role" id="role" placeholder="Role"onChange={(e)=>{setRole(e.target.value)}} />
+          <input required className="input" type="text" 
+          name="image" id="image" placeholder="Image URL" onChange={(e)=>{setImage(e.target.value)}}/>
 
-          <input className="addbutton" 
+        <Link to="/personnels"><input className="addbutton" 
                 type="submit" 
-                value="Add Personnel" />
-
+                value="Add Personnel" 
+                  onClick={addPersonnel}
+                />  </Link>
+          
         </form>
       </div>
     </div>

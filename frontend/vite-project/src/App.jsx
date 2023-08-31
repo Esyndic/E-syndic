@@ -20,11 +20,8 @@ import THome from "../Tcomp/THome.jsx";
 import Factures from "../Tcomp/Factures";
 import Claims from "../Tcomp/Claims.jsx";
 import Profile from "../Tcomp/Profile";
-<<<<<<< HEAD
-import Tenants from "../Scomp/Tenants.jsx";
+
 import Sprofile from "../Scomp/Sprofile";
-=======
->>>>>>> f78ba1f65dc0902ac591e2099d2bfc2e27df6d81
 
 function App() {
   const [up, setup] = useState({});
@@ -42,15 +39,12 @@ function App() {
         <Route path="/shome" element={<Shome />} />
         <Route path="/personnels" element={<Personnels upval={upval} />} />
         <Route path="/tenants" element={<Tenants />} />
-<<<<<<< HEAD
         <Route path="/sprofile" element={<Sprofile />} />
 
-=======
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/createFacture" element={<CreateFacture />} />
         <Route path="/uppPers" element={<UppPers upval={up} />} />
         <Route path="/addPer" element={<AddPers />} />
->>>>>>> f78ba1f65dc0902ac591e2099d2bfc2e27df6d81
 
         <Route path="/Thome" element={<THome />} />
         <Route path="/tenant/factures" element={<Factures />} />

@@ -39,23 +39,6 @@ function Cards() {
           </div>
         </div>
       </article>
-      <article class="article-wrapper">
-        <div>
-          <img
-            class="rounded-lg container-project"
-            src="https://www.pngitem.com/pimgs/m/76-768106_feedback-icon-png-transparent-png.png"
-          />
-        </div>
-        <div class="project-info">
-          <div class="flex-pr">
-            <div class="project-title">
-              <Link to="/tenant/feedbacks">
-                Send<br/> Feedbacks
-              </Link>
-            </div>
-          </div>
-        </div>
-      </article>
     </div>
   );
 }

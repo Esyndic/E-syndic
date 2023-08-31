@@ -15,13 +15,13 @@ import CreateFacture from "../Scomp/CreateFacture.jsx";
 import UppPers from "../Scomp/UppPers.jsx";
 import AddPers from "../Scomp/AddPers";
 import Tenants from "../Scomp/Tenants.jsx";
+import Sprofile from "../Scomp/Sprofile";
 
 import THome from "../Tcomp/THome.jsx";
 import Factures from "../Tcomp/Factures";
 import Claims from "../Tcomp/Claims.jsx";
 import Profile from "../Tcomp/Profile";
 
-import Sprofile from "../Scomp/Sprofile";
 
 function App() {
   const [up, setup] = useState({});
@@ -50,9 +50,6 @@ function App() {
         <Route path="/tenant/factures" element={<Factures />} />
         <Route path="/claims" element={<Claims />} />
         <Route path="/profile" element={<Profile />} />
-
-
-        
       </Routes>
     </BrowserRouter>
   );

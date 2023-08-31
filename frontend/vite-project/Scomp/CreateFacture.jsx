@@ -58,9 +58,9 @@ export default function CreateFacture() {
             <option hidden value="">
               Tenant
             </option>
-            {selectedTenant.map(() => {
+            {/* {selectedTenant.map(() => {
               <option value={selectedTenant.id}>{selectedTenant.id}</option>
-            })}
+            })} */} 
           </select>
         </div>
         <div className="input-box">
@@ -130,4 +130,3 @@ export default function CreateFacture() {
   )
 }
 
-export default CreateFacture

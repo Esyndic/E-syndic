@@ -17,7 +17,7 @@ function AddPers() {
     email: email,
     role: role,
     image: image,
-    syndic_idsyndic: 1,
+    syndic_idsyndic: 1
   };
 
   const addPersonnel = () => {
@@ -35,7 +35,7 @@ function AddPers() {
     <div>
       <SNavBar />
 
-      <div className="container">
+      <div className="container1">
         <div className="heading">Add Personnel</div>
         <form action="" className="form">
           <input
@@ -104,7 +104,8 @@ function AddPers() {
               setImage(e.target.value);
             }}
           />
-          <button>click me </button>
+          
+
           <Link to="/personnels">
             <input
               className="addbutton"

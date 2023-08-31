@@ -76,7 +76,7 @@ module.exports = {
   
             if (auth) {
               const token =  createToken(user.id,"tenant")
-              res.cookie("jwt",token,{httpOnly:true})
+              res.cookie("jwt",token)
               res.status(200).json({ message: "Successfully logged in", user });
             } else {
               res.status(204).json( {message:"Incorrect password"});

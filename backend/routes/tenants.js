@@ -18,8 +18,6 @@ router.get("/getAll", getAllTenants);
 
 router.get("/:email", getOneTenants);
 
-
-
 router.post("/add", addTenants);
 
 router.delete("/delete/:id", deleteTenants);

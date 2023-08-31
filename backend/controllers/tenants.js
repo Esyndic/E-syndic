@@ -43,6 +43,7 @@ module.exports = {
 
   getOneTenants: function (req, res) {
 
+
     tenants.getOne(function (err, results) {
 
       if (err) res.status(500).send(err);

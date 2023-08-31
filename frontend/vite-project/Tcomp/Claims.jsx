@@ -3,7 +3,35 @@ import { Link } from "react-router-dom";
 import TNavbar from "./TNavBar.jsx";
 import "./claims.css";
 function Claims(props) {
-  
+  const [claims, setClaims] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    contactNumber: "",
+    message: "",
+  });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    axios
+      .post("http://localhost:3000/api/claims/add", claims)
+      .then((response) => {
+        console.log("claims sent :", response.data);
+      })
+      .catch((error) => {
+        console.error("Error", error);
+      });
+  };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setClaims({
+      ...Claims,
+      [name]: value,
+    });
+  };
+
   return (
     <div>
       <div>
@@ -33,49 +61,71 @@ function Claims(props) {
                   <label>
                     <input
                       required=""
-                      placeholder=""
+                      placeholder="first name"
                       type="text"
                       class="input"
+                      value={claims.firstName}
+                      onChange={(e) => {
+                        handleInputChange(e);
+                      }}
                     />
-                    <span>first name</span>
                   </label>
 
                   <label id="label2">
                     <input
                       required=""
-                      placeholder=""
+                      placeholder="last name"
                       type="text"
                       class="input"
+                      value={claims.lastName}
+                      onChange={(e) => {
+                        handleInputChange(e);
+                      }}
                     />
-                    <span>last name</span>
                   </label>
                 </div>
 
                 <label>
                   <input
                     required=""
-                    placeholder=""
+                    placeholder="email"
                     type="email"
                     class="input"
+                    value={claims.email}
+                    onChange={(e) => {
+                      handleInputChange(e);
+                    }}
                   />
-                  <span>email</span>
                 </label>
 
                 <label>
-                  <input required="" type="tel" placeholder="" class="input" />
-                  <span>contact number</span>
+                  <input
+                    required=""
+                    type="tel"
+                    placeholder="contact number"
+                    class="input"
+                  />
                 </label>
                 <label>
                   <textarea
                     required=""
                     rows="3"
-                    placeholder=""
+                    placeholder="message"
                     class="input01"
+                    value={claims.message}
+                    onChange={(e) => {
+                      handleInputChange(e);
+                    }}
                   ></textarea>
-                  <span>message</span>
                 </label>
 
-                <button class="fancy" href="#">
+                <button
+                  class="fancy"
+                  href="#"
+                  onClick={(e) => {
+                    handleSubmit(e);
+                  }}
+                >
                   <span class="top-key"></span>
                   <span class="text">Submit</span>
                   <span class="bottom-key-1"></span>

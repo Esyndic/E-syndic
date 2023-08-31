@@ -7,7 +7,7 @@ import SNavBar from "../Scomp/SNavBar";
 export default function CreateFacture() {
   const [selectedTenant, setSelectedTenant] = useState([]);
   const [creationDate, setCreationDate] = useState("");
-  const [id_syndic, setIdSyndic] = useState("");
+  const [tenants_id, setTenants_id] = useState("");
   const [rentFacture, setRentFacture] = useState("");
   const [stegFacture, setStegFacture] = useState("");
   const [sonedFacture, setSonedFacture] = useState("");
@@ -35,7 +35,9 @@ export default function CreateFacture() {
       SONEDE: sonedFacture * 1,
       Topnet: topnetFacture * 1,
       decription: notes,
-      tenants_id: id_syndic
+      syndic_idsyndic: 1,
+      tenants_id: tenants_id,
+      tenants_syndic_idsyndic: 1,
     };
     console.log(formData);
     axios
@@ -57,20 +59,13 @@ export default function CreateFacture() {
         <div className="column">
           <label>Select tenant</label>
           <div className="select-box">
-            <select>
+            <select onClick={(e) => setTenants_id(e.target.value)}>
               <option hidden value="">
                 Tenant
               </option>
 
               {selectedTenant.map((e) => {
-                return (
-                  <option
-                    value={id_syndic}
-                    onChange={(event) => setIdSyndic(event.target.value)}
-                  >
-                    {e.id}
-                  </option>
-                );
+                return <option value={e.id}>{e.id}</option>;
               })}
             </select>
           </div>
@@ -136,8 +131,8 @@ export default function CreateFacture() {
 
             <Link to="/shome">
               <button
-                onClick={() => {
-                  handleSubmit;
+                onClick={(e) => {
+                  handleSubmit(e);
                 }}
                 type="submit"
               >

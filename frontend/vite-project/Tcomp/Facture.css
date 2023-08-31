@@ -1,20 +1,139 @@
-.card {
-    margin-left: auto;
-    margin-left: 50px;
-    width: 690px;
-    height: 254px;
-    background: rgb(46, 44, 44);
-    transition: all 300ms;
-   }
-   
-   .card:hover {
-    opacity: 0.8;
-    transform: scale(1.80);
-   }
-   .facture-list{
-    color: aliceblue;
+.parent {
+   width: 500px;
+   padding: 20px;
+   perspective: 1000px;
+}
 
-   }
-   .p{
-color: beige;
-   }
+#fact {
+   display: flex;
+}
+
+.fcard {
+   padding-top: 50px;
+   border: 3px solid rgb(255, 255, 255);
+   transform-style: preserve-3d;
+   background: linear-gradient(135deg, #0000 18.75%, #f3f3f3 0 31.25%, #0000 0),
+       repeating-linear-gradient(45deg, #f3f3f3 -6.25% 6.25%, #ffffff 0 18.75%);
+   background-size: 60px 60px;
+   background-position: 0 0, 0 0;
+   background-color: #f0f0f0;
+   width: 100%;
+   box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
+   transition: all 0.5s ease-in-out;
+}
+
+.content-box {
+   background:#3498db;
+   padding: 60px 25px 25px 25px;
+   transform-style: preserve-3d;
+}
+
+.content-box .card-title {
+   display: inline-block;
+   color: white;
+   font-size: 25px;
+   font-weight: 900;
+   transition: all 0.5s ease-in-out;
+   transform: translate3d(0px, 0px, 50px);
+}
+
+.content-box .card-title:hover {
+   transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .card-content {
+   margin-top: 10px;
+   font-size: 20px;
+   font-weight: 700;
+   color: #f2f2f2;
+   transition: all 0.5s ease-in-out;
+   transform: translate3d(0px, 0px, 30px);
+}
+
+.date-box {
+   position: absolute;
+   top: 30px;
+   right: 30px;
+   height: 60px;
+   width: 60px;
+   background: white;
+   border: 1px solid rgb(7, 185, 255);
+   padding: 10px;
+   transform: translate3d(0px, 0px, 80px);
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 17px 10px -10px;
+}
+
+.date-box span {
+   display: block;
+   text-align: center;
+}
+
+.date-box .month {
+   color: rgb(4, 193, 250);
+   font-size: 9px;
+   font-weight: 700;
+}
+
+.date-box .date {
+   font-size: 20px;
+   font-weight: 900;
+   color: rgb(4, 193, 250);
+}
+
+/* Styling for <li> elements */
+li {
+   color: black;
+   margin: 8px 0;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+}
+
+/* Styling for <li> elements inside an unordered list (<ul>) */
+ul li {
+   list-style-type: disc;
+}
+
+.facture-list {
+   list-style-type: none;
+   padding: 0;
+   border: 4px black;
+ }
+
+ 
+ .Tenant {
+   color: white;
+   font-size: 18px;
+   font-weight: 700;
+   margin-bottom: 5px;
+ }
+ 
+ .fcard p {
+   font-size: 16px;
+   font-weight: 600;
+   margin: 5px 0;
+
+ }
+ 
+ .fcard p:last-child {
+   margin-bottom: 10px;
+ }
+ 
+ .fcard p:nth-child(2) {
+   font-weight: 700;
+ }
+ 
+ .fcard p:nth-child(3),
+ .fcard p:nth-child(4),
+ .fcard p:nth-child(5),
+ .fcard p:nth-child(6),
+ .fcard p:nth-child(7) {
+   color: #444;
+   font-weight: 600;
+ }
+ 
+ .fcard p:nth-child(8) {
+   font-weight: 700;
+ }
+ 
+
+ 

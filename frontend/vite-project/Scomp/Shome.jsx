@@ -1,38 +1,66 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../Scomp/SNavBar.jsx";
-import './s.css';
+//import './s.css';
 import Scard from "../Scomp/Scard.jsx";
 function Home(props) {
   return (
     <div>
       <div>
         <NavBar />
-        <div />
-        <br></br>
+
         <section class="section-2">
           <div class="sheet">
-            <img
-              class="img2"
-              src="https://fac.img.pmdstatic.net/fit/https.3A.2F.2Fi.2Epmdstatic.2Enet.2Ffac.2F2022.2F01.2F12.2F895946b4-9bbf-4f04-9228-cd4748f48d86.2Ejpeg/1200x600/quality/80/crop-from/center/focus-point/657%2C419/copropriete-tout-ce-qu-il-faut-savoir-pour-changer-de-syndic.jpeg"
-            />
-            <br></br>
-            <p class="description">
-            Welcome to E-SYNDIC, your ultimate solution for efficient co-ownership management! With over a decade of experience, we've been simplifying the lives of co-owners just like you. Our platform offers unparalleled clarity and effectiveness, designed especially for dedicated administrators like yourself.
-
-Say goodbye to the complexities of managing co-ownership – E-SYNDIC empowers you with complete freedom. Our team of experts is here to provide unwavering support, ensuring all your needs are met seamlessly.
-
-Let's join hands and craft a sustainable condominium project together. Welcome to a new era of hassle-free syndic administration!
+            <p class="parag">
+            <img id="img2" src="https://www.coprolib.com/wp-content/uploads/2019/12/visuel-communaute-2.svg"></img>
+            <br/>
+            <br/>
+            <br/>
+              Hello! Welcome to our platform's interface. This is your space to
+              effortlessly submit claims, provide valuable feedback, and
+              conveniently access your invoices. If you encounter any challenges
+              or have questions, don't hesitate to reach out. Our dedicated
+              support team is available round the clock, 7 days a week, to
+              assist you. Your satisfaction is our priority, and we're here to
+              serve you anytime, day or night.
+              <br/>
+              <br/>
+            
+              <br/>
+              <Scard />
             </p>
-            <Scard/>
           </div>
         </section>
-        <section class="section-3">
-          
-        
 
-
-        </section>
+        <footer class="footer">
+          <div class="footer-div">
+            <button type="button" class="social-button">
+              <a class="footer-link" href="https://www.facebook.com">
+                <img
+                  class="icon"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png"
+                />
+              </a>
+            </button>
+            <button type="button" class="social-button">
+              <a class="footer-link" href="https://www.instagram.com">
+                <img
+                  class="icon"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png"
+                />
+              </a>
+            </button>
+            <button type="button" class="social-button">
+              <a class="footer-link" href="https://www.youtube.com">
+                <img
+                  class="icon"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png"
+                />
+              </a>
+            </button>
+          </div>
+          <div class="text-center">© 2023 - All rights reserved</div>
+        </footer>
       </div>
     </div>
   );

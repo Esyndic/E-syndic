@@ -3,7 +3,7 @@ const config = {
   host: "localhost",
   user: "root",
   password: "123456",
-  database: "mydb",
+  database: "e-syndic",
 }
 // Create a database connection and export it from this file.
 const connection = mysql.createConnection(config);

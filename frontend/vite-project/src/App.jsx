@@ -14,14 +14,13 @@ import Feedback from "../Scomp/feedbacks.jsx";
 import CreateFacture from "../Scomp/CreateFacture.jsx";
 import UppPers from "../Scomp/UppPers.jsx";
 import AddPers from "../Scomp/AddPers";
-import Tenants from "../Scomp/Tenants.jsx";
+import Tenants from "../Scomp/Tenants.jsx"; 
 import Sprofile from "../Scomp/Sprofile";
 
 import THome from "../Tcomp/THome.jsx";
 import Factures from "../Tcomp/Factures";
 import Claims from "../Tcomp/Claims.jsx";
 import Profile from "../Tcomp/Profile";
-import Tenants from "../Scomp/Tenants.jsx"
 import AddTenant from "../Scomp/AddTenant";
 
 
@@ -54,7 +53,6 @@ function App() {
         <Route path="/createFacture" element={<CreateFacture />} />
         <Route path="/uppPers" element={<UppPers upval={up} />} />
         <Route path="/addPer" element={<AddPers />} />
-        <Route path="/tenants" element={<Tenants />} />
         <Route path="/addTenant" element={<AddTenant />} />
         <Route path="/uppTenant" element={<UppTenant />} />
 

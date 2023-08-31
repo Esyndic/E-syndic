@@ -2,7 +2,7 @@ const mysql = require("mysql2");
 const config = {
   host: "localhost",
   user: "root",
-  password: "A.m.i.n.e1",
+  password: "hamed.24887867",
   database: "e-syndic",
 }
 // Create a database connection and export it from this file.

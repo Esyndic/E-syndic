@@ -93,7 +93,7 @@ function NavBar() {
             >
               <MenuItem onClick={handleCloseUserMenu}>
                 <Typography textAlign="center">
-                  <Link to="/profile">Profile</Link>
+                  <Link to="/sprofile">Profile</Link>
                 </Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseUserMenu}>

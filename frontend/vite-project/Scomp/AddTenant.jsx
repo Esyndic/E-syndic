@@ -1,66 +1,65 @@
-import React, { useState } from 'react';
+import React from 'react'
 import { Link } from 'react-router-dom';
-import './AddPers.css';
+import './AddTenant.css';
 import SNavBar from "../Scomp/SNavBar.jsx"
 import axios from 'axios';
 
 
-function AddPers() {
+
+function AddTenant() {
+
   const [name, setName] = useState("");
-  const [num, setNum] = useState("");
   const [email, setEmail] = useState("");
-  const [role, setRole] = useState("");
+  const [password, setPassword] = useState("");
   const [image, setImage] = useState("");
-   
+
   
   const obj={
     name:name,
-    num:num,
     email:email,
-    role:role,
+    password:password,
     image:image,
     syndic_idsyndic:1
   }
 
- 
-  const addPersonnel = () => {
+  const addTenant = () => {
     axios
-      .post(`http://localhost:3000/api/personnel/add`, obj)
+      .post(`http://localhost:3000/api/tenants/add`, obj)
       .then((result) => {console.log(result)})
       .catch((error) =>{ console.log(error)});
   };
 
- 
+
 
   return (
     <div>
-<SNavBar/>
-
+      <SNavBar/>
       <div className="container">
     
-        <div className="heading">Add Personnel</div>
+        <div className="heading">Add Tenant</div>
         <form action="" className="form">
           <input required className="input" type="text" 
           name="name" id="name" placeholder="Name" onChange={(e)=>{setName(e.target.value)}} />
           <input required className="input" type="text" 
-          name="num" id="num" placeholder="Number" onChange={(e)=>{setNum(e.target.value)}}/>
-          <input required className="input" type="text" 
           name="email" id="email" placeholder="Email" onChange={(e)=>{setEmail(e.target.value)}}/>
           <input required className="input" type="text" 
-          name="role" id="role" placeholder="Role"onChange={(e)=>{setRole(e.target.value)}} />
+          name="password" id="password" placeholder="Password" onChange={(e)=>{setPassword(e.target.value)}} />
           <input required className="input" type="text" 
           name="image" id="image" placeholder="Image URL" onChange={(e)=>{setImage(e.target.value)}}/>
 
-        <Link to="/personnels"><input className="addbutton" 
+        <Link to="/tenants"><input className="addbutton" 
                 type="submit" 
-                value="Add Personnel" 
-                  onClick={addPersonnel}
+                value="Add Tenant" 
+                  onClick={AddTenant}
                 />  </Link>
           
         </form>
       </div>
+     
+
+
     </div>
-  );
+  )
 }
 
-export default AddPers;
+export default AddTenant

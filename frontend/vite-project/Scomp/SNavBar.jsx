@@ -64,7 +64,7 @@ function NavBar() {
           <Box sx={{ flexGrow: 1 }}><Link id="navLink" to="/claims"> </Link></Box>
           <Box sx={{ flexGrow: 0.09 }}><Link id="navLink" to="/personnels"> Personels</Link></Box>
           <Box sx={{ flexGrow: 0.09}}><Link id="navLink" to="/tenants"> Tenants</Link></Box>
-          <Box sx={{ flexGrow: 0.09 }}><Link id="navLink" to="/feedback"> Feedback</Link></Box>
+          <Box sx={{ flexGrow: 0.09 }}><Link id="navLink" to="/feedback"> Feedback/Claims</Link></Box>
           <Box sx={{ flexGrow: 1 }}><Link id="navLink" to="/createFacture"> Factures</Link></Box>
 
 
@@ -93,7 +93,7 @@ function NavBar() {
             >
               <MenuItem onClick={handleCloseUserMenu}>
                 <Typography textAlign="center">
-                  <Link to="/profile">Profile</Link>
+                  <Link to="/sprofile">Profile</Link>
                 </Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseUserMenu}>

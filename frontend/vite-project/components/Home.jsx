@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar.jsx";
-import Navbar from "../Scomp/SNavBar.jsx";
 function Home(props) {
   return (
     <div>
@@ -31,7 +30,7 @@ function Home(props) {
 
             <button>
               <Link
-                to="/loginastenant"
+                to="/Thome"
                 class="button"
                 onClick={() => {
                   setInter(1);

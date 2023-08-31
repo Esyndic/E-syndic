@@ -6,7 +6,7 @@ function Scard() {
     
 
     
-<div>
+<div id="tcards">
   
 <article class="article-wrapper">
   <Link to = "/personnels">

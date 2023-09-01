@@ -11,7 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
-import Cookies from "js-cookie";
+
 
 function NavBar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);

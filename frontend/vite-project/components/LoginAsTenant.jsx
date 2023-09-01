@@ -10,7 +10,7 @@ function LoginAsTenant(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:3000/api/tenant/login", {
+      .post("http://localhost:3000/api/tenants/login", {
         email: email,
         password: pwd,
       })
@@ -68,7 +68,7 @@ function LoginAsTenant(props) {
                   handleSubmit(e);
                 }}
               >
-                <Link to="/Thome"> Sign in</Link>
+                 Sign in
               </button>
             </form>
             <img

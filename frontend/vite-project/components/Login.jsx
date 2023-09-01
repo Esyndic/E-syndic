@@ -70,7 +70,7 @@ function Login(props) {
                   handleSubmit(e);
                 }}
               >
-                <Link to="/shome"> Sign in</Link>
+                Sign in
               </button>
             </form>
           </div>

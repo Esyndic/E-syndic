@@ -53,6 +53,7 @@
 
 /*Add button*/
 .addbutton {
+  margin-left: 45%;
   position: relative;
   width: 200px;
   height: 400px;
@@ -142,12 +143,14 @@
 }
 
 
-
+#coll{
+  margin:20px;
+}
 /*Delete button*/
 .delete-button {
   width: 40px;
   height: 40px;
-  margin-left:120px;
+  margin-left:250px;
   margin-top:-40px;
   border-radius: 50%;
   background-color: rgb(86, 103, 188);

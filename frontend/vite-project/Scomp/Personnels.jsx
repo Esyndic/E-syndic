@@ -18,6 +18,7 @@ function Personnels(props) {
       .catch(function (error) {
         console.log(error);
       });
+    setTrigger(!trigger);
   }, [trigger]);
 
   const deletepersonnel = (id) => {
@@ -45,8 +46,8 @@ function Personnels(props) {
           <br></br>
           <br></br>
           <br></br>
-          <div id="centrage">
-            <div>
+          <div id="centrage" >
+            <div id="flex" >
               {data &&
                 data.map((e, i) => {
                   return (
@@ -70,6 +71,9 @@ function Personnels(props) {
                               <br />
                               <span>Role:{e.role}</span>
                               <br />
+                              </p>
+                              </div>
+                              <div id="coll">
                               <button
                                 className="edit-button"
                                 onClick={() => {
@@ -77,41 +81,40 @@ function Personnels(props) {
                                 }}
                               >
                                 <Link to="/uppPers">
-                                  {" "}
-                                  <svg
-                                    className="edit-svgIcon"
-                                    viewBox="0 0 512 512"
-                                  ></svg>
+                                  edit
                                 </Link>
+
                               </button>
                               <button
                                 className="delete-button"
                                 onClick={() => {
                                   deletepersonnel(e.idpersonnel);
                                 }}
-                              >
+                              > 
                                 <svg
                                   className="delete-svgIcon"
                                   viewBox="0 0 448 512"
                                 ></svg>
                               </button>
-                            </p>
-                          </div>
+                              </div>
+                          
                         </>
                       }
                     </div>
                   );
                 })}
             </div>
-            <div>
+            
+          </div>
+
+        </p>
+        <div>
               <button type="button" class="addbutton">
                 <span class="addbutton__text">
                   <Link to="/addPer">Add Personnel</Link>
                 </span>
               </button>
             </div>
-          </div>
-        </p>
         <br></br>
         <footer class="footer">
           <div class="footer-div">

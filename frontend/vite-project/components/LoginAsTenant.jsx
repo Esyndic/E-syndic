@@ -28,7 +28,7 @@ function LoginAsTenant() {
         cookie.set("jwt",result.data.token)
         navigate("/thome") } 
       else {alert ("wrong credential")}
-  }).catch((err)=>{console.log(err)})
+  }).catch((err)=>{console.log(err)})}
   return (
     <MDBContainer fluid className="p-4">
       <MDBRow>
@@ -127,6 +127,6 @@ function LoginAsTenant() {
       </MDBRow>
     </MDBContainer>
   );
-}}
+  }
 
 export default LoginAsTenant;

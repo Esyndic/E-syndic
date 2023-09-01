@@ -1,4 +1,5 @@
 import * as React from "react";
+import cookie from "js-cookie"
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -10,6 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
 
 function NavBar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -98,7 +100,7 @@ function NavBar() {
               </MenuItem>
               <MenuItem onClick={handleCloseUserMenu}>
                 <Typography textAlign="center">
-                  <Link to="http://localhost:5173">Logout</Link>
+                  <Link to="http://localhost:5173" onClick={()=>{cookie.remove("jwt")}} >Logout</Link>
                 </Typography>
               </MenuItem>
             </Menu>

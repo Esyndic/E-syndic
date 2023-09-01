@@ -44,11 +44,12 @@ function Feedbacks(props) {
                         <span class="card-title">claim</span>
                         <ol className="claim-list">
                           <li key={claim.id}>
-                            <p></p>
+                           
                             <p className="Tenant">id claim: {claim.idclaims}</p>
-                            <p>name : {claim.name}</p>
-                            <p>num : {claim.num}</p>
-                            <p>email: {claim.email}</p>
+                            <p className="Tenant">name : {claim.name}</p>
+                            <p className="Tenant">num : {claim.num}</p>
+                            <p className="Tenant">email: {claim.email}</p>
+                            <p className="Tenant"> message: {claim.message}</p>
                           </li>
                         </ol>
                       </div>

@@ -9,7 +9,7 @@ module.exports = {
 
   add: async function (callback, claimsData) {
     const sql =
-      "INSERT INTO claims (name,message,num,tenants_id,tenants_syndic_idsyndic,syndic_idsyndic,email) VALUES (?,?,?,?,?,?,?,?)";
+      "INSERT INTO claims (name,message,num,tenants_id,tenants_syndic_idsyndic,syndic_idsyndic,email) VALUES (?,?,?,?,?,?,?)";
     conn.query(
       sql,
       [

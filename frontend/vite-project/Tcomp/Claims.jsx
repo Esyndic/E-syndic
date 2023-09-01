@@ -1,12 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import TNavbar from "./TNavBar.jsx";
+
+import cookie from "js-cookie"
+import axios from "axios";
 import "./claims.css";
 function Claims(props) {
+  const [TName,setTName]=useState("")
+  const [Id,setId]=useState("")
+  const [email,setemail]=useState("")
+  const [num,setnum]=useState("")
+  const [syndicid,setsyndicid]=useState("")
+  const [message,setmessage]=useState("ffff")
+  
+  useEffect(()=>{
+    axios.post("http://localhost:3000/api/auth",{cookie :cookie.get("jwt")},{ withCredentials: true }).then((response)=>{ console.log(response.data);
+
+     setTName(response.data.payload.name);setId(response.data.payload.id)
+
+     ;axios.get(`http://localhost:3000/api/tenants/${Id}`).then((response)=>{ console.log(response.data); setemail(response.data[0].email);setsyndicid(response.data[0].syndic_idsyndic)}).catch((err)=>{console.log(err)})
+    }).catch((err)=>{console.log(err)})
+    
+  
+  },[])
   const [claims, setClaims] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
+   
+   
     contactNumber: "",
     message: "",
   });
@@ -15,7 +34,7 @@ function Claims(props) {
     event.preventDefault();
 
     axios
-      .post("http://localhost:3000/api/claims/add", claims)
+      .post("http://localhost:3000/api/claims/add", {"name":TName ,"email":email,"tenants_syndic_idsyndic":syndicid,"syndic_idsyndic":syndicid,"message":message,"num":num,"tenants_id":Id})
       .then((response) => {
         console.log("claims sent :", response.data);
       })
@@ -24,17 +43,12 @@ function Claims(props) {
       });
   };
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setClaims({
-      ...Claims,
-      [name]: value,
-    });
-  };
-
+  
   return (
     <div>
+      {console.log(email,syndicid)}
       <div>
+        
         <TNavbar />
 
         <section class="section-2">
@@ -57,34 +71,7 @@ function Claims(props) {
             <br />
             <div class="ccards">
               <form class="cform">
-                <div class="flex">
-                  <label>
-                    <input
-                      required=""
-                      placeholder="first name"
-                      type="text"
-                      class="input"
-                      value={claims.firstName}
-                      onChange={(e) => {
-                        handleInputChange(e);
-                      }}
-                    />
-                  </label>
-
-                  <label id="label2">
-                    <input
-                      required=""
-                      placeholder="last name"
-                      type="text"
-                      class="input"
-                      value={claims.lastName}
-                      onChange={(e) => {
-                        handleInputChange(e);
-                      }}
-                    />
-                  </label>
-                </div>
-
+                
                 <label>
                   <input
                     required=""
@@ -93,7 +80,7 @@ function Claims(props) {
                     class="input"
                     value={claims.email}
                     onChange={(e) => {
-                      handleInputChange(e);
+                      setemail(e.target.value);
                     }}
                   />
                 </label>
@@ -104,6 +91,9 @@ function Claims(props) {
                     type="tel"
                     placeholder="contact number"
                     class="input"
+                    onChange={(e) => {
+                      setnum(e.target.value);
+                    }}
                   />
                 </label>
                 <label>
@@ -114,7 +104,7 @@ function Claims(props) {
                     class="input01"
                     value={claims.message}
                     onChange={(e) => {
-                      handleInputChange(e);
+                      setmessage(e.target.value);
                     }}
                   ></textarea>
                 </label>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useState}from 'react'
 import { Link } from 'react-router-dom';
 import './AddTenant.css';
 import SNavBar from "../Scomp/SNavBar.jsx"
@@ -34,7 +34,7 @@ function AddTenant() {
   return (
     <div>
       <SNavBar/>
-      <div className="container">
+      <div className="container2">
     
         <div className="heading">Add Tenant</div>
         <form action="" className="form">
@@ -50,7 +50,7 @@ function AddTenant() {
         <Link to="/tenants"><input className="addbutton" 
                 type="submit" 
                 value="Add Tenant" 
-                  onClick={AddTenant}
+                  onClick={addTenant}
                 />  </Link>
           
         </form>

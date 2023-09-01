@@ -9,18 +9,20 @@ function AddPers(props) {
   const [num, setNum] = useState("");
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
+  const [uploadedImageUrl, setUploadedImageUrl] = useState("");
   const [image, setImage] = useState("");
 
-  const obj = {
-    name: name,
-    num: num,
-    email: email,
-    role: role,
-    image: image,
-    syndic_idsyndic: 1,
-  };
-
-  const addPersonnel = () => {
+  const addPersonnel = (e) => {
+    e.preventDefault();
+    const obj = {
+      name: name,
+      num: num,
+      email: email,
+      role: role,
+      image: uploadedImageUrl,
+      syndic_idsyndic: 1,
+    };
+    console.log(obj, "the obj");
     axios
       .post(`http://localhost:3000/api/personnel/add`, obj)
       .then((result) => {
@@ -29,13 +31,27 @@ function AddPers(props) {
       .catch((error) => {
         console.log(error);
       });
+    console.log(obj);
+  };
+  const uploadImage = () => {
+    const formaData = new FormData();
+    formaData.append("file", image);
+    formaData.append("upload_preset", "t2mwv0gn");
+
+    axios
+      .post("https://api.cloudinary.com/v1_1/djjf52bsy/upload", formaData)
+      .then((response) => {
+        response.data.secure_url.length > 3
+          ? setUploadedImageUrl(response.data.secure_url)
+          : console.log("not done");
+        console.log(response.data.secure_url, "state image upload");
+      });
   };
 
   return (
     <div>
       <SNavBar />
       <div />
-
       <section class="section-2">
         <p class="parag">
           Hello! Welcome to our platform's interface.Manage your co-ownership in
@@ -47,7 +63,7 @@ function AddPers(props) {
           <div id="adlog">
             <div className="container2">
               <div className="heading">Add Personnel</div>
-              <form action="" className="form">
+              <form onSubmit={(e) => addPersonnel(e)} className="form">
                 <input
                   required
                   className="inputs"
@@ -95,33 +111,23 @@ function AddPers(props) {
                 <input
                   required
                   className="inputs"
-                  type="text"
-                  name="image"
-                  id="image"
-                  placeholder="Image URL"
-                  onChange={(e) => {
-                    setImage(e.target.value);
-                  }}
-                />
-                <input
-                  required
-                  className="inputs"
                   type="file"
                   name="image"
                   id="image"
                   placeholder="Image URL"
                   onChange={(e) => {
-                    setImage(e.target.value);
+                    setImage(e.target.files[0]);
                   }}
                 />
-
+                <button
+                  onClick={() => {
+                    uploadImage();
+                  }}
+                >
+                  Upload Image
+                </button>
                 <Link to="/personnels">
-                  <input
-                    className="addbutton"
-                    type="submit"
-                    value="Add Personnel"
-                    onClick={addPersonnel}
-                  />{" "}
+                  <button className="addbutton" type="submit" />
                 </Link>
               </form>
             </div>
@@ -161,5 +167,4 @@ function AddPers(props) {
     </div>
   );
 }
-
 export default AddPers;

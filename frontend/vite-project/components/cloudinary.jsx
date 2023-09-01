@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 
-const CloudinaryUploader = () => {
+const CloudinaryUploader = (props) => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [uploadedImageUrl, setUploadedImageUrl] = useState('');
+  const [uploadedImageUrl, setUploadedImageUrl] = useState("");
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -13,12 +13,12 @@ const CloudinaryUploader = () => {
   const handleImageUpload = async () => {
     if (!selectedImage) return;
 
-    const cloudName = 'dcygttfkr'; // Replace with your Cloudinary cloud name
-    const uploadPreset = 'sdzk10qw'; // Replace with your Cloudinary upload preset
+    const cloudName = "dcygttfkr"; // Replace with your Cloudinary cloud name
+    const uploadPreset = "sdzk10qw"; // Replace with your Cloudinary upload preset
 
     const formData = new FormData();
-    formData.append('file', selectedImage);
-    formData.append('upload_preset', uploadPreset);
+    formData.append("file", selectedImage);
+    formData.append("upload_preset", uploadPreset);
 
     try {
       const response = await axios.post(
@@ -26,16 +26,17 @@ const CloudinaryUploader = () => {
         formData,
         {
           headers: {
-            'Content-Type': 'multipart/form-data',
+            "Content-Type": "multipart/form-data",
           },
         }
       );
 
       setUploadedImageUrl(response.data.secure_url);
-      console.log(uploadedImageUrl)
+      console.log(uploadedImageUrl);
     } catch (error) {
-      console.error('Error uploading image:', error);
+      console.error("Error uploading image:", error);
     }
+    props.upload(uploadedImageUrl);
   };
 
   return (
@@ -45,7 +46,11 @@ const CloudinaryUploader = () => {
       {uploadedImageUrl && (
         <div>
           <h2>Uploaded Image:</h2>
-          <img src={uploadedImageUrl} alt="Uploaded" style={{ maxWidth: '100%' }} />
+          <img
+            src={uploadedImageUrl}
+            alt="Uploaded"
+            style={{ maxWidth: "100%" }}
+          />
         </div>
       )}
     </div>

@@ -16,7 +16,8 @@ function Cards() {
           <div class="flex-pr">
             <div class="project-title">
               <Link to="/claims">
-                Send <br/>Claims
+                Send <br />
+                Claims
               </Link>
             </div>
           </div>

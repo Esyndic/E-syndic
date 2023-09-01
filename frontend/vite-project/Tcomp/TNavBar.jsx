@@ -50,7 +50,7 @@ function Navbar() {
               Claims
             </Link>
           </Box>
-          <Box sx={{ flexGrow: 0.09 }}>
+          <Box sx={{ flexGrow: 1}}>
             <Link id="navLink" to="/tenant/factures">
               Factures
             </Link>

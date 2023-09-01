@@ -1,44 +1,101 @@
 import React, { useEffect, useState } from "react";
-
 import cookie from "js-cookie"
+import "../Scomp/Sprofile.css";
+import NavBar from "../Scomp/SNavBar.jsx";
 import axios from "axios";
-
-function Profile() {
-  const [TName,setTName]=useState("")
-  const [Id,setId]=useState("")
-  useEffect (()=>{
-    axios.post("http://localhost:3000/api/auth",{cookie :cookie.get("jwt")},{ withCredentials: true }).then((response)=>{ console.log(response.data); setTName(response.data.payload.name);setId(response.data.payload.id)}).catch((err)=>{console.log(err)})
-    
-  
-  
-  },[])
+function Profile(props) {
+  const [TName, setTName] = useState("")
+  const [Id, setId] = useState("")
+  useEffect(() => {
+    axios.post("http://localhost:3000/api/auth", { cookie: cookie.get("jwt") }, { withCredentials: true }).then((response) => { console.log(response.data); setTName(response.data.payload.name); setId(response.data.payload.id) }).catch((err) => { console.log(err) })
+  }, [])
   return (
-    <div class="flex min-h-screen items-center justify-center">
-      <div class="w-64 rounded-lg border-2 border-indigo-500 bg-transparent p-4 text-center shadow-lg dark:bg-gray-800">
-        <figure class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-indigo-500 dark:bg-indigo-600">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="48"
-            height="48"
-            fill="currentColor"
-            class="bi bi-person-fill text-white dark:text-indigo-300"
-            viewBox="0 0 16 16"
-          >
-            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
-          </svg>
-        </figure>
-        <h2 class="mt-4 text-xl font-bold text-indigo-600 dark:text-indigo-400">
-         {TName}
-        </h2>
-        <p class="mb-4 text-gray-600 dark:text-gray-300">id= {Id}</p>
-        <div class="flex items-center justify-center">
-          <a
-            href="#"
-            class="rounded-full bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 dark:bg-indigo-400 dark:hover:bg-indigo-500"
-          >
-            Update
-          </a>
-        </div>
+    <div>
+      <div>
+        <NavBar />
+        <section class="section-2">
+          <div class="sheet">
+            <div class="page-content page-container" id="page-content">
+              <div class="padding">
+                <div class="row container d-flex justify-content-center">
+                  <div class="col-xl-6 col-md-12">
+                    <div class="prcard user-prcard-full">
+                      <div class="row m-l-0 m-r-0">
+                        <div class="col-sm-4 bg-c-lite-green user-profile">
+                          <div class="prcard-block text-center text-white">
+                            <div class="m-b-25">
+                              <img
+                                src="https://www.artesia-syndic.fr/wp-content/uploads/Calque-11-300x277.png"
+                                class="img-radius"
+                                alt="User-Profile-Image"
+                              />
+                            </div>
+                            <h6 class="f-w-600">{TName}</h6>
+                            <p>Tenant</p>
+                            <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                          </div>
+                        </div>
+                        <div class="col-sm-8">
+                          <div class="prcard-block">
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <p class="m-b-10 f-w-600">id:</p>
+                                <h6 class="text-muted f-w-400">
+                                  id= {Id}
+                                </h6>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="parag">
+            <br />
+            Hello! Welcome to our platform's interface. This is your space to
+            effortlessly submit claims, provide valuable feedback, and
+            conveniently access your invoices. If you encounter any challenges
+            or have questions, don't hesitate to reach out. Our dedicated
+            support team is available round the clock, 7 days a week, to assist
+            you. Your satisfaction is our priority, and we're here to serve you
+            anytime, day or night.
+            <br />
+          </p>
+        </section>
+
+        <footer class="footer">
+          <div class="footer-div">
+            <button type="button" class="social-button">
+              <a class="footer-link" href="https://www.facebook.com">
+                <img
+                  class="icon"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png"
+                />
+              </a>
+            </button>
+            <button type="button" class="social-button">
+              <a class="footer-link" href="https://www.instagram.com">
+                <img
+                  class="icon"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png"
+                />
+              </a>
+            </button>
+            <button type="button" class="social-button">
+              <a class="footer-link" href="https://www.youtube.com">
+                <img
+                  class="icon"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png"
+                />
+              </a>
+            </button>
+          </div>
+          <div class="text-center">© 2023 - All rights reserved</div>
+        </footer>
       </div>
     </div>
   );

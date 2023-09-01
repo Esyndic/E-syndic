@@ -1,6 +1,11 @@
+#scards {
+  display: flex;
+  margin-left: 8%;
+
+}
 #tcards {
   display: flex;
-  margin-left: 24%;
+  margin-left: 30%;
 
 }
 .article-wrapper {

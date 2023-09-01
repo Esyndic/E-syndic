@@ -37,11 +37,11 @@ module.exports = {
     const salt = await bcrypt.genSalt(10) ;
     var  hashedpassowrd = await bcrypt.hash(tenantsData.password,salt)
     const sql =
-      "INSERT INTO tenants (name, password, email,syndic_idsyndic) VALUES (?,?,?,?)";
+      "INSERT INTO tenants (name, password, email,syndic_idsyndic,image) VALUES (?,?,?,?,?)";
     conn.query(
       sql,
 
-      [tenantsData.name, hashedpassowrd, tenantsData.email,tenantsData.syndic_idsyndic],
+      [tenantsData.name, hashedpassowrd, tenantsData.email,tenantsData.syndic_idsyndic,tenantsData.image],
 
       function (error, results) {
         callback(error, results);

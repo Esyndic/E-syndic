@@ -27,7 +27,7 @@ function   Login() {
       
       if(result.data.token) {
         cookie.set("jwt",result.data.token)
-        navigate("/shome") } 
+        navigate("/shome",{state:{id:result.data.id,email:email}}) } 
       else {alert ("wrong credential")}
   }).catch((err)=>{console.log(err)})
 }

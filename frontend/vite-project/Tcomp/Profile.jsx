@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+import cookie from "js-cookie"
+import axios from "axios";
 
 function Profile() {
+  const [TName,setTName]=useState("")
+  const [Id,setId]=useState("")
+  useEffect (()=>{
+    axios.post("http://localhost:3000/api/auth",{cookie :cookie.get("jwt")},{ withCredentials: true }).then((response)=>{ console.log(response.data); setTName(response.data.payload.name);setId(response.data.payload.id)}).catch((err)=>{console.log(err)})
     
+  
+  
+  },[])
   return (
     <div class="flex min-h-screen items-center justify-center">
       <div class="w-64 rounded-lg border-2 border-indigo-500 bg-transparent p-4 text-center shadow-lg dark:bg-gray-800">
@@ -18,9 +28,9 @@ function Profile() {
           </svg>
         </figure>
         <h2 class="mt-4 text-xl font-bold text-indigo-600 dark:text-indigo-400">
-          John Doe
+         {TName}
         </h2>
-        <p class="mb-4 text-gray-600 dark:text-gray-300">id</p>
+        <p class="mb-4 text-gray-600 dark:text-gray-300">id= {Id}</p>
         <div class="flex items-center justify-center">
           <a
             href="#"

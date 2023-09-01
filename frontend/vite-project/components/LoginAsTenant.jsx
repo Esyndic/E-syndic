@@ -21,7 +21,7 @@ function LoginAsTenant() {
        
     event.preventDefault();
   
-    axios.post("http://localhost:3000/api/tenant/login",{"email":email,"password":pwd}).then((result)=>{
+    axios.post("http://localhost:3000/api/tenants/login",{"email":email,"password":pwd}).then((result)=>{
 
       
       if(result.data.token) {

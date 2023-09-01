@@ -30,7 +30,7 @@ function Home(props) {
 
             <button>
               <Link
-                to="/Thome"
+                to="/loginastenant"
                 class="button"
                 onClick={() => {
                   setInter(1);
@@ -44,7 +44,7 @@ function Home(props) {
             <button>
               
               <Link
-                to="/Shome"
+                to="/login"
                 class="button"
                 onClick={() => {
                   props.inter(2);

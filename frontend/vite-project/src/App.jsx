@@ -7,7 +7,7 @@ import AboutUs from "../components/AboutUs";
 
 import LoginAsTenant from "../components/LoginAsTenant";
 import Login from "../components/Login";
-
+import CloudinaryUploader from "../components/cloudinary";
 import Shome from "../Scomp/Shome.jsx";
 import Personnels from "../Scomp/Personnels.jsx";
 import Feedback from "../Scomp/feedbacks.jsx";
@@ -17,7 +17,7 @@ import AddPers from "../Scomp/AddPers";
 import Tenants from "../Scomp/Tenants.jsx";
 import Sprofile from "../Scomp/Sprofile";
 import UppTenant from "../Scomp/UppTenant.jsx"
-
+import ProtectedRoutes from "../components/ProtectedRoutes";
 import THome from "../Tcomp/THome.jsx";
 import Factures from "../Tcomp/Factures";
 import Claims from "../Tcomp/Claims.jsx";
@@ -35,12 +35,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/login" element={<Login />} />
-
-
-
-     
-        <Route path="/shome" element={<Shome />} />
         
+        <Route path="/up" element={<CloudinaryUploader />} />
+
+
+        <Route element ={<ProtectedRoutes/>}>
+        <Route path="/shome" element={<Shome />} />
+        </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/loginastenant" element={<LoginAsTenant />} />
         <Route path="/shome" element={<Shome />} />

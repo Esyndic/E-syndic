@@ -1,19 +1,23 @@
 import React, { useState } from 'react'
+import cookie from "js-cookie"
 import { useEffect } from 'react'
 import { useLocation,Outlet, useNavigate } from "react-router-dom";
 import axios from "axios"
 function ProtectedRoutes() {
-    const [Access,setAcess]=useState()
+    const [Access,setAcess]=useState(true)
+    const [role,setrole] =useState("")
     useEffect (()=>{
-        axios.post("http://localhost:3000/api/auth").then((response)=>{ setAcess(response.data.true)})
-        console.log("🚀 ~ file: ProtectedRoutes.jsx:9 ~ useEffect ~ response.data:", response.data)
+        axios.post("http://localhost:3000/api/auth",{cookie :cookie.get("jwt")},{ withCredentials: true }).then((response)=>{ setAcess(response.data.access);setrole(response.data.role)})
+     
   
     },[])
     const location = useLocation()
-   const Navigate =useNavigate()
+   const Navigate =useNavigate(   )
+   
   return (
-    Access ? < Outlet/> : 
-    <Navigate to="/login" state={{from:location}} replace/>
+    Access  ? < Outlet/> : Navigate("/login")
+
+    
   )
 }
 

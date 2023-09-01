@@ -1,0 +1,21 @@
+import useState
+
+const [file,setFile]=useState()
+
+djjf52bsy :cloud name
+t2mwv0gn :
+
+
+onChange={(e)=setFile()}
+
+const uploadImage=()=>{
+    const form =new FormData()
+    form.append('image', file)
+    form.append("upload_preset","t2mwv0gn")
+
+    axios.post("https://api.cloudinary.com/v1_1/djjf52bsy/upload",form)
+}
+
+
+
+<button onClick={uploadImage}></button>

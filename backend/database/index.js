@@ -3,6 +3,7 @@ const config = {
   host: "localhost",
   user: "root",
   password: "123456",
+  password: "root",
   database: "e-syndic",
 }
 // Create a database connection and export it from this file.

@@ -6,6 +6,8 @@ import "./Personnel.css";
 import SNavBar from "../Scomp/SNavBar.jsx";
 
 function Personnels(props) {
+  console.log(props);
+
   const [data, setdata] = useState([]);
   const [trigger, setTrigger] = useState(true);
 

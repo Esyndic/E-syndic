@@ -44,7 +44,6 @@ function Feedbacks(props) {
                         <span class="card-title">claim</span>
                         <ol className="claim-list">
                           <li key={claim.id}>
-                           
                             <p className="Tenant">id claim: {claim.idclaims}</p>
                             <p className="Tenant">name : {claim.name}</p>
                             <p className="Tenant">num : {claim.num}</p>
@@ -52,6 +51,9 @@ function Feedbacks(props) {
                             <p className="Tenant"> message: {claim.message}</p>
                           </li>
                         </ol>
+                        <Link to="reply">
+                          <button>reply</button>
+                        </Link>
                       </div>
                       <div class="date-box">
                         <span class="date">{i}</span>

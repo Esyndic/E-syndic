@@ -25,3 +25,36 @@ app.use("/api/facture", facture);
 app.post("/api/auth", verifyToken);
 app.get("/api/logout", logout);
 module.exports = app;
+
+//nodemailer
+
+const nodemailer = require('nodemailer');
+const transporter = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+    user: 'slimaniamin76@gmail.com',
+    pass: 'a.m.i.n.e',
+  },
+});
+
+app.post('/send-email', (req, res) => {
+  const { to, subject, text } = req.body;
+  const mailOptions = {
+    from: 'slimaniamin76@gmail.com',
+    to,
+    subject,
+    text,
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.error('Error sending email: ' + error);
+      res.status(500).json({ error: 'Email could not be sent' });
+    } else {
+      console.log('Email sent: ' + info.response);
+      res.json({ message: 'Email sent successfully' });
+    }
+  });
+});
+
+

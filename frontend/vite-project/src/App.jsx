@@ -34,8 +34,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/shome" element={<Shome />} />
+        <Route path="/login" element={<Login />} />
 
+
+
+     
+        <Route path="/shome" element={<Shome />} />
+        
         <Route path="/login" element={<Login />} />
         <Route path="/loginastenant" element={<LoginAsTenant />} />
         <Route path="/shome" element={<Shome />} />
@@ -47,7 +52,6 @@ function App() {
         <Route path="/createFacture" element={<CreateFacture />} />
         <Route path="/uppPers" element={<UppPers upval={up} />} />
         <Route path="/addPer" element={<AddPers />} />
-        <Route path="/tenants" element={<Tenants />} />
         <Route path="/addTenant" element={<AddTenant />} />
         <Route path="/uppTenant" element={<UppTenant />} />
 

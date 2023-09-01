@@ -8,56 +8,46 @@ function AboutUs(props) {
     <div>
       <div>
         <Navbar />
-
         <section class="section-2">
           <div class="sheet">
             <p class="parag">
-              <img
-                id="img2"
-                src="https://www.coprolib.com/wp-content/uploads/2019/12/visuel-communaute-2.svg"
-              ></img>
-              <br />
-              Hello! Welcome to our platform's interface. This is your space to
-              effortlessly submit claims, provide valuable feedback, and
-              conveniently access your invoices. If you encounter any challenges
-              or have questions, don't hesitate to reach out. Our dedicated
-              support team is available round the clock, 7 days a week, to
-              assist you. Your satisfaction is our priority, and we're here to
-              serve you anytime, day or night.
-              <br />
-              </p>
-              <div class="cardContainer">
-                <div class="abcard">
-                  <p class="city">
-                    E-Syndic: Your complete and secure platform
-                  </p>{" "}
-                  <br />
-                  <div class="checkbox-wrapper-31">
-                    <input checked="" type="checkbox" />
-                    <p class="text">
-                      A simple and educational software for efficient and fast
-                      management that simplifies the work of the Syndicate
-                      Council
-                    </p>
-                  </div>
-                  <div class="checkbox-wrapper-31">
-                    <input checked="" type="checkbox" />
-                    <p class="text">
-                      Automated accounting ensures compliance with the law.
-                    </p>
-                  </div>
-                  <div class="checkbox-wrapper-31">
-                    <input checked="" type="checkbox" />
-                    <p class="text">
-                      No more Excel or accounting posting, copying and pasting
-                      in the journals and above all errors. Don't wait any
-                      longer, start now and take advantage of the full potential
-                      of web and mobile
-                    </p>
-                  </div>
+              <div class="abcard">
+                <p class="abcard-title">Welcome to Syndic Website</p>
+                <p class="small-desc">
+                  Welcome to our Syndic website! We're dedicated to providing
+                  top-notch solutions for all your syndication needs. Our
+                  experienced team is here to assist you every step of the way,
+                  ensuring seamless and efficient processes.
+                </p>
+                <div class="go-corner">
+                  <div class="go-arrow">→</div>
                 </div>
               </div>
-            
+              <div class="abcard">
+                <p class="abcard-title">Our Services</p>
+                <p class="small-desc">
+                  Explore our wide range of syndication services tailored to
+                  meet your unique requirements. From content distribution to
+                  audience engagement, we've got you covered with innovative
+                  solutions that deliver results.
+                </p>
+                <div class="go-corner">
+                  <div class="go-arrow">→</div>
+                </div>
+              </div>
+              <div class="abcard">
+                <p class="abcard-title">Why Choose Us</p>
+                <p class="small-desc">
+                  With years of industry experience, we take pride in being a
+                  trusted partner for syndication. Our commitment to excellence,
+                  attention to detail, and client-centric approach set us apart.
+                  Join us in shaping the future of syndication.
+                </p>
+                <div class="go-corner">
+                  <div class="go-arrow">→</div>
+                </div>
+              </div>
+            </p>
           </div>
         </section>
 

@@ -2,7 +2,7 @@ require("dotenv").config()
 const tenants = require("../database/models/tenants");
 const bcrypt =require("bcrypt")
 const jwt = require("jsonwebtoken")
-const createToken = (id,role,name,emazil) => {
+const createToken = (id,role,name,email) => {
 
   return jwt.sign({id,role,name,email},process.env.ACCESS_TOKEN_SECRET)
 }

@@ -78,7 +78,7 @@ function Claims(props) {
                     placeholder="email"
                     type="email"
                     class="input"
-                    value={claims.email}
+                   
                     onChange={(e) => {
                       setemail(e.target.value);
                     }}
@@ -102,7 +102,7 @@ function Claims(props) {
                     rows="3"
                     placeholder="message"
                     class="input01"
-                    value={claims.message}
+                    
                     onChange={(e) => {
                       setmessage(e.target.value);
                     }}

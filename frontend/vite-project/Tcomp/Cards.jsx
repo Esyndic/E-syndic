@@ -34,8 +34,7 @@ function Cards() {
           <div class="flex-pr">
             <div class="project-title">
               <Link to="/tenant/factures">
-                Check
-                <br /> Factures
+                Check<br/> Factures
               </Link>
             </div>
           </div>

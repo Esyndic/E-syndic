@@ -7,6 +7,7 @@ function Profile(props) {
   const [TName, setTName] = useState("");
   const [Id, setId] = useState("");
   const [email, setEmail] = useState("");
+  const [image, setImage] = useState("https://www.artesia-syndic.fr/wp-content/uploads/Calque-11-300x277.png");
   useEffect(() => {
     axios
       .post(
@@ -19,6 +20,7 @@ function Profile(props) {
         setTName(response.data.payload.name);
         setId(response.data.payload.id);
         setEmail(response.data.payload.email);
+        response.data.payload.image && setImage(response.data.payload.image);
       })
       .catch((err) => {
         console.log(err);
@@ -40,7 +42,7 @@ function Profile(props) {
                           <div class="prcard-block text-center text-white">
                             <div class="m-b-25">
                               <img
-                                src="https://www.artesia-syndic.fr/wp-content/uploads/Calque-11-300x277.png"
+                                src={image}
                                 class="img-radius"
                                 alt="User-Profile-Image"
                               />

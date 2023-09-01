@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Scomp/Sprofile.css";
 import NavBar from "./SNavBar";
 import axios from "axios";
+import cookie from "js-cookie";
+
 function Sprofile(props) {
   const [SName, setSName] = useState("");
   const [Id, setId] = useState("");
@@ -14,7 +16,7 @@ function Sprofile(props) {
         { withCredentials: true }
       )
       .then((response) => {
-        console.log(response.data);
+        console.log(response.data.payload);
         setSName(response.data.payload.name);
         setId(response.data.payload.id);
         setEmail(response.data.payload.email);
@@ -23,15 +25,7 @@ function Sprofile(props) {
         console.log(err);
       });
   }, []);
-  axios
-    .get("http://localhost:3000/api/syndic/get")
-    .then((response) => {
-      console.log(response.data[0]);
-      setSyndic(response.data[0]);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  
   return (
     <div>
       <div>
@@ -64,11 +58,9 @@ function Sprofile(props) {
                             <div class="row">
                               <div class="col-sm-6">
                                 <p class="m-b-10 f-w-600">Email:</p>
-                                <h6 class="text-muted f-w-400">
-                                  {syndic.email}
-                                </h6>
-                                <p class="m-b-10 f-w-600">id:</p>
-                                <h6 class="text-muted f-w-400">{Id}</h6>
+                                <h6 class="text-muted f-w-400">{email}</h6>
+                                <p class="m-b-10 f-w-600">id: {Id}</p>
+                                
                               </div>
                             </div>
                           </div>

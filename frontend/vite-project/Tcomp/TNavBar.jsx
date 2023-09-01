@@ -10,7 +10,7 @@ import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
-
+import cookie from "js-cookie";
 function Navbar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -40,28 +40,9 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            <Link id="title" to="/">
+            <Link id="title" to="/Thome">
               E-Syndic
             </Link>
-          </Typography>
-
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            E-SYNDIC
           </Typography>
           <Box sx={{ flexGrow: 0.8 }}></Box>
           <Box sx={{ flexGrow: 0.09 }}>
@@ -69,7 +50,7 @@ function Navbar() {
               Claims
             </Link>
           </Box>
-          <Box sx={{ flexGrow: 0.09 }}>
+          <Box sx={{ flexGrow: 1}}>
             <Link id="navLink" to="/tenant/factures">
               Factures
             </Link>
@@ -105,7 +86,7 @@ function Navbar() {
               </MenuItem>
               <MenuItem onClick={handleCloseUserMenu}>
                 <Typography textAlign="center">
-                  <Link to="http://localhost:5173">Logout</Link>
+                  <Link to="http://localhost:5173" onClick={()=>{cookie.remove("jwt")}}>Logout</Link>
                 </Typography>
               </MenuItem>
             </Menu>

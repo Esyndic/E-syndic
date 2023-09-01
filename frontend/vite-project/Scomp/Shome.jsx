@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../Scomp/SNavBar.jsx";
-//import './s.css';
+
 import Scard from "../Scomp/Scard.jsx";
 function Home(props) {
   return (

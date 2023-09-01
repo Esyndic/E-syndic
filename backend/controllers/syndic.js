@@ -49,7 +49,7 @@ module.exports = {
             }
   
             if (auth) {
-              const token =  createToken(user.idsyndic,"admin")
+              const token =  createToken(user.idsyndic,"admin",user.syndicName,user.email)
               res.cookie("jwt",token,{ sameSite: "none",   expires: new Date(Date.now() + 1 * 60 * 60 * 1000)})
 
               res.status(200).json({ message: "Successfully logged in", user ,token});

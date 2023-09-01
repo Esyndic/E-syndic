@@ -16,7 +16,7 @@ router.post("/login", loginTenants);
 router.get("/getAll", getAllTenants);
 
 
-router.get("/:email", getOneTenants);
+router.get("/:id", getOneTenants);
 
 router.post("/add", addTenants);
 

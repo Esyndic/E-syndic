@@ -25,34 +25,25 @@ function Home(props) {
           <br></br>
         </section>
         <section class="section-3">
-          <div class="sheet">
-            <h2 class="heading">Start Now!</h2>
-
-            <button>
-              <Link
-                to="/Thome"
-                class="button"
-                onClick={() => {
-                  setInter(1);
-                }}
-              >
-                Login As Tenant
-              </Link>
-            </button>
-            <br/>
-            <br/>
-            <button>
-              
-              <Link
-                to="/Shome"
-                class="button"
-                onClick={() => {
-                  props.inter(2);
-                }}
-              >
-                Login As Syndic
-              </Link>
-            </button>
+          <div id="logins">
+            <Link
+              to="/loginastenant"
+              class="button"
+              onClick={() => {
+                setInter(1);
+              }}
+            >
+              <button class="blogins">Login As Tenant</button>
+            </Link>
+            <Link
+              to="/login"
+              class="button"
+              onClick={() => {
+                props.inter(2);
+              }}
+            >
+              <button class="blogins">Login As Syndic</button>
+            </Link>
           </div>
 
           <footer class="footer">
@@ -86,7 +77,6 @@ function Home(props) {
           </footer>
         </section>
       </div>
-
     </div>
   );
 }

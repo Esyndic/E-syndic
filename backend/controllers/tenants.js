@@ -2,9 +2,9 @@ require("dotenv").config()
 const tenants = require("../database/models/tenants");
 const bcrypt =require("bcrypt")
 const jwt = require("jsonwebtoken")
-const createToken = (id,role) => {
+const createToken = (id,role,name) => {
 
-  return jwt.sign({id,role},process.env.ACCESS_TOKEN_SECRET)
+  return jwt.sign({id,role,name},process.env.ACCESS_TOKEN_SECRET)
 }
 module.exports = {  
   createToken : createToken ,
@@ -76,9 +76,9 @@ module.exports = {
             }
   
             if (auth) {
-              const token =  createToken(user.id,"tenant")
+              const token =  createToken(user.id,"tenant",user.name)
               res.cookie("jwt",token)
-              res.status(200).json({ message: "Successfully logged in", user });
+              res.status(200).json({ message: "Successfully logged in", user ,token});
             } else {
               res.status(204).json( {message:"Incorrect password"});
             }

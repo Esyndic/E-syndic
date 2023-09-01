@@ -2,25 +2,25 @@
 const conn = require("../index");
 const bcrypt = require("bcrypt")
 module.exports = {
- 
+
   getAll: function (callback) {
     const sql = "SELECT * FROM `tenants`";
     conn.query(sql, function (error, results) {
       callback(error, results);
     });
   },
-   getoneByEmail : function (callback, email) { 
+  getoneByEmail: function (callback, email) {
     const sql = "SELECT * FROM `tenants` WHERE email=?";
-    conn.query(sql, [email], function (error, results, ) {
+    conn.query(sql, [email], function (error, results,) {
       callback(error, results);
     });
   },
 
- 
+
 
   getOne: function (callback, id) {
     const sql = "SELECT * FROM `tenants` ";
-    conn.query(sql,  function (error, results, ) {
+    conn.query(sql, function (error, results,) {
       callback(error, results);
     });
   },
@@ -32,17 +32,15 @@ module.exports = {
   //   });
   // },
 
-  
+
   add: async function (callback, tenantsData) {
-    const salt = await bcrypt.genSalt(10) ;
-    var  hashedpassowrd = await bcrypt.hash(tenantsData.password,salt)
+    const salt = await bcrypt.genSalt(10);
+    var hashedpassowrd = await bcrypt.hash(tenantsData.password, salt)
     const sql =
       "INSERT INTO tenants (name, password, email,image,syndic_idsyndic) VALUES (?,?,?,?,?)";
     conn.query(
       sql,
-
-      [tenantsData.name, hashedpassowrd, tenantsData.email, tenantsData.image,tenantsData.syndic_idsyndic],
-
+      [tenantsData.name, hashedpassowrd, tenantsData.email, tenantsData.image, tenantsData.syndic_idsyndic],
       function (error, results) {
         callback(error, results);
       }
@@ -60,7 +58,7 @@ module.exports = {
     conn.query(
       sql,
       [val.name, val.password, val.email, id],
-      function (error, results, ) {
+      function (error, results,) {
         callback(error, results);
       }
     );

@@ -3,7 +3,12 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
 const app = express();
-app.use(cors())
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    next();
+  });
+app.use(cors({credentials:true, origin: 'http://localhost:5173'}))
 app.use(express.json());
 app.use(cookieParser());
 const syndic = require("./routes/syndic");

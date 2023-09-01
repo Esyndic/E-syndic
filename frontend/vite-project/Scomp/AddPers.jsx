@@ -9,14 +9,16 @@ function AddPers() {
   const [num, setNum] = useState("");
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
-  const [image, setImage] = useState("");
+
+  const [image,setImageSelected]=useState("")
+  
 
   const obj = {
     name: name,
     num: num,
     email: email,
     role: role,
-    image: image,
+    image:image,
     syndic_idsyndic: 1
   };
 
@@ -29,13 +31,27 @@ function AddPers() {
       .catch((error) => {
         console.log(error);
       });
+
+    
   };
+const uploadImage=()=>{
+  const formaData=new FormData()
+  formaData.append("file",image)
+  formaData.append("upload_preset","t2mwv0gn")
+
+  axios.post("https://api.cloudinary.com/v1_1/djjf52bsy/upload",formaData)
+  .then((response)=>{console.log(response)})
+
+}
 
   return (
     <div>
       <SNavBar />
+      <div
+      ></div>
 
       <div className="container1">
+        
         <div className="heading">Add Personnel</div>
         <form action="" className="form">
           <input
@@ -85,34 +101,23 @@ function AddPers() {
           <input
             required
             className="input"
-            type="text"
+            type="file"  
             name="image"
             id="image"
             placeholder="Image URL"
             onChange={(e) => {
-              setImage(e.target.value);
+              setImageSelected(e.target.image);
             }}
+            
           />
-          <input
-            required
-            className="input"
-            type="file"
-            name="image"
-            id="image"
-            placeholder="Image URL"
-            onChange={(e) => {
-              setImage(e.target.value);
-            }}
-          />
-          
-
+         
           <Link to="/personnels">
             <input
               className="addbutton"
               type="submit"
               value="Add Personnel"
-              onClick={addPersonnel}
-            />{" "}
+              onClick={()=>{addPersonnel();uploadImage()}}
+            />
           </Link>
         </form>
       </div>

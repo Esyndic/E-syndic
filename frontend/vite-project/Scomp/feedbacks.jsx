@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import SNavbar from "./SNavBar.jsx";
 import axios from "axios";
 import "../Tcomp/facture.css";
+import { Link } from "react-router-dom";
 function Feedbacks(props) {
   const [claims, setClaims] = useState([]);
 

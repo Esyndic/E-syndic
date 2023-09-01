@@ -81,12 +81,11 @@ function CreateFacture(props) {
                       return <option value={e.id}>{e.id}</option>;
                     })}
                   </select>
-                  
                 </div>
-                <br/>
+                <br />
                 <div className="input-box">
                   <label>Creation Date</label>
-                  <br/>
+                  <br />
                   <input
                     required
                     type="date"
@@ -144,14 +143,8 @@ function CreateFacture(props) {
                     value={notes}
                     onChange={(event) => setNotes(event.target.value)}
                   />
-
                   <Link to="/shome">
-                    <button
-                      onClick={(e) => {
-                        handleSubmit(e);
-                      }}
-                      type="submit"
-                    >
+                    <button onClick={handleSubmit} type="submit">
                       Submit
                     </button>
                   </Link>

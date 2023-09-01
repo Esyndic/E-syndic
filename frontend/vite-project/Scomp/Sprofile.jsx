@@ -3,11 +3,26 @@ import "../Scomp/Sprofile.css";
 import NavBar from "./SNavBar";
 import axios from "axios";
 function Sprofile(props) {
-  const [syndic, setSyndic] = useState({
-    name: "3am saleh",
-    email: "saleh@gmail.com",
-  });
-
+  const [SName, setSName] = useState("");
+  const [Id, setId] = useState("");
+  const [email, setEmail] = useState("");
+  useEffect(() => {
+    axios
+      .post(
+        "http://localhost:3000/api/auth",
+        { cookie: cookie.get("jwt") },
+        { withCredentials: true }
+      )
+      .then((response) => {
+        console.log(response.data);
+        setSName(response.data.payload.name);
+        setId(response.data.payload.id);
+        setEmail(response.data.payload.email);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   axios
     .get("http://localhost:3000/api/syndic/get")
     .then((response) => {
@@ -39,7 +54,7 @@ function Sprofile(props) {
                                 alt="User-Profile-Image"
                               />
                             </div>
-                            <h6 class="f-w-600">{syndic.name}</h6>
+                            <h6 class="f-w-600">{SName}</h6>
                             <p>Syndic</p>
                             <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
                           </div>
@@ -52,6 +67,8 @@ function Sprofile(props) {
                                 <h6 class="text-muted f-w-400">
                                   {syndic.email}
                                 </h6>
+                                <p class="m-b-10 f-w-600">id:</p>
+                                <h6 class="text-muted f-w-400">{Id}</h6>
                               </div>
                             </div>
                           </div>

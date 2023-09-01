@@ -53,9 +53,10 @@
 
 /*Add button*/
 .addbutton {
+  margin-left: 45%;
   position: relative;
-  width: 150px;
-  height: 40px;
+  width: 200px;
+  height: 400px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -76,7 +77,7 @@
 }
 
 .addbutton .addbutton__icon {
-  position: absolute;
+
   transform: translateX(109px);
   height: 100%;
   width: 39px;
@@ -86,10 +87,7 @@
   justify-content: center;
 }
 
-.addbutton .svg {
-  width: 30px;
-  stroke: #fff;
-}
+
 
 .addbutton:hover {
   background: #59bed2;
@@ -145,12 +143,14 @@
 }
 
 
-
+#coll{
+  margin:20px;
+}
 /*Delete button*/
 .delete-button {
   width: 40px;
   height: 40px;
-  margin-left:120px;
+  margin-left:250px;
   margin-top:-40px;
   border-radius: 50%;
   background-color: rgb(86, 103, 188);

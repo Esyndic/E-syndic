@@ -50,7 +50,14 @@
   font-size: 25px;
 }
 #centrage {
-  margin-left: 40%;
+  margin-left: 28%;
+}
+#lcentrage {
+  margin-left: 38%;
+}
+#flex{
+
+  display: flex;
 }
 .parag {
   text-align: center;

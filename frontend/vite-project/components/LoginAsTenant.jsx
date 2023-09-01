@@ -39,7 +39,7 @@ function LoginAsTenant(props) {
           your account please <a href="">contact us !</a>
           <br></br>
           <br></br>
-          <div id="centrage">
+          <div id="lcentrage">
             <form class="login">
               <p class="login-title">Sign in to your account as Tenant</p>
               <div class="login-input-container">

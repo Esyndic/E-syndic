@@ -14,6 +14,8 @@ import Feedback from "../Scomp/Feedbacks.jsx";
 import CreateFacture from "../Scomp/CreateFacture.jsx";
 import UppPers from "../Scomp/UppPers.jsx";
 import AddPers from "../Scomp/AddPers";
+import AddTenant from "../Scomp/AddTenant";
+
 import Tenants from "../Scomp/Tenants.jsx";
 import UppTenant from "../Scomp/UppTenant";
 import Sprofile from "../Scomp/Sprofile";
@@ -22,7 +24,9 @@ import THome from "../Tcomp/THome.jsx";
 import Factures from "../Tcomp/Factures";
 import Claims from "../Tcomp/Claims.jsx";
 import Profile from "../Tcomp/Profile";
-import AddTenant from "../Scomp/AddTenant";
+
+
+
 
 function App() {
   const [up, setup] = useState({});
@@ -35,12 +39,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/login" element={<Login />} />
-        
+
         <Route path="/up" element={<CloudinaryUploader />} />
 
-
-        <Route element ={<ProtectedRoutes/>}>
-        <Route path="/shome" element={<Shome />} />
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/shome" element={<Shome />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/loginastenant" element={<LoginAsTenant />} />

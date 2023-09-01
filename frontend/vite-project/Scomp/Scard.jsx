@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Scard() {
   return (
-    <div id="tcards">
+    <div id="scards">
       <article class="article-wrapper">
         <Link to="/personnels">
           <div class="rounded-lg container-project">
@@ -44,13 +44,13 @@ function Scard() {
           </div>
           <div class="project-info">
             <div class="flex-pr"></div>
-            <div class="project-title text-nowrap">Feedbacks</div>
+            <div class="project-title text-nowrap">Claims</div>
           </div>
         </Link>
       </article>
 
       <article class="article-wrapper">
-        <Link to="/tenant/factures">
+        <Link to="/createFacture">
           <div class="rounded-lg container-project">
             <img
               class="rounded-lg container-project"

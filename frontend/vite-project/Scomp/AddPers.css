@@ -22,21 +22,21 @@
   
   .form .input {
     width: 100%;
-    background: white;
+    background: rgb(213, 99, 99);
     border: none;
     padding: 15px 20px;
     border-radius: 20px;
     margin-top: 15px;
-    box-shadow: #cff0ff 0px 10px 10px -5px;
+    box-shadow: #001f2e 0px 10px 10px -5px;
     border-inline: 2px solid transparent;
   }
   
   .form .input::-moz-placeholder {
-    color: rgb(170, 170, 170);
+    color: rgb(180, 67, 67);
   }
   
   .form .input::placeholder {
-    color: rgb(170, 170, 170);
+    color: rgb(190, 62, 62);
   }
   
   .form .input:focus {

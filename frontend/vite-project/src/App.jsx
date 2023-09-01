@@ -10,13 +10,13 @@ import Login from "../components/Login";
 import CloudinaryUploader from "../components/cloudinary";
 import Shome from "../Scomp/Shome.jsx";
 import Personnels from "../Scomp/Personnels.jsx";
-import Feedback from "../Scomp/feedbacks.jsx";
+import Feedback from "../Scomp/Feedbacks.jsx";
 import CreateFacture from "../Scomp/CreateFacture.jsx";
 import UppPers from "../Scomp/UppPers.jsx";
 import AddPers from "../Scomp/AddPers";
 import Tenants from "../Scomp/Tenants.jsx";
+import UppTenant from "../Scomp/UppTenant";
 import Sprofile from "../Scomp/Sprofile";
-import UppTenant from "../Scomp/UppTenant.jsx"
 import ProtectedRoutes from "../components/ProtectedRoutes";
 import THome from "../Tcomp/THome.jsx";
 import Factures from "../Tcomp/Factures";

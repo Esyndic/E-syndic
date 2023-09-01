@@ -18,19 +18,19 @@ module.exports = {
 
 
 
-  getOne: function (callback, id) {
-    const sql = "SELECT * FROM `tenants` ";
-    conn.query(sql, function (error, results,) {
-      callback(error, results);
-    });
-  },
-
   // getOne: function (callback, id) {
-  //   const sql = "SELECT * FROM `tenants` WHERE id=?";
-  //   conn.query(sql, [id], function (error, results, ) {
+  //   const sql = "SELECT * FROM `tenants` ";
+  //   conn.query(sql, function (error, results,) {
   //     callback(error, results);
   //   });
   // },
+
+  getOne: function (callback, id) {
+    const sql = "SELECT * FROM `tenants` WHERE id=?";
+    conn.query(sql, [id], function (error, results, ) {
+      callback(error, results);
+    });
+  },
 
 
   add: async function (callback, tenantsData) {

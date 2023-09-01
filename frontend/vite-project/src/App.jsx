@@ -35,12 +35,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/login" element={<Login />} />
-        
+
         <Route path="/up" element={<CloudinaryUploader />} />
 
-
-        <Route element ={<ProtectedRoutes/>}>
-        <Route path="/shome" element={<Shome />} />
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/shome" element={<Shome />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/loginastenant" element={<LoginAsTenant />} />

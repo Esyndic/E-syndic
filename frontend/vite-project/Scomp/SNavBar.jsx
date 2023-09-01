@@ -1,5 +1,5 @@
 import * as React from "react";
-import cookie from "js-cookie"
+import cookie from "js-cookie";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -11,7 +11,6 @@ import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
-
 
 function NavBar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -42,7 +41,9 @@ function NavBar() {
               textDecoration: "none",
             }}
           >
-            <Link to="/shome">E-Syndic</Link>
+            <Link id="title" to="/shome">
+              E-Syndic
+            </Link>
           </Typography>
 
           <Typography
@@ -63,12 +64,35 @@ function NavBar() {
           >
             E-SYNDIC
           </Typography>
-          <Box sx={{ flexGrow: 1 }}><Link id="navLink" to="/claims"> </Link></Box>
-          <Box sx={{ flexGrow: 0.09 }}><Link id="navLink" to="/personnels"> Personels</Link></Box>
-          <Box sx={{ flexGrow: 0.09}}><Link id="navLink" to="/tenants"> Tenants</Link></Box>
-          <Box sx={{ flexGrow: 0.09 }}><Link id="navLink" to="/feedback"> Feedback/Claims</Link></Box>
-          <Box sx={{ flexGrow: 1 }}><Link id="navLink" to="/createFacture"> Factures</Link></Box>
-
+          <Box sx={{ flexGrow: 1 }}>
+            <Link id="navLink" to="/claims">
+              {" "}
+            </Link>
+          </Box>
+          <Box sx={{ flexGrow: 0.09 }}>
+            <Link id="navLink" to="/personnels">
+              {" "}
+              Personels
+            </Link>
+          </Box>
+          <Box sx={{ flexGrow: 0.09 }}>
+            <Link id="navLink" to="/tenants">
+              {" "}
+              Tenants
+            </Link>
+          </Box>
+          <Box sx={{ flexGrow: 0.09 }}>
+            <Link id="navLink" to="/feedback">
+              {" "}
+              Feedback/Claims
+            </Link>
+          </Box>
+          <Box sx={{ flexGrow: 1 }}>
+            <Link id="navLink" to="/createFacture">
+              {" "}
+              Factures
+            </Link>
+          </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
@@ -100,7 +124,14 @@ function NavBar() {
               </MenuItem>
               <MenuItem onClick={handleCloseUserMenu}>
                 <Typography textAlign="center">
-                  <Link to="http://localhost:5173" onClick={()=>{cookie.remove("jwt")}} >Logout</Link>
+                  <Link
+                    to="http://localhost:5173"
+                    onClick={() => {
+                      cookie.remove("jwt");
+                    }}
+                  >
+                    Logout
+                  </Link>
                 </Typography>
               </MenuItem>
             </Menu>

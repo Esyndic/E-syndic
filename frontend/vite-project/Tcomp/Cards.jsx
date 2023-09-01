@@ -16,7 +16,8 @@ function Cards() {
           <div class="flex-pr">
             <div class="project-title">
               <Link to="/claims">
-                Send <br/>Claims
+                Send <br />
+                Claims
               </Link>
             </div>
           </div>
@@ -33,24 +34,8 @@ function Cards() {
           <div class="flex-pr">
             <div class="project-title">
               <Link to="/tenant/factures">
-                Check<br/> Factures
-              </Link>
-            </div>
-          </div>
-        </div>
-      </article>
-      <article class="article-wrapper">
-        <div>
-          <img
-            class="rounded-lg container-project"
-            src="https://www.pngitem.com/pimgs/m/76-768106_feedback-icon-png-transparent-png.png"
-          />
-        </div>
-        <div class="project-info">
-          <div class="flex-pr">
-            <div class="project-title">
-              <Link to="/tenant/feedbacks">
-                Send<br/> Feedbacks
+                Check
+                <br /> Factures
               </Link>
             </div>
           </div>

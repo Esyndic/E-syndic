@@ -41,7 +41,7 @@ function Login(props) {
           <br></br>
           <br></br>
           <br></br>
-          <div id="centrage">
+          <div id="lcentrage">
             <form class="login">
               <p class="login-title">Sign in to your account as Syndic</p>
               <div class="login-input-container">

@@ -97,7 +97,6 @@ function Personnels(props) {
                                 ></svg>
                               </button>
                               </div>
-                          
                         </>
                       }
                     </div>

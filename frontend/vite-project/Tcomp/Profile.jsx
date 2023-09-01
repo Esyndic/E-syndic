@@ -1,14 +1,29 @@
 import React, { useEffect, useState } from "react";
-import cookie from "js-cookie"
+import cookie from "js-cookie";
 import "../Scomp/Sprofile.css";
 import NavBar from "../Scomp/SNavBar.jsx";
 import axios from "axios";
 function Profile(props) {
-  const [TName, setTName] = useState("")
-  const [Id, setId] = useState("")
+  const [TName, setTName] = useState("");
+  const [Id, setId] = useState("");
+  const [email, setEmail] = useState("");
   useEffect(() => {
-    axios.post("http://localhost:3000/api/auth", { cookie: cookie.get("jwt") }, { withCredentials: true }).then((response) => { console.log(response.data); setTName(response.data.payload.name); setId(response.data.payload.id) }).catch((err) => { console.log(err) })
-  }, [])
+    axios
+      .post(
+        "http://localhost:3000/api/auth",
+        { cookie: cookie.get("jwt") },
+        { withCredentials: true }
+      )
+      .then((response) => {
+        console.log(response.data);
+        setTName(response.data.payload.name);
+        setId(response.data.payload.id);
+        setEmail(response.data.payload.email);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   return (
     <div>
       <div>
@@ -39,10 +54,8 @@ function Profile(props) {
                           <div class="prcard-block">
                             <div class="row">
                               <div class="col-sm-6">
-                                <p class="m-b-10 f-w-600">id:</p>
-                                <h6 class="text-muted f-w-400">
-                                  id= {Id}
-                                </h6>
+                                <h6 class="text-muted f-w-400">id:{Id}</h6>
+                                <h6 class="text-muted f-w-400">email:{email}</h6>
                               </div>
                             </div>
                           </div>

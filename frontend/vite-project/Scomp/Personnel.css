@@ -1,5 +1,6 @@
 /*Card*/
 .card {
+  margin: 2%;
   --font-color: #323232;
   --font-color-sub: #666;
   --bg-color: #fff;

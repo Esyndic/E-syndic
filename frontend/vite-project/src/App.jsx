@@ -15,6 +15,7 @@ import CreateFacture from "../Scomp/CreateFacture.jsx";
 import UppPers from "../Scomp/UppPers.jsx";
 import AddPers from "../Scomp/AddPers";
 import AddTenant from "../Scomp/AddTenant";
+import Reply from "../Scomp/Reply";
 
 import Tenants from "../Scomp/Tenants.jsx";
 import UppTenant from "../Scomp/UppTenant";
@@ -24,9 +25,6 @@ import THome from "../Tcomp/THome.jsx";
 import Factures from "../Tcomp/Factures";
 import Claims from "../Tcomp/Claims.jsx";
 import Profile from "../Tcomp/Profile";
-
-
-
 
 function App() {
   const [up, setup] = useState({});
@@ -49,15 +47,16 @@ function App() {
         <Route path="/loginastenant" element={<LoginAsTenant />} />
         <Route path="/shome" element={<Shome />} />
         <Route path="/personnels" element={<Personnels upval={upval} />} />
-        <Route path="/tenants" element={<Tenants />} />
+        <Route path="/tenants" element={<Tenants upval={upval} />} />
         <Route path="/sprofile" element={<Sprofile />} />
+        <Route path="/reply" element={<Reply />} />
 
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/createFacture" element={<CreateFacture />} />
         <Route path="/uppPers" element={<UppPers upval={up} />} />
         <Route path="/addPer" element={<AddPers />} />
         <Route path="/addTenant" element={<AddTenant />} />
-        <Route path="/uppTenant" element={<UppTenant />} />
+        <Route path="/uppTenant" element={<UppTenant upval={up} />} />
 
         <Route path="/Thome" element={<THome />} />
         <Route path="/tenant/factures" element={<Factures />} />

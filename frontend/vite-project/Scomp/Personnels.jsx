@@ -18,8 +18,8 @@ function Personnels(props) {
       .catch(function (error) {
         console.log(error);
       });
-    setTrigger(!trigger);
-  }, [trigger]);
+ 
+  }, []);
 
   const deletepersonnel = (id) => {
     axios

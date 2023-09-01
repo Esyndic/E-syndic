@@ -9,20 +9,22 @@ function AddPers() {
   const [num, setNum] = useState("");
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
+  const [uploadedImageUrl, setUploadedImageUrl] = useState("");
+  const [image,setImage]=useState("")
+  console.log(uploadedImageUrl,"image url");
 
-  const [image,setImageSelected]=useState("")
-  
 
-  const obj = {
-    name: name,
-    num: num,
-    email: email,
-    role: role,
-    image:image,
-    syndic_idsyndic: 1
-  };
-
-  const addPersonnel = () => {
+  const addPersonnel = (e) => {
+e.preventDefault()
+const obj = {
+  name: name,
+  num: num,
+  email: email,
+  role: role,
+  image: uploadedImageUrl,
+  syndic_idsyndic: 1
+};
+console.log(obj,"the obj");
     axios
       .post(`http://localhost:3000/api/personnel/add`, obj)
       .then((result) => {
@@ -31,16 +33,16 @@ function AddPers() {
       .catch((error) => {
         console.log(error);
       });
-
+      console.log(obj);console.log(uploadedImageUrl)
     
   };
-const uploadImage=()=>{
-  const formaData=new FormData()
+const uploadImage=   ()=>{
+  const formaData= new FormData()
   formaData.append("file",image)
   formaData.append("upload_preset","t2mwv0gn")
 
   axios.post("https://api.cloudinary.com/v1_1/djjf52bsy/upload",formaData)
-  .then((response)=>{console.log(response)})
+  .then((response)=>{ response && setUploadedImageUrl(response.data.secure_url);console.log(uploadedImageUrl,"state image upload")})
 
 }
 
@@ -53,7 +55,7 @@ const uploadImage=()=>{
       <div className="container1">
         
         <div className="heading">Add Personnel</div>
-        <form action="" className="form">
+        <form onSubmit={(e)=>addPersonnel(e)} className="form">
           <input
             required
             className="input"
@@ -105,18 +107,18 @@ const uploadImage=()=>{
             name="image"
             id="image"
             placeholder="Image URL"
-            onChange={(e) => {
-              setImageSelected(e.target.image);
+            onChange={async(e) => {
+              setImage(e.target.files[0]);
+              
+              
             }}
             
           />
-         
+         <button onClick={ uploadImage }>Upload Image</button>
           <Link to="/personnels">
-            <input
+            <button
               className="addbutton"
               type="submit"
-              value="Add Personnel"
-              onClick={()=>{addPersonnel();uploadImage()}}
             />
           </Link>
         </form>

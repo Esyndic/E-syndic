@@ -40,9 +40,16 @@ function Tenants(props) {
 
       <section class="section-2">
         <p class="parag">
-          Hello! Welcome to our platform's interface.Manage your co-ownership in
-          complete freedom! hare you can Login for your account . if you forgot
-          your account please <a href="">contact us !</a>
+          The "Tenants" component is a central feature of our syndic management
+          application, designed to efficiently manage co-ownership tenant
+          information. It provides syndic users with a comprehensive overview of
+          all tenants associated with a property or co-ownership. The component
+          displays crucial details such as tenant names, email addresses, and
+          profile images, enhancing the user experience. Users can easily update
+          tenant information or remove records as needed, ensuring accurate and
+          up-to-date tenant data. With its user-friendly design, the "Tenants"
+          page streamlines tenant management, making it an essential tool for
+          syndic users in their daily operations.
           <br></br>
           <br></br>
           <br></br>

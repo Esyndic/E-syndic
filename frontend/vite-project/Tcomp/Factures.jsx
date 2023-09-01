@@ -24,13 +24,14 @@ function FactureList(props) {
           <div class="sheet">
             <p class="parag">
               <br />
-              Hello! Welcome to our platform's interface. This is your space to
-              effortlessly submit claims, provide valuable feedback, and
-              conveniently access your invoices. If you encounter any challenges
-              or have questions, don't hesitate to reach out. Our dedicated
-              support team is available round the clock, 7 days a week, to
-              assist you. Your satisfaction is our priority, and we're here to
-              serve you anytime, day or night.
+              This page empowers tenants with quick access to their financial
+              information and invoices. It provides a clear breakdown of rent
+              and utility bills, making it easy for tenants to track expenses
+              and verify bills. Tenants can also view unique invoice IDs and
+              additional notes for each invoice, ensuring they have all the
+              necessary details at their fingertips. This platform simplifies
+              financial management and enhances transparency for a more seamless
+              living experience.
               <br />
               <br />
             </p>
@@ -49,7 +50,7 @@ function FactureList(props) {
                         <span class="card-title">Facture</span>
                         <ol className="facture-list">
                           <li key={facture.id}>
-                          <p></p>
+                            <p></p>
                             <p className="Tenant">id Facture: {facture.id}</p>
                             <p>Rent Facture: {facture.rent}dt</p>
                             <p>STEG Facture: {facture.STEG}dt</p>

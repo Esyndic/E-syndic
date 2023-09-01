@@ -36,9 +36,16 @@ function AddTenant(props) {
 
       <section class="section-2">
         <p class="parag">
-          Hello! Welcome to our platform's interface.Manage your co-ownership in
-          complete freedom! hare you can Login for your account . if you forgot
-          your account please <a href="">contact us !</a>
+          Welcome to our platform's interface, where you can manage your
+          co-ownership with unparalleled ease and flexibility! The "Add Tenant"
+          feature empowers you to effortlessly expand your co-ownership
+          community. With just a few clicks, you can invite new tenants to join
+          your co-ownership venture. Enter their essential details, including
+          name, email, and password, and even add a profile image to personalize
+          their account. Our platform ensures a seamless experience,
+          facilitating your co-ownership management journey. Join us today and
+          streamline your operations with the "Add Tenant" page, making
+          co-ownership management a breeze.
           <br></br>
           <br></br>
           <br></br>

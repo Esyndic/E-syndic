@@ -58,13 +58,17 @@ function CreateFacture(props) {
           <div class="sheet">
             <p class="parag">
               <br />
-              Hello! Welcome to our platform's interface. This is your space to
-              effortlessly submit claims, provide valuable feedback, and
-              conveniently access your invoices. If you encounter any challenges
-              or have questions, don't hesitate to reach out. Our dedicated
-              support team is available round the clock, 7 days a week, to
-              assist you. Your satisfaction is our priority, and we're here to
-              serve you anytime, day or night.
+              Welcome to our platform's "Create Facture" page! This is your
+              gateway to easily submit claims, provide valuable feedback, and
+              access your invoices hassle-free. We've designed this space with
+              your convenience in mind. Simply select the tenant, enter the
+              creation date, and input the details for rent, STEG, SONEDE,
+              Topnet, and any additional notes. It's a user-friendly process
+              that puts you in control. Should you have any questions or need
+              assistance, our dedicated support team is available around the
+              clock to assist you. We're here to ensure your satisfaction every
+              step of the way. Click "Submit" to streamline your facture
+              creation process and enjoy a seamless experience.
               <br />
             </p>
             <section className="container">

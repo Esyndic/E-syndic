@@ -37,9 +37,20 @@ function UppTenant(props) {
       <div />
       <section class="section-2">
         <p class="parag">
-          Hello! Welcome to our platform's interface.Manage your co-ownership in
-          complete freedom! hare you can Login for your account . if you forgot
-          your account please <a href="">contact us !</a>
+          The "UppTenant" component provides an interface for editing tenant
+          information within the syndic management application. Here's a
+          description of its functionality: Users can access this component to
+          edit tenant details, including name, email, password, and tenant
+          profile image. The form fields are pre-filled with the existing tenant
+          data, making it easy for users to make necessary changes. Users can
+          modify the tenant's name, email, password, and image URL as needed.
+          After making the desired edits, users can click the "Edit Tenant"
+          button to save the updated information. This component offers a
+          user-friendly way to ensure that tenant records are accurate and
+          up-to-date. It also provides a link to return to the "Tenants" page
+          after editing the tenant's information. Overall, "UppTenant"
+          simplifies the process of managing tenant records for syndic users,
+          helping them maintain accurate tenant information within the system.
           <br></br>
           <br></br>
           <br></br>

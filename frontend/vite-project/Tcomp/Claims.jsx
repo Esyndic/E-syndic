@@ -2,30 +2,45 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import TNavbar from "./TNavBar.jsx";
 
-import cookie from "js-cookie"
+import cookie from "js-cookie";
 import axios from "axios";
 import "./claims.css";
 function Claims(props) {
-  const [TName,setTName]=useState("")
-  const [Id,setId]=useState("")
-  const [email,setemail]=useState("")
-  const [num,setnum]=useState("")
-  const [syndicid,setsyndicid]=useState("")
-  const [message,setmessage]=useState("ffff")
-  
-  useEffect(()=>{
-    axios.post("http://localhost:3000/api/auth",{cookie :cookie.get("jwt")},{ withCredentials: true }).then((response)=>{ console.log(response.data);
+  const [TName, setTName] = useState("");
+  const [Id, setId] = useState("");
+  const [email, setemail] = useState("");
+  const [num, setnum] = useState("");
+  const [syndicid, setsyndicid] = useState("");
+  const [message, setmessage] = useState("ffff");
 
-     setTName(response.data.payload.name);setId(response.data.payload.id)
+  useEffect(() => {
+    axios
+      .post(
+        "http://localhost:3000/api/auth",
+        { cookie: cookie.get("jwt") },
+        { withCredentials: true }
+      )
+      .then((response) => {
+        console.log(response.data);
 
-     ;axios.get(`http://localhost:3000/api/tenants/${Id}`).then((response)=>{ console.log(response.data); setemail(response.data[0].email);setsyndicid(response.data[0].syndic_idsyndic)}).catch((err)=>{console.log(err)})
-    }).catch((err)=>{console.log(err)})
-    
-  
-  },[])
+        setTName(response.data.payload.name);
+        setId(response.data.payload.id);
+        axios
+          .get(`http://localhost:3000/api/tenants/${Id}`)
+          .then((response) => {
+            console.log(response.data);
+            setemail(response.data[0].email);
+            setsyndicid(response.data[0].syndic_idsyndic);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   const [claims, setClaims] = useState({
-   
-   
     contactNumber: "",
     message: "",
   });
@@ -34,7 +49,15 @@ function Claims(props) {
     event.preventDefault();
 
     axios
-      .post("http://localhost:3000/api/claims/add", {"name":TName ,"email":email,"tenants_syndic_idsyndic":syndicid,"syndic_idsyndic":syndicid,"message":message,"num":num,"tenants_id":Id})
+      .post("http://localhost:3000/api/claims/add", {
+        name: TName,
+        email: email,
+        tenants_syndic_idsyndic: syndicid,
+        syndic_idsyndic: syndicid,
+        message: message,
+        num: num,
+        tenants_id: Id,
+      })
       .then((response) => {
         console.log("claims sent :", response.data);
       })
@@ -43,42 +66,39 @@ function Claims(props) {
       });
   };
 
-  
   return (
     <div>
-      {console.log(email,syndicid)}
+      {console.log(email, syndicid)}
       <div>
-        
         <TNavbar />
 
         <section class="section-2">
           <div class="sheet">
             <p class="parag">
               <br />
-              Hello! We're excited to have you on our platform. This space is
-              designed to make your experience as smooth as possible. Whether
-              you need to submit claims, share valuable feedback, or access your
-              invoices, you're in the right place. Don't hesitate to let us know
-              if you encounter any challenges or have questions. Our dedicated
-              support team is available 24/7 to assist you. Your satisfaction is
-              our top priority, and we're here to cater to your needs day and
-              night. Feel free to use this platform to request services like
-              plumbing or maintenance. We're here to serve you in every way we
-              can!
+              This page empowers tenants by providing them with a convenient
+              platform to communicate their concerns and feedback effectively.
+              Tenants can use this page to submit claims, share valuable
+              insights, or report any issues related to their property or syndic
+              management. Whether it's addressing maintenance requests,
+              highlighting concerns, or offering suggestions for improvement,
+              this interface ensures that tenants' voices are heard and their
+              needs are addressed promptly. With a user-friendly form and secure
+              authentication, tenants can trust that their submissions will be
+              processed efficiently, ultimately enhancing their overall
+              experience and satisfaction in their co-ownership arrangement.
               <br />
               <br />
             </p>
             <br />
             <div class="ccards">
               <form class="cform">
-                
                 <label>
                   <input
                     required=""
                     placeholder="email"
                     type="email"
                     class="input"
-                   
                     onChange={(e) => {
                       setemail(e.target.value);
                     }}
@@ -102,7 +122,6 @@ function Claims(props) {
                     rows="3"
                     placeholder="message"
                     class="input01"
-                    
                     onChange={(e) => {
                       setmessage(e.target.value);
                     }}
@@ -117,7 +136,9 @@ function Claims(props) {
                   }}
                 >
                   <span class="top-key"></span>
-                  <span class="text">Submit</span>
+                  <Link to="/Thome">
+                    <span class="text">Submit</span>
+                  </Link>
                   <span class="bottom-key-1"></span>
                   <span class="bottom-key-2"></span>
                 </button>

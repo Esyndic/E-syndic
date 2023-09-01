@@ -9,20 +9,29 @@ function AddPers(props) {
   const [num, setNum] = useState("");
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
-  const [uploadedImageUrl, setUploadedImageUrl] = useState("");
-  const [image, setImage] = useState("");
+  const [uploadedImageUrl, setUploadedImageUrl] = useState(""); 
+  const [image, setImage] = useState(null); 
 
   const addPersonnel = (e) => {
     e.preventDefault();
+
+    if (image) {
+      uploadImage();
+    } else {
+      createPersonnel({});
+    }
+  };
+
+  const createPersonnel = (imageData) => {
     const obj = {
       name: name,
       num: num,
       email: email,
       role: role,
-      image: uploadedImageUrl,
+      image: imageData, 
       syndic_idsyndic: 1,
     };
-    console.log(obj, "the obj");
+
     axios
       .post(`http://localhost:3000/api/personnel/add`, obj)
       .then((result) => {
@@ -31,20 +40,26 @@ function AddPers(props) {
       .catch((error) => {
         console.log(error);
       });
-    console.log(obj);
   };
+
   const uploadImage = () => {
-    const formaData = new FormData();
-    formaData.append("file", image);
-    formaData.append("upload_preset", "t2mwv0gn");
+    const formData = new FormData();
+    formData.append("file", image);
+    formData.append("upload_preset", "t2mwv0gn");
 
     axios
-      .post("https://api.cloudinary.com/v1_1/djjf52bsy/upload", formaData)
+      .post("https://api.cloudinary.com/v1_1/djjf52bsy/upload", formData)
       .then((response) => {
-        response.data.secure_url.length > 3
-          ? setUploadedImageUrl(response.data.secure_url)
-          : console.log("not done");
-        console.log(response.data.secure_url, "state image upload");
+        console.log("Cloudinary response:", response.data);
+        if (response.data.secure_url) {
+          setUploadedImageUrl(response.data.secure_url);
+          createPersonnel(response.data.secure_url);
+        } else {
+          console.log("Image upload failed");
+        }
+      })
+      .catch((error) => {
+        console.error("Cloudinary upload error:", error);
       });
   };
 
@@ -52,14 +67,19 @@ function AddPers(props) {
     <div>
       <SNavBar />
       <div />
-      <section class="section-2">
-        <p class="parag">
-          Hello! Welcome to our platform's interface.Manage your co-ownership in
-          complete freedom! hare you can Login for your account . if you forgot
-          your account please <a href="">contact us !</a>
-          <br></br>
-          <br></br>
-          <br></br>
+      <section className="section-2">
+        <p className="parag">
+          Our "Add Personnel" page simplifies the task of managing your
+          co-ownership team effortlessly. With this feature-rich page, you can
+          swiftly onboard new personnel members to enhance your co-ownership
+          experience. Just input their names, contact details, roles, and even
+          upload profile images to personalize your records. This user-friendly
+          platform seamlessly integrates with Cloudinary, ensuring your uploaded
+          images are securely stored and linked to each personnel profile. It's
+          never been easier to maintain an organized team and provide a
+          professional touch to your co-ownership management. Click the "Add"
+          button to create new personnel profiles and optimize your co-ownership
+          operations with ease.
           <div id="adlog">
             <div className="container2">
               <div className="heading">Add Personnel</div>
@@ -114,18 +134,12 @@ function AddPers(props) {
                   type="file"
                   name="image"
                   id="image"
-                  placeholder="Image URL"
+                  accept="image/*"
                   onChange={(e) => {
                     setImage(e.target.files[0]);
                   }}
                 />
-                <button
-                  onClick={() => {
-                    uploadImage();
-                  }}
-                >
-                  Upload Image
-                </button>
+                <button>Upload Image</button>
                 <Link to="/personnels">
                   <button className="addbutton" type="submit" />
                 </Link>
@@ -134,34 +148,37 @@ function AddPers(props) {
           </div>
         </p>
         <br></br>
-        <footer class="footer">
-          <div class="footer-div">
-            <button type="button" class="social-button">
-              <a class="footer-link" href="https://www.facebook.com">
+        <footer className="footer">
+          <div className="footer-div">
+            <button type="button" className="social-button">
+              <a className="footer-link" href="https://www.facebook.com">
                 <img
-                  class="icon"
+                  className="icon"
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png"
+                  alt="Facebook"
                 />
               </a>
             </button>
-            <button type="button" class="social-button">
-              <a class="footer-link" href="https://www.instagram.com">
+            <button type="button" className="social-button">
+              <a className="footer-link" href="https://www.instagram.com">
                 <img
-                  class="icon"
+                  className="icon"
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png"
+                  alt="Instagram"
                 />
               </a>
             </button>
-            <button type="button" class="social-button">
-              <a class="footer-link" href="https://www.youtube.com">
+            <button type="button" className="social-button">
+              <a className="footer-link" href="https://www.youtube.com">
                 <img
-                  class="icon"
+                  className="icon"
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png"
+                  alt="YouTube"
                 />
               </a>
             </button>
           </div>
-          <div class="text-center">© 2023 - All rights reserved</div>
+          <div className="text-center">© 2023 - All rights reserved</div>
         </footer>
       </section>
     </div>

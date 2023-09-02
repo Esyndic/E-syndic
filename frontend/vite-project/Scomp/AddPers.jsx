@@ -31,22 +31,53 @@ function AddPers(props) {
       .catch((error) => {
         console.log(error);
       });
-    console.log(obj);
+    
+    
+    
   };
-  const uploadImage = () => {
-    const formaData = new FormData();
-    formaData.append("file", image);
-    formaData.append("upload_preset", "t2mwv0gn");
+  const  uploadImage = async () => {
+    try {
+      const formData = new FormData();
+      formData.append("file", image);
+      formData.append("upload_preset", "sdzk10qw");
+     const config ={
+      onUploadProgress : function (progressEvent){
+        const percentCompleted = (progressEvent.loded/progressEvent.total)*100
+        if(percentCompleted===100){ ; 
+        }
+      }
+     }
+      const response = await axios.post(
+        "https://api.cloudinary.com/v1_1/dcygttfkr/upload",
+        formData ,config
+      );
+      console.log(response.data.secure_url,"h")
+       await response.data.secure_url.length>20
 
-    axios
-      .post("https://api.cloudinary.com/v1_1/djjf52bsy/upload", formaData)
-      .then((response) => {
-        response.data.secure_url.length > 3
-          ? setUploadedImageUrl(response.data.secure_url)
-          : console.log("not done");
-        console.log(response.data.secure_url, "state image upload");
-      });
+       
+      if (response.data.secure_url && response.data.secure_url.length > 3) {
+     ; setUploadedImageUrl(response.data.secure_url) ;   console.log(uploadedImageUrl,"urll"); console.log(response.data.secure_url,"hh")
+      } else {
+        console.log("Image upload failed");
+      }
+    } catch (error) {
+      console.error("Error uploading image:", error);
+    }
   };
+  // const uploadImage = () => {
+  //   const formaData = new FormData();
+  //   formaData.append("file", image);
+  //   formaData.append("upload_preset", "t2mwv0gn");
+
+  //   axios
+  //     .post("https://api.cloudinary.com/v1_1/djjf52bsy/upload", formaData)
+  //     .then((response) => {
+  //       response.data.secure_url.length > 3
+  //         ? setUploadedImageUrl(response.data.secure_url)
+  //         : console.log("not done");
+  //       console.log(response.data.secure_url, "state image upload");
+  //     });
+  // };
 
   return (
     <div>
@@ -120,9 +151,9 @@ function AddPers(props) {
                   }}
                 />
                 <button
-                  onClick={() => {
-                    uploadImage();
-                  }}
+                  onClick={
+                    uploadImage
+                  }
                 >
                   Upload Image
                 </button>

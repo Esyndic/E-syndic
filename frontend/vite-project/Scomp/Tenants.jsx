@@ -9,7 +9,6 @@ function Tenants(props) {
   console.log(props);
   const [data, setdata] = useState([]);
   const [trigger, setTrigger] = useState(false);
-
   useEffect(() => {
     axios
       .get("http://localhost:3000/api/tenants/getAll")
@@ -37,70 +36,68 @@ function Tenants(props) {
     <div>
       <SNavBar />
       <div />
-
       <section class="section-2">
         <p class="parag">
-          Hello! Welcome to our platform's interface.Manage your co-ownership in
-          complete freedom! hare you can Login for your account . if you forgot
-          your account please <a href="">contact us !</a>
+          The "Tenants" component is a central feature of our syndic management
+          application, designed to efficiently manage co-ownership tenant
+          information. It provides syndic users with a comprehensive overview of
+          all tenants associated with a property or co-ownership. The component
+          displays crucial details such as tenant names, email addresses, and
+          profile images, enhancing the user experience. Users can easily update
+          tenant information or remove records as needed, ensuring accurate and
+          up-to-date tenant data. With its user-friendly design, the "Tenants"
+          page streamlines tenant management, making it an essential tool for
+          syndic users in their daily operations.
           <br></br>
           <br></br>
           <br></br>
           <div id="centrage">
             <div id="flex">
-              <div>
-                {data &&
-                  data.map((e, i) => {
-                    return (
-                      <div className="card" key={i}>
-                        {
-                          <>
-                            <div>
-                              <img
-                                className="card-photo"
-                                src={e.image}
-                                alt="Icon"
-                              />
-                            </div>
-                            <div className="card-title">
-                              <p>
-                                <span>Name: {e.name}</span>
-                                <br />
-                                <span>Email:{e.email} </span>
-                                <br />
-                                <button
-                                  className="edit-button"
-                                  onClick={() => {
-                                    props.upval(e);
-                                  }}
-                                >
-                                  <Link to="/uppTenant">
-                                    <svg
-                                      className="edit-svgIcon"
-                                      viewBox="0 0 512 512"
-                                    ></svg>
-                                  </Link>
-                                </button>
+              {data &&
+                data.map((e, i) => {
+                  return (
+                    <div className="card" key={i}>
+                      {
+                        <>
+                          <div>
+                            <img
+                              className="card-photo"
+                              src={e.image}
+                              alt="Icon"
+                            />
+                          </div>
+                          <div className="card-title">
+                            <p>
+                              <span>Name: {e.name}</span>
+                              <br />
+                              <span>Email:{e.email} </span>
+                              <br />
+                              <br />
+                              <br />
+                              <button
+                                className="edit-button"
+                                onClick={() => {
+                                  props.upval(e);
+                                }}
+                              >
+                                <Link to="/uppTenant">edit</Link>
+                              </button>
 
-                                <button
-                                  className="delete-button"
-                                  onClick={() => {
-                                    deletetenant(e.id);
-                                  }}
-                                >
-                                  <svg
-                                    className="delete-svgIcon"
-                                    viewBox="0 0 448 512"
-                                  ></svg>
-                                </button>
-                              </p>
-                            </div>
-                          </>
-                        }
-                      </div>
-                    );
-                  })}
-              </div>
+                              <button
+                                className="delete-button"
+                                onClick={() => {
+                                  deletetenant(e.id);
+                                }}
+                              >
+                                delete
+                              </button>
+                            </p>
+                          </div>
+                        </>
+                      }
+                    </div>
+                  );
+                })}
             </div>
           </div>
         </p>

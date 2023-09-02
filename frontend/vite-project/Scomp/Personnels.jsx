@@ -6,8 +6,6 @@ import "./Personnel.css";
 import SNavBar from "../Scomp/SNavBar.jsx";
 
 function Personnels(props) {
-  console.log(props);
-
   const [data, setdata] = useState([]);
   const [trigger, setTrigger] = useState(true);
 
@@ -20,8 +18,7 @@ function Personnels(props) {
       .catch(function (error) {
         console.log(error);
       });
- 
-  }, []);
+  }, [trigger]);
 
   const deletepersonnel = (id) => {
     axios
@@ -39,17 +36,24 @@ function Personnels(props) {
     <div>
       <SNavBar />
       <div />
-
       <section class="section-2">
         <p class="parag">
-          Hello! Welcome to our platform's interface.Manage your co-ownership in
-          complete freedom! hare you can Login for your account . if you forgot
-          your account please <a href="">contact us !</a>
+          The "Personnels" page empowers you to effortlessly manage your
+          co-ownership team, providing a streamlined overview of all personnel
+          members. This user-friendly interface displays essential information
+          such as names, contact numbers, emails, and roles, allowing you to
+          keep track of your team with ease. You can even upload profile images
+          to make each record more personalized. The page offers quick access to
+          edit personnel details or delete records as needed, giving you full
+          control over your co-ownership team's information. Whether you're
+          adding new members, making updates, or simply staying organized, the
+          "Personnels" page is your go-to tool for efficient co-ownership
+          management.
           <br></br>
           <br></br>
           <br></br>
-          <div id="centrage" >
-            <div id="flex" >
+          <div id="centrage">
+            <div id="flex">
               {data &&
                 data.map((e, i) => {
                   return (
@@ -73,49 +77,41 @@ function Personnels(props) {
                               <br />
                               <span>Role:{e.role}</span>
                               <br />
-                              </p>
-                              </div>
-                              <div id="coll">
-                              <button
-                                className="edit-button"
-                                onClick={() => {
-                                  props.upval(e);
-                                }}
-                              >
-                                <Link to="/uppPers">
-                                  edit
-                                </Link>
-
-                              </button>
-                              <button
-                                className="delete-button"
-                                onClick={() => {
-                                  deletepersonnel(e.idpersonnel);
-                                }}
-                              > 
-                                <svg
-                                  className="delete-svgIcon"
-                                  viewBox="0 0 448 512"
-                                ></svg>
-                              </button>
-                              </div>
+                            </p>
+                          </div>
+                          <div id="coll">
+                            <button
+                              className="edit-button"
+                              onClick={() => {
+                                props.upval(e);
+                              }}
+                            >
+                              <Link to="/uppPers">edit</Link>
+                            </button>
+                            <button
+                              className="delete-button"
+                              onClick={() => {
+                                deletepersonnel(e.idpersonnel);
+                              }}
+                            >
+                              Delete
+                            </button>
+                          </div>
                         </>
                       }
                     </div>
                   );
                 })}
             </div>
-            
           </div>
-
         </p>
         <div>
-              <button type="button" class="addbutton">
-                <span class="addbutton__text">
-                  <Link to="/addPer">Add Personnel</Link>
-                </span>
-              </button>
-            </div>
+          <button type="button" class="addbutton">
+            <span class="addbutton__text">
+              <Link to="/addPer">Add Personnel</Link>
+            </span>
+          </button>
+        </div>
         <br></br>
         <footer class="footer">
           <div class="footer-div">

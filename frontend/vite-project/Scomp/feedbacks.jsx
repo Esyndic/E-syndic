@@ -25,13 +25,16 @@ function Feedbacks(props) {
           <div class="sheet">
             <p class="parag">
               <br />
-              Hello! Welcome to our platform's interface. This is your space to
-              effortlessly submit claims, provide valuable feedback, and
-              conveniently access your invoices. If you encounter any challenges
-              or have questions, don't hesitate to reach out. Our dedicated
-              support team is available round the clock, 7 days a week, to
-              assist you. Your satisfaction is our priority, and we're here to
-              serve you anytime, day or night.
+              Welcome to our "Feedbacks" page! This is your platform for
+              managing and responding to user claims and feedback. We value your
+              input, and this space allows us to address your concerns promptly.
+              You can view a list of submitted claims, including details such as
+              the claim ID, name, contact information, and the message. If
+              you're ready to respond or take action, simply click "Reply" to
+              engage with the user and provide assistance. We're here to ensure
+              your feedback is heard and your experience with us is exceptional.
+              Feel free to explore the claims and engage with our users to
+              create a positive and responsive community.
               <br />
               <br />
             </p>
@@ -52,7 +55,7 @@ function Feedbacks(props) {
                             <p className="Tenant"> message: {claim.message}</p>
                           </li>
                         </ol>
-                        <Link to="reply">
+                        <Link to="/reply">
                           <button>reply</button>
                         </Link>
                       </div>

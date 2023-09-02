@@ -12,6 +12,8 @@ function Scard() {
               src="https://webgenery-images.s3.eu-west-1.amazonaws.com/5469FAAE7685D490160164/espace_dynamique/3/538-1.jpg"
             />
           </div>
+          <hr color="black" />
+
           <div class="project-info">
             <div class="flex-pr"></div>
             <div class="project-title text-nowrap">Personnels</div>
@@ -27,6 +29,8 @@ function Scard() {
               src="https://assets-global.website-files.com/5f18a24d02bace2ac2d05bac/5fef987e79132384aae6b6ad_landlord-excessive-normal-wear-tear-rental-properties-1920_d5c9cd489407a6c4ae3ce89745072131.png"
             />
           </div>
+          <hr color="black" />
+
           <div class="project-info">
             <div class="flex-pr"></div>
             <div class="project-title text-nowrap">Tenants</div>
@@ -42,6 +46,8 @@ function Scard() {
               src="https://i0.wp.com/ketto.blog/wp-content/uploads/2021/09/shutterstock_1100033681-min-1.jpg?fit=5000%2C2813&ssl=1"
             />
           </div>
+          <hr color="black" />
+
           <div class="project-info">
             <div class="flex-pr"></div>
             <div class="project-title text-nowrap">Claims</div>
@@ -57,6 +63,8 @@ function Scard() {
               src="https://www.vilogi.com/images/externaliser-comptabilite-syndic-copropriete-15.jpg"
             />
           </div>
+          <hr color="black" />
+
           <div class="project-info">
             <div class="flex-pr"></div>
             <div class="project-title text-nowrap">Factures</div>

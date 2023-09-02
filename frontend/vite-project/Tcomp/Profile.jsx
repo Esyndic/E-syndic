@@ -7,7 +7,9 @@ function Profile(props) {
   const [TName, setTName] = useState("");
   const [Id, setId] = useState("");
   const [email, setEmail] = useState("");
-  const [image, setImage] = useState("https://www.artesia-syndic.fr/wp-content/uploads/Calque-11-300x277.png");
+  const [image, setImage] = useState(
+    "https://www.artesia-syndic.fr/wp-content/uploads/Calque-11-300x277.png"
+  );
   useEffect(() => {
     axios
       .post(
@@ -57,7 +59,9 @@ function Profile(props) {
                             <div class="row">
                               <div class="col-sm-6">
                                 <h6 class="text-muted f-w-400">id:{Id}</h6>
-                                <h6 class="text-muted f-w-400">email:{email}</h6>
+                                <h6 class="text-muted f-w-400">
+                                  email:{email}
+                                </h6>
                               </div>
                             </div>
                           </div>
@@ -71,13 +75,12 @@ function Profile(props) {
           </div>
           <p class="parag">
             <br />
-            Hello! Welcome to our platform's interface. This is your space to
-            effortlessly submit claims, provide valuable feedback, and
-            conveniently access your invoices. If you encounter any challenges
-            or have questions, don't hesitate to reach out. Our dedicated
-            support team is available round the clock, 7 days a week, to assist
-            you. Your satisfaction is our priority, and we're here to serve you
-            anytime, day or night.
+            This page offers tenants a comprehensive view of their profile
+            within the platform. It displays essential information such as the
+            tenant's name, unique ID, and email address. Tenants can also upload
+            a personalized profile image to enhance their identity within the
+            community. With this page, tenants can easily manage and update
+            their profile details for a more personalized experience.
             <br />
           </p>
         </section>

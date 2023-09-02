@@ -44,9 +44,17 @@ function UppPers(props) {
 
       <section class="section-2">
         <p class="parag">
-          Hello! Welcome to our platform's interface.Manage your co-ownership in
-          complete freedom! hare you can Login for your account . if you forgot
-          your account please <a href="">contact us !</a>
+          The "UppPers" component serves as an interface for editing personnel
+          information within our syndic management application. This component
+          allows syndic users to make updates to personnel records effortlessly.
+          Users can modify fields such as name, contact number, email address,
+          role, and even upload a profile image. The form fields are pre-filled
+          with the existing personnel data, making it convenient for users to
+          make necessary changes. Once the edits are complete, users can click
+          the "Edit Personnel" button to save the updated information. This
+          component streamlines the process of maintaining accurate personnel
+          records, ensuring that the syndic team's information is always
+          up-to-date.
           <br></br>
           <br></br>
           <br></br>
@@ -119,8 +127,8 @@ function UppPers(props) {
                   }}
                 />
 
-                <Link to="/personnels">
-                  {" "}
+                <Link to="/personnels" >
+                  
                   <input
                     className="editbutton"
                     type="submit"
@@ -128,7 +136,7 @@ function UppPers(props) {
                     onClick={() => {
                       editPersonnel();
                     }}
-                  />{" "}
+                  />
                 </Link>
               </form>
             </div>

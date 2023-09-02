@@ -25,7 +25,7 @@ function Sprofile(props) {
         console.log(err);
       });
   }, []);
-  
+
   return (
     <div>
       <div>
@@ -60,7 +60,6 @@ function Sprofile(props) {
                                 <p class="m-b-10 f-w-600">Email:</p>
                                 <h6 class="text-muted f-w-400">{email}</h6>
                                 <p class="m-b-10 f-w-600">id: {Id}</p>
-                                
                               </div>
                             </div>
                           </div>
@@ -74,13 +73,16 @@ function Sprofile(props) {
           </div>
           <p class="parag">
             <br />
-            Hello! Welcome to our platform's interface. This is your space to
-            effortlessly submit claims, provide valuable feedback, and
-            conveniently access your invoices. If you encounter any challenges
-            or have questions, don't hesitate to reach out. Our dedicated
-            support team is available round the clock, 7 days a week, to assist
-            you. Your satisfaction is our priority, and we're here to serve you
-            anytime, day or night.
+            The "Sprofile" component is an essential part of our syndic
+            management application, providing syndic users with a personalized
+            and informative profile page. Upon logging in, users can access this
+            page to view their profile information, including their name, email,
+            and user ID. The user's profile image adds a personal touch to the
+            page. This component ensures that syndic users have quick access to
+            their account details and serves as a hub for managing their profile
+            information. It aligns with our platform's user-friendly design and
+            commitment to providing a seamless experience for co-ownership
+            management.
             <br />
           </p>
         </section>

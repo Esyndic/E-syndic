@@ -2,13 +2,14 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-width: 340px;
+  max-width: 380px;
   background-color: #fff;
   padding: 45px;
   border-radius: 10px;
   background: linear-gradient(135deg, #3498db, #e74c3c); /* Gradient colors */
   background-size: 200% 200%; /* Controls smoothness of the gradient transition */
   animation: gradientAnimation 10s ease infinite; /* Animation for smooth transition */
+  padding-right: 60px;
 }
 #ccards{
     margin-left: 20%;
@@ -122,6 +123,7 @@
   transition: all 0.3s ease-in-out;
   user-select: none;
   font-size: 20px;
+  text-align: center;
 }
 
 .fancy::before {
@@ -141,7 +143,7 @@
 .fancy .text {
   font-size: 1.125em;
   line-height: 1.33333em;
-  padding-left: 2em;
+  padding-left: -25px;
   display: block;
   text-align: left;
   transition: all 0.3s ease-in-out;

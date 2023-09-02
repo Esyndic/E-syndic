@@ -9,7 +9,6 @@ function Tenants(props) {
   console.log(props);
   const [data, setdata] = useState([]);
   const [trigger, setTrigger] = useState(false);
-
   useEffect(() => {
     axios
       .get("http://localhost:3000/api/tenants/getAll")
@@ -37,7 +36,6 @@ function Tenants(props) {
     <div>
       <SNavBar />
       <div />
-
       <section class="section-2">
         <p class="parag">
           The "Tenants" component is a central feature of our syndic management
@@ -55,59 +53,51 @@ function Tenants(props) {
           <br></br>
           <div id="centrage">
             <div id="flex">
-              <div>
-                {data &&
-                  data.map((e, i) => {
-                    return (
-                      <div className="card" key={i}>
-                        {
-                          <>
-                            <div>
-                              <img
-                                className="card-photo"
-                                src={e.image}
-                                alt="Icon"
-                              />
-                            </div>
-                            <div className="card-title">
-                              <p>
-                                <span>Name: {e.name}</span>
-                                <br />
-                                <span>Email:{e.email} </span>
-                                <br />
-                                <button
-                                  className="edit-button"
-                                  onClick={() => {
-                                    props.upval(e);
-                                  }}
-                                >
-                                  <Link to="/uppTenant">
-                                    <svg
-                                      className="edit-svgIcon"
-                                      viewBox="0 0 512 512"
-                                    ></svg>
-                                  </Link>
-                                </button>
+              {data &&
+                data.map((e, i) => {
+                  return (
+                    <div className="card" key={i}>
+                      {
+                        <>
+                          <div>
+                            <img
+                              className="card-photo"
+                              src={e.image}
+                              alt="Icon"
+                            />
+                          </div>
+                          <div className="card-title">
+                            <p>
+                              <span>Name: {e.name}</span>
+                              <br />
+                              <span>Email:{e.email} </span>
+                              <br />
+                              <br />
+                              <br />
+                              <button
+                                className="edit-button"
+                                onClick={() => {
+                                  props.upval(e);
+                                }}
+                              >
+                                <Link to="/uppTenant">edit</Link>
+                              </button>
 
-                                <button
-                                  className="delete-button"
-                                  onClick={() => {
-                                    deletetenant(e.id);
-                                  }}
-                                >
-                                  <svg
-                                    className="delete-svgIcon"
-                                    viewBox="0 0 448 512"
-                                  ></svg>
-                                </button>
-                              </p>
-                            </div>
-                          </>
-                        }
-                      </div>
-                    );
-                  })}
-              </div>
+                              <button
+                                className="delete-button"
+                                onClick={() => {
+                                  deletetenant(e.id);
+                                }}
+                              >
+                                delete
+                              </button>
+                            </p>
+                          </div>
+                        </>
+                      }
+                    </div>
+                  );
+                })}
             </div>
           </div>
         </p>

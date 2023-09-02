@@ -8,17 +8,26 @@ function AddTenant(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [image, setImage] = useState("");
+  const [uploadedImageUrl, setUploadedImageUrl] = useState("");
+  const [image, setImage] = useState(null);
 
-  const obj = {
-    name: name,
-    email: email,
-    password: password,
-    image: image,
-    syndic_idsyndic: 1,
+  const addTenant = (e) => {
+    e.preventDefault();
+
+    if (image) {
+      uploadImage();
+    } else {
+      createTenant({});
+    }
   };
-
-  const addTenant = () => {
+  const createTenant = (imageData) => {
+    const obj = {
+      name: name,
+      email: email,
+      password: password,
+      image: imageData,
+      syndic_idsyndic: 1,
+    };
     axios
       .post(`http://localhost:3000/api/tenants/add`, obj)
       .then((result) => {
@@ -26,6 +35,26 @@ function AddTenant(props) {
       })
       .catch((error) => {
         console.log(error);
+      });
+  };
+  const uploadImage = () => {
+    const formData = new FormData();
+    formData.append("file", image);
+    formData.append("upload_preset", "t2mwv0gn");
+
+    axios
+      .post("https://api.cloudinary.com/v1_1/djjf52bsy/upload", formData)
+      .then((response) => {
+        console.log("Cloudinary response:", response.data);
+        if (response.data.secure_url) {
+          setUploadedImageUrl(response.data.secure_url);
+          createTenant(response.data.secure_url);
+        } else {
+          console.log("Image upload failed");
+        }
+      })
+      .catch((error) => {
+        console.error("Cloudinary upload error:", error);
       });
   };
 
@@ -52,7 +81,7 @@ function AddTenant(props) {
           <div id="adten">
             <div className="container2">
               <div className="heading">Add Tenant</div>
-              <form action="" className="form">
+              <form onSubmit={(e) => addTenant(e)} className="form">
                 <input
                   required
                   className="inputs"
@@ -78,7 +107,7 @@ function AddTenant(props) {
                 <input
                   required
                   className="inputs"
-                  type="text"
+                  type="password"
                   name="password"
                   id="password"
                   placeholder="Password"
@@ -89,22 +118,22 @@ function AddTenant(props) {
                 <input
                   required
                   className="inputs"
-                  type="text"
+                  type="file"
                   name="image"
                   id="image"
+                  accept="image/*"
                   placeholder="Image URL"
                   onChange={(e) => {
-                    setImage(e.target.value);
+                    setImage(e.target.files[0]);
                   }}
                 />
-
+                <button>Upload Image</button>
                 <Link to="/tenants">
                   <input
                     className="addbutton"
                     type="submit"
                     value="Add Tenant"
-                    onClick={addTenant}
-                  />{" "}
+                  />
                 </Link>
               </form>
             </div>

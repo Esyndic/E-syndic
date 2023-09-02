@@ -6,8 +6,6 @@ import "./Personnel.css";
 import SNavBar from "../Scomp/SNavBar.jsx";
 
 function Personnels(props) {
-  console.log(props);
-
   const [data, setdata] = useState([]);
   const [trigger, setTrigger] = useState(true);
 
@@ -96,10 +94,7 @@ function Personnels(props) {
                                 deletepersonnel(e.idpersonnel);
                               }}
                             >
-                              <svg
-                                className="delete-svgIcon"
-                                viewBox="0 0 448 512"
-                              ></svg>
+                              Delete
                             </button>
                           </div>
                         </>

@@ -87,7 +87,7 @@ function UppTenant(props) {
                 <input
                   required
                   className="inputs"
-                  type="text"
+                  type="password"
                   name="password"
                   id="password"
                   placeholder="Password"

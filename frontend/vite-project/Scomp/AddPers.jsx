@@ -9,8 +9,8 @@ function AddPers(props) {
   const [num, setNum] = useState("");
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
-  const [uploadedImageUrl, setUploadedImageUrl] = useState(""); 
-  const [image, setImage] = useState(null); 
+  const [uploadedImageUrl, setUploadedImageUrl] = useState("");
+  const [image, setImage] = useState(null);
 
   const addPersonnel = (e) => {
     e.preventDefault();
@@ -28,7 +28,7 @@ function AddPers(props) {
       num: num,
       email: email,
       role: role,
-      image: imageData, 
+      image: imageData,
       syndic_idsyndic: 1,
     };
 
@@ -141,7 +141,11 @@ function AddPers(props) {
                 />
                 <button>Upload Image</button>
                 <Link to="/personnels">
-                  <button className="addbutton" type="submit" />
+                  <button
+                    className="addbutton"
+                    type="submit"
+                    value="Add Personnel"
+                  />
                 </Link>
               </form>
             </div>

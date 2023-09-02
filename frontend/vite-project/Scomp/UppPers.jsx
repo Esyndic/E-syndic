@@ -127,8 +127,8 @@ function UppPers(props) {
                   }}
                 />
 
-                <Link to="/personnels">
-                  {" "}
+                <Link to="/personnels" >
+                  
                   <input
                     className="editbutton"
                     type="submit"
@@ -136,7 +136,7 @@ function UppPers(props) {
                     onClick={() => {
                       editPersonnel();
                     }}
-                  />{" "}
+                  />
                 </Link>
               </form>
             </div>

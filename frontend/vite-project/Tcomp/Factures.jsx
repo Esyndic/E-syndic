@@ -2,12 +2,31 @@ import React, { useEffect, useState } from "react";
 import TNavbar from "./TNavBar.jsx";
 import axios from "axios";
 import "./Facture.css";
+import cookie from "js-cookie";
+import { saveAs } from "file-saver";
+import jsPDF from "jspdf";
+
 function FactureList(props) {
   const [factures, setFactures] = useState([]);
+  const [Id, setId] = useState("");
+  const [trigger, setTrigger] = useState(false);
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/facture/get")
+      .post(
+        "http://localhost:3000/api/auth",
+        { cookie: cookie.get("jwt") },
+        { withCredentials: true }
+      )
+      .then((response) => {
+        console.log(response.data);
+        setId(response.data.payload.id);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    axios
+      .get(`http://localhost:3000/api/facture/get/${Id}`)
       .then((response) => {
         console.log(response.data);
         setFactures(response.data);
@@ -15,7 +34,39 @@ function FactureList(props) {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [trigger]);
+  const deletefact = (id) => {
+    axios
+      .delete(`http://localhost:3000/api/facture/delete/${Id}`)
+      .then((response) => {
+        setTrigger(!trigger);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  function generateAndDownloadPDF(facture) {
+    const doc = new jsPDF();
+    doc.text(`date: ${facture.date}`, 80, 10);
+    doc.text(`id Facture: ${facture.id}`, 80, 30);
+    doc.text(`Rent : ${facture.rent}dt`, 10, 40);
+    doc.text(`STEG: ${facture.STEG}dt`, 10, 50);
+    doc.text(`SONEDE: ${facture.SONEDE}dt`, 10, 60);
+    doc.text(`Topnet: ${facture.Topnet}dt`, 10, 70);
+    doc.text(
+      `Total: ${
+        facture.rent * 1 +
+        facture.STEG * 1 +
+        facture.SONEDE * 1 +
+        facture.Topnet * 1
+      }dt`,
+      80,
+      80
+    );
+    const pdfBlob = doc.output("blob");
+    saveAs(pdfBlob, `facture_${facture.id}.pdf`);
+  }
+
   return (
     <div>
       <div>
@@ -61,6 +112,19 @@ function FactureList(props) {
                           </li>
                         </ol>
                       </div>
+                      <button
+                        class="fbtn"
+                        onClick={() => generateAndDownloadPDF(facture)}
+                      >
+                        download
+                      </button>
+
+                      <button
+                        class="fbtn"
+                        onClick={() => deletefact(facture.id)}
+                      >
+                        delete
+                      </button>
                       <div class="date-box">
                         <span class="month">{facture.date.substr(0, 4)}</span>
                         <span class="date">{facture.date.substr(4, 6)}</span>

@@ -147,11 +147,10 @@ function CreateFacture(props) {
                     value={notes}
                     onChange={(event) => setNotes(event.target.value)}
                   />
-                  <Link to="/shome">
-                    <button onClick={handleSubmit} type="submit">
-                      Submit
-                    </button>
-                  </Link>
+
+                  <button onClick={handleSubmit} type="submit">
+                    <Link to="/shome">Submit</Link>
+                  </button>
                 </div>
               </form>
             </section>

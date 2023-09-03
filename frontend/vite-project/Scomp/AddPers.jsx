@@ -127,7 +127,11 @@ function AddPers(props) {
                   Upload Image
                 </button>
                 <Link to="/personnels">
-                  <button className="addbutton" type="submit" />
+                  <button
+                    className="addbutton"
+                    type="submit"
+                    value="Add Personnel"
+                  > Add personnel</button>
                 </Link>
               </form>
             </div>

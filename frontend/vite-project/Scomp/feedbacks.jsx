@@ -56,7 +56,7 @@ function Feedbacks(props) {
                           </li>
                         </ol>
                         <Link to="/reply">
-                          <button>reply</button>
+                          <button onClick={props.mail(claim.email)}>reply</button>
                         </Link>
                       </div>
                       <div class="date-box">

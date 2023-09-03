@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import cookie from "js-cookie";
 import "../Scomp/Sprofile.css";
-import NavBar from "../Scomp/SNavBar.jsx";
+import NavBar from "../Tcomp/TNavBar.jsx";
 import axios from "axios";
 function Profile(props) {
   const [TName, setTName] = useState("");

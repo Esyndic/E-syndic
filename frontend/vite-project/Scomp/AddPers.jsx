@@ -145,7 +145,7 @@ function AddPers(props) {
                     className="addbutton"
                     type="submit"
                     value="Add Personnel"
-                  />
+                  > Add personnel</button>
                 </Link>
               </form>
             </div>

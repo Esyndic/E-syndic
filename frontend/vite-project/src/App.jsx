@@ -10,7 +10,7 @@ import Login from "../components/Login";
 import CloudinaryUploader from "../components/cloudinary";
 import Shome from "../Scomp/Shome.jsx";
 import Personnels from "../Scomp/Personnels.jsx";
-import Feedback from "../Scomp/Feedbacks.jsx";
+import Feedback from "../Scomp/feedbacks.jsx";
 import CreateFacture from "../Scomp/CreateFacture.jsx";
 import UppPers from "../Scomp/UppPers.jsx";
 import AddPers from "../Scomp/AddPers";

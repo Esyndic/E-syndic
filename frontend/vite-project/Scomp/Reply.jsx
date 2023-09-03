@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import SNavBar from "../Scomp/SNavBar.jsx";
 
-function Reply() {
+function Reply(props) {
   const [emailData, setEmailData] = useState({
     to: "",
     subject: "",
@@ -43,6 +43,7 @@ function Reply() {
                   className="inputs"
                   type="email"
                   id="name"
+                  defaultValue={props.email}
                   placeholder="Email"
                   onChange={(e) =>
                     setEmailData({ ...emailData, to: e.target.value })

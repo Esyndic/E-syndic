@@ -27,10 +27,17 @@ import Claims from "../Tcomp/Claims.jsx";
 import Profile from "../Tcomp/Profile";
 
 function App() {
+
   const [up, setup] = useState({});
+  const [email, setemail] = useState("");
+
   function upval(obj) {
     setup(obj);
   }
+  function mail(str) {
+    setemail(str);
+  }
+
   return (
     <BrowserRouter>
       <Routes>
@@ -49,9 +56,9 @@ function App() {
         <Route path="/personnels" element={<Personnels upval={upval} />} />
         <Route path="/tenants" element={<Tenants upval={upval} />} />
         <Route path="/sprofile" element={<Sprofile />} />
-        <Route path="/reply" element={<Reply />} />
+        <Route path="/reply" element={<Reply email={email} />} />
 
-        <Route path="/feedback" element={<Feedback />} />
+        <Route path="/feedback" element={<Feedback mail={mail}/>} />
         <Route path="/createFacture" element={<CreateFacture />} />
         <Route path="/uppPers" element={<UppPers upval={up} />} />
         <Route path="/addPer" element={<AddPers />} />

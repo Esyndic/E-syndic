@@ -35,7 +35,7 @@ function CreateFacture(props) {
       Topnet: topnetFacture * 1,
       decription: notes,
       syndic_idsyndic: 1,
-      tenants_id: tenants_id,
+      tenants_id: tenants_id* 1,       
       tenants_syndic_idsyndic: 1,
     };
     console.log(formData);

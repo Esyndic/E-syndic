@@ -19,18 +19,19 @@ function FactureList(props) {
         { withCredentials: true }
       )
       .then((response) => {
-        console.log(response.data);
+        console.log(response.data,"auth");
         setId(response.data.payload.id);
       })
-      .catch((err) => {
-        console.log(err);
-      });
-    axios
-      .get(`http://localhost:3000/api/facture/get/${Id}`)
-      .then((response) => {
-        console.log(response.data);
-        setFactures(response.data);
-      })
+      .then(()=>{
+        console.log(Id)
+        axios
+        .get(`http://localhost:3000/api/facture/get/${Id}`)
+        .then((response) => {
+          console.log(response.data,"get");
+          setFactures(response.data);
+          
+        })})
+    
       .catch((err) => {
         console.log(err);
       });

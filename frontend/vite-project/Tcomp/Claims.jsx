@@ -5,7 +5,7 @@ import TNavbar from "./TNavBar.jsx";
 import cookie from "js-cookie";
 import axios from "axios";
 import "./claims.css";
-function Claims(props) {
+function Claims() {
   const [TName, setTName] = useState("");
   const [Id, setId] = useState("");
   const [email, setemail] = useState("");
@@ -25,17 +25,17 @@ function Claims(props) {
 
         setTName(response.data.payload.name);
         setId(response.data.payload.id);
+        
+      }).then(()=>{
         axios
-          .get(`http://localhost:3000/api/tenants/${Id}`)
-          .then((response) => {
-            console.log(response.data);
-            setemail(response.data[0].email);
-            setsyndicid(response.data[0].syndic_idsyndic);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      })
+        .get(`http://localhost:3000/api/tenants/${Id}`)
+        .then((response) => {
+          console.log(response.data ,"get");
+          setemail(response.data[0].email);
+         console.log (syndicid,"syndicid")
+          setsyndicid(response.data[0].syndic_idsyndic);
+        })})
+        
       .catch((err) => {
         console.log(err);
       });
@@ -47,13 +47,21 @@ function Claims(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+   console.log({
+    name: TName,
+    email: email,
+    tenants_syndic_idsyndic: syndicid,
+    syndic_idsyndic: 1,
+    message: message,
+    num: num,
+    tenants_id: Id,
+  })
     axios
       .post("http://localhost:3000/api/claims/add", {
         name: TName,
         email: email,
         tenants_syndic_idsyndic: syndicid,
-        syndic_idsyndic: syndicid,
+        syndic_idsyndic: 1,
         message: message,
         num: num,
         tenants_id: Id,

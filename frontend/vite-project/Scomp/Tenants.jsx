@@ -73,7 +73,7 @@ function Tenants(props) {
                     class="input"
                     type="text"
                     required=""
-                    placeholder="Search Personnel"
+                    placeholder="Search Tenants"
                     id="search"
                     onChange={(e) => {
                       handleChange(e);
